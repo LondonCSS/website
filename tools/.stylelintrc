@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-recommended",
+  "rules": {
+    "selector-nested-pattern": "^&",
+    "property-no-unknown": [true, { "ignoreProperties": ["composes"] }]
+  }
+}
