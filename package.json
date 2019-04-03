@@ -1,8 +1,18 @@
 {
-  "name": "xpmt",
+  "name": "londoncss-website",
   "version": "1.0.0",
+  "license": "Apache-2.0",
+  "repository": "git@github.com:LondonCSS/website.git",
+  "author": "Oliver Turner <oliver.turner@codedsignal.co.uk>",
+  "homepage": "https://www.londoncss.dev/",
+  "bugs": "https://github.com/LondonCSS/website/issues",
+  "keywords": [
+    "London CSS",
+    "website",
+    "eleventy",
+    "css"
+  ],
   "main": "index.js",
-  "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "0.7.1",
     "clean-css": "4.2.1",
@@ -18,13 +28,13 @@
     "stylelint-config-recommended": "2.1.0"
   },
   "scripts": {
-    "lint:css": "stylelint ./styles --config ./tools/.stylelintrc",
-    "css": "postcss ./styles/*.css --dir ./dist/styles",
-    "dev:css": "yarn run css -w",
-    "dev:serve": "eleventy --serve",
-    "dev": "run-p dev:*",
+    "build": "run-s build:*",
     "build:css": "yarn run css",
     "build:site": "eleventy",
-    "build": "run-s build:*"
+    "css": "postcss ./styles/*.css --dir ./dist/styles",
+    "dev": "run-p dev:*",
+    "dev:css": "yarn run css -w",
+    "dev:serve": "eleventy --serve",
+    "lint:css": "stylelint ./styles --config ./tools/.stylelintrc"
   }
 }
