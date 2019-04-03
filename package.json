@@ -19,8 +19,12 @@
   },
   "scripts": {
     "lint:css": "stylelint ./styles --config ./tools/.stylelintrc",
-    "dev:css": "postcss ./styles/*.css --dir ./dist/styles -w",
+    "css": "postcss ./styles/*.css --dir ./dist/styles",
+    "dev:css": "yarn run css -w",
     "dev:serve": "eleventy --serve",
-    "dev": "run-p dev:*"
+    "dev": "run-p dev:*",
+    "build:css": "yarn run css",
+    "build:site": "eleventy",
+    "build": "run-s build:*"
   }
 }
