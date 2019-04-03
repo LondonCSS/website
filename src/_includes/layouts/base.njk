@@ -22,12 +22,12 @@
   <body>
     <super-mannerist></super-mannerist>
     <div class="app">
-      <header class="app__controls app__header title">
+      <header class="app__controls app__nav title">
         <div class="container row">
           <a href="/">
             <h1 class="app__title">London CSS</h1>
           </a>
-          <nav class="app__nav">
+          <nav class="app__nav__links">
             <a href="/about-us" class="app__nav__link">About Us</a>
             <a href="/code-of-conduct" class="app__nav__link">
               Code of Conduct
@@ -36,25 +36,45 @@
         </div>
       </header>
 
-      <div class="app__content">
+      <header class="app__header">
+        <h1 class="title page__title">
+          {{ title }}
+        </h1>
+      </header>
+
+      <main class="app__content">
         {{ content | safe }}
-      </div>
-      <div class="app__sidebar"></div>
+      </main>
+
+      <aside class="sponsors">
+        <a href="#" class="sponsor sponsor--cinema">
+          <img src="/static/images/silogo.svg" alt="Samsung Internet">
+        </a>
+        <a href="#" class="sponsor sponsor--panorama">
+          <img src="/static/images/ft.svg" alt="Financial Times">
+        </a>
+      </aside>
 
       <footer class="app__controls app__footer title">
         <div class="container row">
           <p>©2019 London CSS</p>
           <ul class="unlist social">
-            <a href="#">
-              <svg>
-                <use href="#icon-twitter"/>
-              </svg>
-              <span>Tweet!</span>
+            <a class="social__link" href="https://twitter.com/londoncss">
+              <span class="social__link__icon">
+                <svg>
+                  <use href="#icon-twitter"/>
+                </svg>
+              </span>
+              <span class="social__link__label">Tweet!</span>
             </a>
-            <svg>
-              <use href="#icon-github"/>
-              <span>Source</span>
-            </svg>
+            <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
+              <span class="social__link__icon">
+                <svg>
+                  <use href="#icon-github"/>
+                </svg>
+              </span>
+              <span class="social__link__label">Source</span>
+            </a>
           </ul>
         </div>
       </footer>
