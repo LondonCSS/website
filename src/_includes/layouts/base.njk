@@ -16,14 +16,17 @@
     <meta name="twitter:description" content="{{ description }}"/>
     <meta name="twitter:image" content="{{ url }}/images/favicon.png"/>
 
-    <link rel="stylesheet" href="{{ url }}/styles.css">
+    <link rel="stylesheet" href="{{ url }}/styles/styles.css">
   </head>
 
   <body>
+    <super-mannerist></super-mannerist>
     <div class="app">
       <header class="app__controls app__header title">
         <div class="container row">
-          <a href="/"><h1 class="app__title">London CSS</h1></a>
+          <a href="/">
+            <h1 class="app__title">London CSS</h1>
+          </a>
           <nav class="app__nav">
             <a href="/about-us" class="app__nav__link">About Us</a>
             <a href="/code-of-conduct" class="app__nav__link">
@@ -45,6 +48,52 @@
       </footer>
     </div>
 
-    <script src="{{ '/script/index.js' | url }}"></script>
+    <template id="super-mannerist">
+      <link rel="stylesheet" href="/styles/supermannerist.css"/>
+      <div class="sm">
+        <div class="sm__container">
+          <div class="sm__stripes sm__stripes--a">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div class="sm__stripes sm__stripes--b">
+            <i></i>
+            <i></i>
+          </div>
+          <div class="sm__stripes sm__stripes--c">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div class="sm__stripes sm__stripes--d">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script type="module" src="{{ '/script/index.mjs' | url }}"></script>
   </body>
 </html>

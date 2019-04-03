@@ -1,9 +1,12 @@
+const postcssImport = require("postcss-import");
 const postcssPresetEnv = require(`postcss-preset-env`);
+const postcssClean = require(`postcss-clean`);
 
 const { customMedia } = require("./src/theme.js");
 
 module.exports = () => ({
   plugins: [
+    postcssImport,
     postcssPresetEnv({
       preserve: true,
       browsers: "last 2 versions",
@@ -11,6 +14,7 @@ module.exports = () => ({
         "nesting-rules": true,
         "custom-media-queries": { importFrom: { customMedia } }
       }
-    })
+    }),
+    postcssClean
   ]
 });

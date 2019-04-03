@@ -1,8 +1,3 @@
-const postcssPresetEnv = require("postcss-preset-env");
-const CleanCSS = require("clean-css");
-
-const { customMedia } = require("./src/theme");
-
 const eleventy = config => {
   // Get upcoming events
   config.addCollection("events", collection => {
