@@ -17,6 +17,8 @@
   --grad1: #002239;
   --grad2: #0b605f;
   --stripe: #fff1;
+
+  --icon-med: 24px;
 }
 
 html,
@@ -32,6 +34,12 @@ body {
   color: #ccc;
 }
 
+.unlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -43,6 +51,10 @@ body {
   align-items: center;
 }
 
+.icons {
+  display: none;
+}
+
 .app__controls {
   background: #000;
   color: #999;
@@ -52,6 +64,7 @@ body {
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
+  grid-gap: 1em;
   grid-template-areas:
       "header"
       "content" 
@@ -122,4 +135,14 @@ body {
 
   padding: 0.5rem;
   font-size: 0.8em;
+}
+
+.social {
+  display: flex;
+  
+  & svg {
+    stroke: currentColor;
+    width: var(--icon-med);
+    height: var(--icon-med);
+  }
 }

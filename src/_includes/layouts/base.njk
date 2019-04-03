@@ -44,55 +44,24 @@
       <footer class="app__controls app__footer title">
         <div class="container row">
           <p>©2019 London CSS</p>
+          <ul class="unlist social">
+            <a href="#">
+              <svg>
+                <use href="#icon-twitter"/>
+              </svg>
+              <span>Tweet!</span>
+            </a>
+            <svg>
+              <use href="#icon-github"/>
+              <span>Source</span>
+            </svg>
+          </ul>
         </div>
       </footer>
     </div>
 
-    <template id="super-mannerist">
-      <link rel="stylesheet" href="/styles/supermannerist.css"/>
-      <div class="sm">
-        <div class="sm__container">
-          <div class="sm__stripes sm__stripes--a">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-          <div class="sm__stripes sm__stripes--b">
-            <i></i>
-            <i></i>
-          </div>
-          <div class="sm__stripes sm__stripes--c">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-          <div class="sm__stripes sm__stripes--d">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-        </div>
-      </div>
-    </template>
+    {% include "partials/supermannerist.njk" %}
+    {% include "partials/icons.njk" %}
 
     <script type="module" src="{{ '/script/index.mjs' | url }}"></script>
   </body>
