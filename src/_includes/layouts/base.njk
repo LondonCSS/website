@@ -48,20 +48,21 @@
 
       <aside class="sponsors">
         <a href="#" class="sponsor sponsor--cinema">
-          <img src="/static/images/silogo.svg" alt="Samsung Internet">
+          <img src="/static/images/silogo.svg" alt="Samsung Internet logo">
         </a>
         <a href="#" class="sponsor sponsor--panorama">
-          <img src="/static/images/ft.svg" alt="Financial Times">
+          <img src="/static/images/ft.svg" alt="Financial Times logo">
         </a>
       </aside>
 
       <footer class="app__controls app__footer title">
         <div class="container row">
           <p>©2019 London CSS</p>
-          <ul class="unlist social">
+          <div class="social">
             <a class="social__link" href="https://twitter.com/londoncss">
               <span class="social__link__icon">
-                <svg>
+                <svg role="img">
+                  <title>Twitter Logo</title>
                   <use href="#icon-twitter"/>
                 </svg>
               </span>
@@ -69,13 +70,14 @@
             </a>
             <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
               <span class="social__link__icon">
-                <svg>
+                <svg role="img">
+                  <title>Github Logo</title>
                   <use href="#icon-github"/>
                 </svg>
               </span>
               <span class="social__link__label">Source</span>
             </a>
-          </ul>
+          </div>
         </div>
       </footer>
     </div>

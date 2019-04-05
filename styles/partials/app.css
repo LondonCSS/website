@@ -171,6 +171,8 @@ body {
   font-size: 0.8em;
 }
 
+/* Sponsors
+------------------------------------------------------------------------------*/
 .sponsors {
   grid-area: sponsors;
   align-self: end;
@@ -205,6 +207,8 @@ body {
   height: 24px;
 }
 
+/* Social
+------------------------------------------------------------------------------*/
 .social {
   display: flex;
 }
@@ -216,7 +220,7 @@ body {
   align-items: center;
 
   margin-left: 0.5em;
-  color: #666;
+  /* color: #666; */
 
   &:hover {
     color: #ccc;
