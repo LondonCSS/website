@@ -16,6 +16,7 @@
 
   --grad1: #002239;
   --grad2: #0b605f;
+  --grad3: #58ADAC;
   --stripe: #fff1;
 
   --icon-med: 24px;
@@ -154,10 +155,11 @@ body {
   color: #ccc;
 
   & a {
-    color: var(--vict);
+    color: var(--grad3);
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }
