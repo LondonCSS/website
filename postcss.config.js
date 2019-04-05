@@ -6,7 +6,6 @@ const { customMedia } = require("./src/theme.js");
 
 module.exports = () => ({
   plugins: [
-    postcssImport,
     postcssPresetEnv({
       preserve: true,
       browsers: "last 2 versions",
@@ -15,6 +14,6 @@ module.exports = () => ({
         "custom-media-queries": { importFrom: { customMedia } }
       }
     }),
-    postcssClean
+    postcssClean()
   ]
 });
