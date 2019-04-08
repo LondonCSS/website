@@ -1,3 +1,6 @@
+const postcss = require("postcss");
+const postcssConfig = require("./postcss.config");
+
 const eleventy = config => {
   // Get upcoming events
   config.addCollection("events", collection => {
@@ -5,6 +8,12 @@ const eleventy = config => {
     const events = collection.getFilteredByGlob("static/events/*.md");
 
     return events.filter(event => event.data.date >= dateNow);
+  });
+
+  config.addNunjucksAsyncFilter("postcss", async (code, callback) => {
+    const { css } = await postcss([postcssConfig()]).process(code);
+
+    return callback(null, css);
   });
 
   config.addPassthroughCopy("src/script");

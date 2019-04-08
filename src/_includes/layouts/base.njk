@@ -16,7 +16,14 @@
     <meta name="twitter:description" content="{{ description }}"/>
     <meta name="twitter:image" content="{{ url }}/images/favicon.png"/>
 
-    <link rel="stylesheet" href="{{ url }}/styles/styles.css">
+    {%- set css -%}
+      {% include "css/reset.css" %}
+      {% include "css/typography.css" %}
+      {% include "css/app.css" %}
+    {%- endset %}
+    <style>
+      {{css | postcss | safe}}
+    </style>
   </head>
 
   <body>
