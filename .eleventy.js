@@ -1,3 +1,5 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 const eleventy = config => {
   // Get upcoming events
   config.addCollection("events", collection => {
@@ -6,6 +8,8 @@ const eleventy = config => {
 
     return events.filter(event => event.data.date >= dateNow);
   });
+
+  config.addPlugin(pluginRss);
 
   config.addPassthroughCopy("src/script");
   config.addPassthroughCopy("static/images");
