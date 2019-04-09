@@ -234,6 +234,10 @@ body {
   border-bottom: 1px solid currentColor;
 }
 
+.talk__title {
+  font-style: italic;
+}
+
 .talk__content {
   padding: 0.5em;
 }
