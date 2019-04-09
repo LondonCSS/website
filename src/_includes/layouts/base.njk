@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="/styles/reset.css"/>
 
     {%- set css -%}
-      {% include "css/typography.css" %}
-      {% include "css/app.css" %}
+    {% include "css/typography.css" %}
+    {% include "css/app.css" %}
     {%- endset %}
     <style>
       {{css | postcss | safe}}
@@ -44,15 +44,11 @@
         </div>
       </header>
 
-      <header class="app__header">
-        <h1 class="title page__title">
-          {{ title }}
-        </h1>
-      </header>
+      <h1 class="title page__title">
+        {{ title }}
+      </h1>
 
-      <main class="app__content">
-        {{ content | safe }}
-      </main>
+      {{ content | safe }}
 
       <aside class="sponsors">
         <a href="#" class="sponsor sponsor--cinema">
