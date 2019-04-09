@@ -5,7 +5,6 @@ const postcssClean = require(`postcss-clean`);
 const { customMedia } = require("./src/theme.js");
 
 module.exports = () => ({
-  from: undefined,
   plugins: [
     postcssPresetEnv({
       preserve: true,

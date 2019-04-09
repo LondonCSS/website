@@ -146,13 +146,15 @@ body {
 .page__title {
   grid-area: header;
 
-  position: sticky;
-  top: 1rem;
-
   padding: 0.25em;
   border: 1px solid currentColor;
   border-left: none;
   border-right: none;
+
+  @media (--mq-m) {
+    position: sticky;
+    top: 1rem;
+  }
 }
 
 .page__content {
