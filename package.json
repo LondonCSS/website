@@ -22,7 +22,7 @@
     "postcss-cli": "6.1.2",
     "postcss-import": "12.0.1",
     "postcss-preset-env": "6.6.0",
-    "workbox-build": "4.2.0"
+    "workbox-cli": "4.2.0"
   },
   "devDependencies": {
     "stylelint": "9.10.1",
@@ -37,7 +37,7 @@
     "dev": "run-p dev:*",
     "build:css": "yarn run css",
     "build:site": "eleventy",
-    "build": "run-s build:*",
-    "postbuild": "workbox generateSW ./tools/workbox-config.js"
+    "build:sw": "workbox generateSW ./tools/workbox-config.js",
+    "build": "run-s build:*"
   }
 }
