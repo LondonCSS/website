@@ -36,6 +36,7 @@
     "dev": "run-p dev:*",
     "build:css": "yarn run css",
     "build:site": "eleventy",
-    "build": "run-s build:*"
+    "build": "run-s build:*",
+    "postbuild": "npx workbox generateSW ./tools/workbox-config.js"
   }
 }

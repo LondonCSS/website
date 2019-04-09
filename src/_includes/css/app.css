@@ -150,7 +150,6 @@ body {
 }
 
 .page__content--bg {
-  padding: 1em;
   background: #000a;
   color: #ccc;
 
@@ -164,11 +163,45 @@ body {
   }
 }
 
+.content__copy {
+  padding: 1em;
+}
+
 .app__footer {
   grid-area: footer;
 
   padding: 0.5rem;
   font-size: 0.8em;
+}
+
+.content__hero {
+  position: relative;
+
+  & img {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+.content__hero__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  padding: 0 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff9;
+
+  & span {
+    display: block;
+  }
+
+  & time {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }
 
 /* Sponsors
