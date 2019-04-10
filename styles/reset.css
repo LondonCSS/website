@@ -1,6 +1,5 @@
 /*! backpack.css v2.0.0 | MIT License | github.com/chris-pearce/backpack.css */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/*! reset.css: https://gist.github.com/andybelldesign/3ff68ebe3011e17f5ea7c287f47868fc */
 
 /* Document ================================================================= */
 /*
@@ -71,6 +70,24 @@ h1 {
   margin: 0.67em 0;
 }
 
+/**
+ * We scope our heading styles to classes instead of the `<hx>` element selector
+ * so our styles are not tied to their semantics, i.e., if you want a `<h4>` to
+ * look like a `<h2>` you can easily do this. All of the heading elements are
+ * reset to have the same styles as the body copy. See:
+ * https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+}
+
 /* Grouping content ========================================================= */
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -105,7 +122,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 800;
 }
 
 /**
@@ -128,9 +145,6 @@ pre {
   font-kerning: none; /* 2 */
   font-variant-ligatures: contextual; /* 2 */
   font-variant-numeric: lining-nums tabular-nums slashed-zero; /* 2 */
-  -webkit-font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "onum" 0, "pnum" 0, "tnum", "lnum", "zero";
-  -webkit-font-kerning: none;
-  -webkit-font-variant-ligatures: contextual;
 }
 
 /**
@@ -141,8 +155,7 @@ small {
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
  */
 sub,
 sup {
@@ -160,6 +173,28 @@ sup {
   top: -0.35em;
 }
 
+/**
+ * normalize.css normalizes the `<sub>` and `<sup>` elements, however, if
+ * user-agents support the `font-variant-position` property then we use that
+ * instead and remove the relevant normalize.css styles.
+ */
+@supports (font-variant-position: sub) and (font-variant-position: super) {
+  sub,
+  sup {
+    font-size: 100%;
+    line-height: inherit;
+    position: static;
+  }
+
+  sub {
+    font-variant-position: sub;
+  }
+
+  sup {
+    font-variant-position: super;
+  }
+}
+
 /* Embedded content ========================================================= */
 /**
  * Remove the border on images inside links in IE 10.
@@ -168,54 +203,41 @@ img {
   border-style: none;
 }
 
+/**
+ * Make all images and videos responsive.
+ *
+ * 1. Override the height to 'auto', otherwise images will be stretched when
+ *    setting a width and height attribute on the `<img>` element.
+ * 2. Set a maximum relative to the parent.
+ */
+img,
+video {
+  height: auto; /* 1 */
+  max-width: 100%; /* 2 */
+}
+
+/*
+ * Remove the gap between the following elements and the bottom of their
+ * containers.
+ *
+ * ✌︎ Resources and credit
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ * https://github.com/h5bp/html5-boilerplate
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
 figure {
   margin: 0;
 }
 
 /* Forms ==================================================================== */
-/*
- * 1. Remove top inner shadow that iOS applies to all textual inputs.
- *    ✌︎ Credit https://davidwalsh.name/input-shadows-ipad
- * 2. Remove padding (mostly 1px) that most user-agents apply to all textual
- *    inputs.
- */
-[type="date"],
-[type="datetime-local"],
-[type="email"],
-[type="month"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="time"],
-[type="url"],
-[type="week"] {
-  background-clip: padding-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Set OpenType features for specific input types, mostly numeric. Remove
- * kerning and proportional, oldstyle numerals. Enable lining numerals.
- *
- * NOTE: See the "OpenType features" section in the README.md.
- */
-[type="color"],
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="number"],
-[type="range"],
-[type="tel"],
-[type="time"],
-[type="week"] {
-  -webkit-font-feature-settings: "kern" 0, "onum" 0, "lnum";
-  font-feature-settings: "kern" 0, "onum" 0, "lnum";
-  -webkit-font-kerning: none;
-  font-kerning: none;
-  font-variant-numeric: lining-nums;
-}
 
 /**
  * 1. Change the font styles in all browsers.
@@ -297,6 +319,48 @@ textarea,
   touch-action: manipulation;
 }
 
+/*
+ * 1. Remove top inner shadow that iOS applies to all textual inputs.
+ *    ✌︎ Credit https://davidwalsh.name/input-shadows-ipad
+ * 2. Remove padding (mostly 1px) that most user-agents apply to all textual
+ *    inputs.
+ */
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"] {
+  background-clip: padding-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Set OpenType features for specific input types, mostly numeric. Remove
+ * kerning and proportional, oldstyle numerals. Enable lining numerals.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="number"],
+[type="range"],
+[type="tel"],
+[type="time"],
+[type="week"] {
+  font-feature-settings: "kern" 0, "onum" 0, "lnum";
+  font-kerning: none;
+  font-variant-numeric: lining-nums;
+}
+
 /**
  * 2. Remove the padding in IE 10.
  */
@@ -353,6 +417,24 @@ summary {
   display: list-item;
 }
 
+/*
+ * Prevent table cell borders from doubling up.
+ */
+table {
+  border-collapse: collapse;
+}
+
+/**
+ * Set OpenType features. Remove proportional and oldstyle numerals. Enable
+ * lining numerals, tabular numerals, and slashed zero.
+ *
+ * NOTE: See the "OpenType features" section in the README.md.
+ */
+td {
+  font-feature-settings: "onum" 0, "pnum" 0, "lnum", "tnum", "zero";
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+}
+
 /* Misc ===================================================================== */
 /**
  * Add the correct display in IE 10+.
@@ -367,18 +449,6 @@ template {
 [hidden] {
   display: none;
 }
-
-/*
- * Remove margins, paddings, and borders from all elements except `<input>` so
- * that everything is on an even playing field.
- */
-/* @TODO: restore once lobotomised owl pattern implemented for headings etc
-*:not(input) {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-*/
 
 /**
  * Prevents an unwanted focus outline from appearing around elements that might
@@ -398,23 +468,6 @@ template {
  */
 *:focus:not(:focus-visible) {
   outline: none;
-}
-
-/**
- * Removes any animations or transitions for users who have notified their
- * system that they prefer an interface that minimises the amount of movement or
- * animation. Preferably to the point where all non-essential movement is
- * removed.
- *
- * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
- * i.e., we always want these rules to take precedence.
- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
 }
 
 body:not(:-moz-handler-blocked) fieldset {
@@ -449,112 +502,28 @@ body:not(:-moz-handler-blocked) fieldset {
 }
 
 /**
- * We scope our heading styles to classes instead of the `<hx>` element selector
- * so our styles are not tied to their semantics, i.e., if you want a `<h4>` to
- * look like a `<h2>` you can easily do this. All of the heading elements are
- * reset to have the same styles as the body copy. See:
- * https://medium.com/fed-or-dead/handling-headings-in-a-ui-component-library-2587de93c890
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: normal;
-  line-height: inherit;
-}
-
-/**
- * normalize.css normalizes the `<sub>` and `<sup>` elements, however, if
- * user-agents support the `font-variant-position` property then we use that
- * instead and remove the relevant normalize.css styles.
- */
-@supports (font-variant-position: sub) and (font-variant-position: super) {
-  sub,
-  sup {
-    font-size: 100%;
-    line-height: inherit;
-    position: static;
-  }
-
-  sub {
-    font-variant-position: sub;
-  }
-
-  sup {
-    font-variant-position: super;
-  }
-}
-
-/**
- * Make all images and videos responsive.
- *
- * 1. Override the height to 'auto', otherwise images will be stretched when
- *    setting a width and height attribute on the `<img>` element.
- * 2. Set a maximum relative to the parent.
- */
-img,
-video {
-  height: auto; /* 1 */
-  max-width: 100%; /* 2 */
-}
-
-/*
- * Prevent table cell borders from doubling up.
- */
-table {
-  border-collapse: collapse;
-}
-
-/**
- * Set OpenType features. Remove proportional and oldstyle numerals. Enable
- * lining numerals, tabular numerals, and slashed zero.
- *
- * NOTE: See the "OpenType features" section in the README.md.
- */
-td {
-  -webkit-font-feature-settings: "onum" 0, "pnum" 0, "lnum", "tnum", "zero";
-  font-feature-settings: "onum" 0, "pnum" 0, "lnum", "tnum", "zero";
-  font-variant-numeric: lining-nums tabular-nums slashed-zero;
-}
-
-/*
- * Remove the gap between the following elements and the bottom of their
- * containers.
- *
- * ✌︎ Resources and credit
- * https://github.com/h5bp/html5-boilerplate/issues/440
- * https://github.com/h5bp/html5-boilerplate
- */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/**
  * Set a more readable tab size.
  *
  * ✌︎ Credit https://github.com/sindresorhus/modern-normalize/issues/17
  */
 :root {
-  -moz-tab-size: 4;
   tab-size: 4;
 }
 
-/*
- * Remove _all_ animations and transitions for people that prefer not to see them 
+
+/**
+ * Removes any animations or transitions for users who have notified their
+ * system that they prefer an interface that minimises the amount of movement or
+ * animation. Preferably to the point where all non-essential movement is
+ * removed.
+ *
+ * NOTE: it's okay to use `!important` here as we're doing it pre-emptively,
+ * i.e., we always want these rules to take precedence.
  */
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation: none !important;
-            animation: none !important;
-    transition: none !important;
+    animation: none !important;
     scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
