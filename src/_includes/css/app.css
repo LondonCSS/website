@@ -247,11 +247,17 @@ body {
 .talk__footer {
   padding: 0 1rem;
   color: #aaa;
+}
 
-  & details {
-    padding: 1rem 0;
+.speaker {
+  @nest .talk__footer & {
+    padding: 0.5rem 0;
     border-top: 1px dotted #fff5;
   }
+}
+
+.speaker__bio {
+  margin-top: 0.5rem;
 }
 
 /* Sponsors

@@ -10,7 +10,8 @@ layout: layouts/base.njk
       <span>Event 1:</span>
       <em>Relaunch</em>
     </h2>
-    <time class="content__hero__date" datetime="2019-05-09">Thursday, May&nbsp;9<sup>th</sup></time>
+    <time class="content__hero__date" datetime="2019-05-09">Thursday, May&nbsp;9<sup>th</sup>
+    </time>
   </div>
   <div class="copy">
     <p>Please join us at Conde Nast for the relaunch of London CSS with talks from these amazing speakers</p>
@@ -42,22 +43,25 @@ layout: layouts/base.njk
       <p>Come along to see me demo a few of my favourite unconventional solutions.</p>
     </div>
     <footer class="talk__footer">
-      <details>
-        <summary>About Cassie</summary>
-        <p>Cassie is passionate about web animation, SVG and testing the limits of CSS.</p><p>She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at Clearleft.</p>
-    </footer>
-  </article>
+      <details class="speaker">
+        <summary class="speaker__name">About Cassie</summary>
+        <div class="speaker__bio">
+          <p>Cassie is passionate about web animation, SVG and testing the limits of CSS.</p>
+          <p>She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at Clearleft.</p>
+        </div>
+      </footer>
+    </article>
 
-  <article class="talk">
-    <header class="talk__header">
-      <h3 class="title talk__topic">
-        <span class="talk__author">Jean-Yves Perrier:</span>
-        <span class="talk__title">Modern Layouts</span>
-      </h3>
-    </header>
-    <div class="talk__content">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A magni porro itaque labore. Dolor provident eius, libero rem ipsa fugit quasi repellat rerum, porro ipsum aut enim! Ratione, molestias reiciendis!</p>
-    </div>
-    <footer class="talk__footer"></footer>
-  </article>
-</section>
+    <article class="talk">
+      <header class="talk__header">
+        <h3 class="title talk__topic">
+          <span class="talk__author">Jean-Yves Perrier:</span>
+          <span class="talk__title">Modern Layouts</span>
+        </h3>
+      </header>
+      <div class="talk__content">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A magni porro itaque labore. Dolor provident eius, libero rem ipsa fugit quasi repellat rerum, porro ipsum aut enim! Ratione, molestias reiciendis!</p>
+      </div>
+      <footer class="talk__footer"></footer>
+    </article>
+  </section>
