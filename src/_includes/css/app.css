@@ -244,6 +244,16 @@ body {
   padding: 1rem;
 }
 
+.talk__footer {
+  padding: 0 1rem;
+  color: #aaa;
+
+  & details {
+    padding: 1rem 0;
+    border-top: 1px dotted #fff5;
+  }
+}
+
 /* Sponsors
 ------------------------------------------------------------------------------*/
 .sponsors {
