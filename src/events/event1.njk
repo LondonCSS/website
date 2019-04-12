@@ -1,0 +1,47 @@
+---
+tags: events
+layout: layouts/base.njk 
+title: Event 1
+date: 2019-04-12
+location: Conde Nast
+talks:
+  - speaker: 
+      name: Laura
+      bio: Text coming
+    title: Absolute units
+    content: 
+  - speaker: 
+      name: Cassie Evans
+      bio: 
+        Cassie is passionate about web animation, SVG and testing the limits of CSS.
+
+        She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at [Clearleft](https://www.clearleft.co.uk).
+    title: Limitation breeds creativity
+    content: 
+      Constraints might not feel like what you want when you're trying to kickstart creativity or start a new project. But working within constraints can help you get started and provide unconventional ways around a problem.
+
+      Come along to see me demo a few of my favourite unconventional solutions.
+---
+
+{%- for talk in talks %}
+  <article class="talk">
+    <header class="talk__header">
+      <h3 class="title talk__topic">
+        <span class="talk__author">wat{{talk.speaker.name}}</span>
+        <span class="talk__title">{{talk.title}}</span>
+      </h3>
+    </header>
+    <div class="talk__content">
+      {{talk.content | markdown}}
+    </div>
+    <footer class="talk__footer">
+      <details class="speaker">
+        <summary class="speaker__name">About {{talk.speaker.name}}</summary>
+        <div class="speaker__bio">
+          {{talk.speaker.bio | markdown}}
+        </div>
+      </details>
+    </footer>
+  </article>
+{%- endfor %}
+

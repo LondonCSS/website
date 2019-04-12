@@ -7,6 +7,7 @@
   --bg-contrast: #000a;
   --bg-contrast-text: #ccc;
   --bg-contrast-title: #B6B58E;
+  --bg-highlight: #202237;
 
   --icon-med: 24px;
 }
@@ -105,11 +106,11 @@ body {
 .app__nav__link {
   padding: 0.5rem 1rem;
 
-  &:hover,
+  &:enter,
   &:target,
   &.active {
-    background: #333;
-    color: #fff;
+    background: var(--bg-highlight);
+    color: var(--bg-contrast-title);
   }
 }
 
@@ -161,7 +162,7 @@ body {
     color: var(--grad3);
     text-decoration: underline;
 
-    &:hover {
+    &:enter {
       text-decoration: none;
     }
   }
@@ -182,7 +183,7 @@ body {
   justify-content: flex-end;
 
   padding: 2rem 1rem 1rem;
-  background: #202237;
+  background: var(--bg-highlight);
 
   @media (--mq-m) {
     height: 200px;
@@ -256,6 +257,14 @@ body {
   }
 }
 
+.speaker__name {
+  transition: color 0.25s;
+  
+  &:enter {
+    color: var(--bg-contrast-title);
+  }
+}
+
 .speaker__bio {
   margin-top: 0.5rem;
 }
@@ -277,8 +286,10 @@ body {
     align-self: end;
     justify-content: flex-start;
 
-    position: sticky;
-    bottom: 1rem;
+    @media (min-height: 400px) {
+      position: sticky;
+      bottom: 1rem;
+    }
   }
 }
 
@@ -314,7 +325,7 @@ body {
   margin-left: 0.5rem;
   /* color: #666; */
 
-  &:hover {
+  &:enter {
     color: #ccc;
   }
 }
@@ -330,7 +341,7 @@ body {
   border: 1px solid transparent;
   border-radius: 50%;
 
-  @nest .social__link:hover & {
+  @nest .social__link:enter & {
     border-color: #999;
   }
 
@@ -354,7 +365,7 @@ body {
   background: #000;
   z-index: 1;
 
-  @nest .social__link:hover & {
+  @nest .social__link:enter & {
     border-color: #999;
   }
 }

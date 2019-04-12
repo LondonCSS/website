@@ -1,0 +1,29 @@
+---
+permalink: rss.xml
+metadata:
+  title: My Blog Title
+  url: http://example.com/
+  author:
+    name: London CSS
+    email: hello@londoncss.dev
+  feed:
+    subtitle: Upcoming events on London CSS
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ pkg.description }}</title>
+  <subtitle>{{ metadata.feed.subtitle }}</subtitle>
+  <link href="{{ pkg.homepage }}" rel="self"/>
+  <updated>{{ collections.events | rssLastUpdatedDate }}</updated>
+  <id>{{ url }}</id>
+  {%- for event in collections.events %}
+    {% set absoluteEventUrl %}{{ event.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    <entry>
+      <title>{{ event.data.title }}</title>
+      <link href="{{ absoluteEventUrl }}"/>
+      <updated>{{ event.date | rssDate }}</updated>
+      <id>{{ absoluteEventUrl }}</id>
+      <content type="html">{{ event.templateContent | htmlToAbsoluteUrls(absoluteEventUrl) }}</content>
+    </entry>
+  {%- endfor %}
+</feed>
