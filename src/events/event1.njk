@@ -65,11 +65,13 @@ talks:
         <h3 class="title talk__topic">
           {% if talk.speaker.twitter %}
             <a class="talk__twitter" href="https://twitter.com/{{talk.speaker.twitter}}">
-              <svg role="img" class="icon">
-                <title>{{talk.speaker.name}} on Twitter</title>
-                <use href="#icon-twitter"></use>
-              </svg>
-              <span class="talk__author">{{talk.speaker.name}}</span>:
+              <span class="talk__author">
+                <svg role="img" class="icon">
+                  <title>{{talk.speaker.name}} on Twitter</title>
+                  <use href="#icon-twitter"></use>
+                </svg>
+                {{talk.speaker.name}}:
+              </span>
               <span class="talk__title">{{talk.presentation.title}}</span>
             </a>
           {% else %}
