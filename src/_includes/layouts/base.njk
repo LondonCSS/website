@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}"/>
+    <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
 
     <meta property="og:url" content="{{ url }}"/>
     <meta property="og:type" content="website"/>
@@ -28,10 +29,11 @@
             <h1 class="app__title">London CSS</h1>
           </a>
           <nav class="app__nav__links">
-            <a href="/about-us" class="app__nav__link">About Us</a>
-            <a href="/code-of-conduct" class="app__nav__link">
-              Code of Conduct
-            </a>
+            {%- for p in collections.pages -%}
+              <a href="{{p.url}}" class="app__nav__link {% if page.url == p.url %}active{% endif %}">
+                {{p.data.title}}
+              </a>
+            {%- endfor -%}
           </nav>
         </div>
       </header>

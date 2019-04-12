@@ -2,12 +2,12 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const eleventy = config => {
   // Get upcoming events
-  config.addCollection("events", collection => {
-    const dateNow = new Date();
-    const events = collection.getFilteredByGlob("static/events/*.md");
+  // config.addCollection("events", collection => {
+  //   const dateNow = new Date();
+  //   const events = collection.getFilteredByGlob("static/events/*.md");
 
-    return events.filter(event => event.data.date >= dateNow);
-  });
+  //   return events.filter(event => event.data.date >= dateNow);
+  // });
 
   config.addPlugin(pluginRss);
 
