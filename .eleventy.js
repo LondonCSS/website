@@ -1,9 +1,25 @@
 const postcss = require("postcss");
 const postcssConfig = require("./postcss.config");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const MarkdownIt = require("markdown-it");
+const formatDate = require('date-fns/format')
+
+const md = new MarkdownIt({
+  xhtmlOut: true,
+  typographer: true
+});
 
 const eleventy = config => {
   config.addPlugin(pluginRss);
+
+  config.addFilter("date", code => {
+    const date = new Date(code);
+    return formatDate(code, "dddd, MMMM Do")
+  });
+
+  config.addFilter("markdown", code => {
+    return code ? md.render(code) : code;
+  });
 
   config.addNunjucksAsyncFilter("postcss", async (code, callback) => {
     const { css } = await postcss([postcssConfig()]).process(code);

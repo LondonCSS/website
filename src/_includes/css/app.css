@@ -9,6 +9,7 @@
   --bg-contrast-title: #B6B58E;
   --bg-highlight: #202237;
 
+  --max-w: 960px;
   --icon-med: 24px;
 }
 
@@ -32,7 +33,7 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: var(--max-w);
   margin: 0 auto;
 }
 
@@ -48,6 +49,12 @@ body {
 
 .copy {
   padding: 1rem;
+}
+
+.icon {
+  stroke: currentColor;
+  width: var(--icon-med);
+  height: var(--icon-med);
 }
 
 
@@ -151,7 +158,12 @@ body {
   grid-area: content;
 
   height: 100%;
-  overflow-y: auto;
+}
+
+.page__content--events {
+  display: grid;
+  gap: 1rem;
+  align-content: flex-start;
 }
 
 .page__content--bg {
@@ -217,19 +229,29 @@ body {
 .talk {
   background: var(--bg-contrast);
   color: var(--bg-contrast-text);
-
-  & + .talk {
-    margin-top: 1rem;
-  }
 }
 
 .talk__topic {
+  display: flex;
+  align-items: center;
+
   padding: 0.65rem;
   border-bottom: 1px solid currentColor;
 }
 
 .talk__author {
+  display: flex;
+  align-items: center;
+
   color: var(--bg-contrast-title);
+}
+
+.talk__twitter {
+  display: contents;
+
+  & svg {
+    margin-right: 0.5rem;
+  }
 }
 
 .talk__title {
@@ -238,6 +260,7 @@ body {
 
   @media (--mq-m) {
     display: inline;
+    margin-left: 4px;
   }
 }
 
@@ -286,10 +309,8 @@ body {
     align-self: end;
     justify-content: flex-start;
 
-    @media (min-height: 400px) {
-      position: sticky;
-      bottom: 1rem;
-    }
+    position: sticky;
+    bottom: 1rem;
   }
 }
 

@@ -1,8 +1,6 @@
 ---
 permalink: rss.xml
 metadata:
-  title: My Blog Title
-  url: http://example.com/
   author:
     name: London CSS
     email: hello@londoncss.dev
@@ -23,7 +21,7 @@ metadata:
       <link href="{{ absoluteEventUrl }}"/>
       <updated>{{ event.date | rssDate }}</updated>
       <id>{{ absoluteEventUrl }}</id>
-      <content type="html">{{ event.templateContent | htmlToAbsoluteUrls(absoluteEventUrl) }}</content>
+      <content type="html">{{ event.templateContent | htmlToAbsoluteUrls(absoluteEventUrl) | safe }}</content>
     </entry>
   {%- endfor %}
 </feed>

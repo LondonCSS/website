@@ -1,0 +1,9 @@
+--- 
+title: Home 
+description: The main event 
+layout: layouts/base.njk 
+---
+
+{%- for event in collections.eventCurrent -%}
+  {{event.templateContent | safe}}
+{%- endfor -%}
