@@ -1,6 +1,9 @@
 const postcss = require("postcss");
 const postcssConfig = require("./postcss.config");
+
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginTOC = require('eleventy-plugin-toc')
+ 
 const MarkdownIt = require("markdown-it");
 const formatDate = require('date-fns/format')
 
@@ -11,9 +14,9 @@ const md = new MarkdownIt({
 
 const eleventy = config => {
   config.addPlugin(pluginRss);
+  config.addPlugin(pluginTOC);
 
   config.addFilter("date", code => {
-    const date = new Date(code);
     return formatDate(code, "dddd, MMMM Do")
   });
 

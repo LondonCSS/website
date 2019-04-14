@@ -1,96 +1,60 @@
 ---
-tags: 
-  - events
-  - eventCurrent
-title: Events
-layout: layouts/base.njk 
-event:
-  title: Event 1
-  subtitle: Relaunch!
-  date: 2019-05-09
-  description: |
-    Please join us at [Condé Nast](https://www.condenast.co.uk/) for the relaunch of [London CSS](https://twitter.com/LondonCSS) with talks from these amazing speakers... 
-host: 
-  name: Condé Nast
-  website: https://www.condenast.co.uk/
-  location: 
-talks:
-  - speaker: 
-      name: Lau González
-      twitter: freezydorito
-      bio: Laura is a developer/villain at The Guardian and maintains many of the greatest Twitter accounts ever
-    presentation:
-      title: Absolute unit
-      content: Laura takes us on a walk through CSS units old and new in our opening Lightning talk
-  - speaker: 
-      name: Cassie Evans
-      twitter: cassiecodes
-      bio: |
-        Cassie is passionate about web animation, SVG and testing the limits of CSS.
+  tags: 
+    - "events"
+    - "eventCurrent"
+  title: "Events"
+  layout: "layouts/base.njk"
+  event: 
+    title: "Event 1"
+    subtitle: "Relaunch!"
+    date: "2019-05-09"
+    description: "Please join us at [Condé Nast](https://www.condenast.co.uk/) for the relaunch of [London CSS](https://twitter.com/LondonCSS) with talks from these amazing speakers... \n"
+  host: 
+    name: "Condé Nast"
+    website: https://www.condenast.co.uk/
+    address: |
+      The Adelphi,\
+      1-11 John Adam St,\
+      London, WC2N 6HT
+    location: 
+      lat: 51.5092559
+      long: -0.1252801
+  talks: 
+    - 
+      speaker: 
+        name: Lau González
+        twitter: freezydorito
+        bio: |
+          Laura is a developer/villain at The Guardian and maintains many of the greatest Twitter accounts to have ever existed
+      presentation: 
+        title: Absolute unit
+        content: |
+          Laura takes us on a walk through CSS units old and new in our opening Lightning talk"
+    - 
+      speaker: 
+        name: Cassie Evans
+        twitter: cassiecodes
+        bio: |
+          Cassie is passionate about web animation, SVG and testing the limits of CSS.
+          
+          She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at [Clearleft](https://www.clearleft.co.uk)."
+      presentation: 
+        title: Limitation breeds creativity
+        content: |
+          Constraints might not feel like what you want when you're trying to kickstart creativity or start a new project. But working within constraints can help you get started and provide unconventional ways around a problem.
+          
+          Come along to see me demo a few of my favourite unconventional solutions.
+    - 
+      speaker: 
+        name: Jean-Yves Perrier
+        bio: |
+          Jean-Yves is Program Manager, Developer Outreach at Mozilla in London
+        twitter: Teoli2003
+      presentation: 
+        title: Modern Layouts
+        content: |
+          Jean-Yves joins us from Mozilla to speak about how layouts work at the browser level
 
-        She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at [Clearleft](https://www.clearleft.co.uk).
-    presentation: 
-      title: Limitation breeds creativity
-      content: |
-        Constraints might not feel like what you want when you're trying to kickstart creativity or start a new project. But working within constraints can help you get started and provide unconventional ways around a problem.
-
-        Come along to see me demo a few of my favourite unconventional solutions.
-  - speaker: 
-      name: Jean-Yves Perrier
-      bio: Jean-Yves is Program Manager, Developer Outreach at Mozilla in London
-      twitter: Teoli2003
-    presentation:
-      title: Modern Layouts
-      content: |
-        Jean-Yves joins us from Mozilla to speak about how layouts work at the browser level
 ---
 
-<header class="content__header">
-  <div class="title content__hero">
-    <h2 class="content__hero__caption">
-      <span>{{event.title}}:</span>
-      <em>{{event.subtitle}}</em>
-    </h2>
-    <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
-  </div>
-  <div class="copy">
-    {{event.description | markdown | safe}}
-  </div>
-</header>
-
-<section class="page__content page__content--events">
-  {%- for talk in talks %}
-    <article class="talk">
-      <header class="talk__header">
-        <h3 class="title talk__topic">
-          {% if talk.speaker.twitter %}
-            <a class="talk__twitter" href="https://twitter.com/{{talk.speaker.twitter}}">
-              <span class="talk__author">
-                <svg role="img" class="icon">
-                  <title>{{talk.speaker.name}} on Twitter</title>
-                  <use href="#icon-twitter"></use>
-                </svg>
-                {{talk.speaker.name}}:
-              </span>
-              <span class="talk__title">{{talk.presentation.title}}</span>
-            </a>
-          {% else %}
-            <span class="talk__author">{{talk.speaker.name}}</span>:
-            <span class="talk__title">{{talk.presentation.title}}</span>
-          {% endif %}
-        </h3>
-      </header>
-      <div class="talk__content">
-        {{talk.presentation.content | markdown | safe}}
-      </div>
-      <footer class="talk__footer">
-        <details class="speaker">
-          <summary class="speaker__name">About {{talk.speaker.name}}</summary>
-          <div class="speaker__bio">
-            {{talk.speaker.bio | markdown | safe}}
-          </div>
-        </details>
-      </footer>
-    </article>
-  {%- endfor %}
-</section>
+{% include "partials/event.njk" %}

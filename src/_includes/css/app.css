@@ -52,6 +52,20 @@ body {
   padding: 1rem;
 }
 
+.bg {
+  background: var(--bg-contrast);
+  color: var(--bg-contrast-text);
+
+  & a {
+    color: var(--grad3);
+    text-decoration: underline;
+
+    &:enter {
+      text-decoration: none;
+    }
+  }
+}
+
 .icon {
   stroke: currentColor;
   width: var(--icon-med);
@@ -161,24 +175,10 @@ body {
   height: 100%;
 }
 
-.page__content--events {
+.talks {
   display: grid;
   gap: 1rem;
   align-content: flex-start;
-}
-
-.page__content--bg {
-  background: var(--bg-contrast);
-  color: var(--bg-contrast-text);
-
-  & a {
-    color: var(--grad3);
-    text-decoration: underline;
-
-    &:enter {
-      text-decoration: none;
-    }
-  }
 }
 
 /* Content
@@ -241,11 +241,17 @@ body {
   color: var(--bg-contrast-title);
 }
 
-.talk__twitter {
+.talk__link {
   display: contents;
 
   & svg {
     margin-right: 0.25rem;
+  }
+
+  &:enter {
+    & svg {
+      fill: currentColor;
+    }
   }
 }
 
@@ -291,13 +297,13 @@ body {
 ------------------------------------------------------------------------------*/
 .sponsors {
   grid-area: sponsors;
-  background: #fff8;
+  background: #fffa;
 
   & p {
     padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
     background: var(--bg-highlight);
-    color: #fff5;
+    color: #fff8;
   }
 
   @media (--mq-m) {

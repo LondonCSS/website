@@ -1,7 +1,13 @@
 {
   "extends": "stylelint-config-recommended",
+  "plugins": [
+    "stylelint-selector-bem-pattern"
+  ],
   "rules": {
     "selector-nested-pattern": "^&",
-    "property-no-unknown": [true, { "ignoreProperties": ["composes"] }]
+    "selector-pseudo-class-blacklist": ["hover"],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["enter"]
+    }]
   }
 }

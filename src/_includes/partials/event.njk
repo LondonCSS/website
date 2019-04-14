@@ -1,0 +1,58 @@
+<header class="content__header">
+  <div class="title content__hero">
+    <h2 class="content__hero__caption">
+      <span>{{event.title}}:</span>
+      <em>{{event.subtitle}}</em>
+    </h2>
+    <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+  </div>
+  <div class="copy">
+    {{event.description | markdown | safe}}
+    {# 
+    <address class="location">
+      {{host.address | markdown | safe}}
+    </address>
+    #}
+  </div>
+</header>
+
+<div class="page__content">
+  <section class="talks">
+    {%- for talk in talks %}
+      <article class="talk">
+        <header class="talk__header">
+          <h3 class="title talk__topic">
+            {% if talk.speaker.twitter %}
+              <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
+                <span class="talk__author">
+                  <svg role="img" class="icon">
+                    <title>{{talk.speaker.name}}
+                      on Twitter</title>
+                    <use href="#icon-twitter"></use>
+                  </svg>
+                  {{talk.speaker.name}}:
+                </span>
+                <span class="talk__title">{{talk.presentation.title}}</span>
+              </a>
+            {% else %}
+              <span class="talk__author">{{talk.speaker.name}}</span>:
+              <span class="talk__title">{{talk.presentation.title}}</span>
+            {% endif %}
+          </h3>
+        </header>
+        <div class="talk__content">
+          {{talk.presentation.content | markdown | safe}}
+        </div>
+        <footer class="talk__footer">
+          <details class="speaker">
+            <summary class="speaker__name">About
+              {{talk.speaker.name}}</summary>
+            <div class="speaker__bio">
+              {{talk.speaker.bio | markdown | safe}}
+            </div>
+          </details>
+        </footer>
+      </article>
+    {%- endfor %}
+  </section>
+</div>
