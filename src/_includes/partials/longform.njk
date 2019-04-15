@@ -1,0 +1,18 @@
+<header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+
+  <div class="copy bg subtitle">
+    {{ 
+      content 
+      | markdown 
+      | toc('{"tags": ["h2", "h3"], "wrapperClass": "content__header__toc"}') 
+      | safe 
+    }}
+  </div>
+</header>
+
+<article class="bg copy page__content">
+  {{ content | markdown | safe }}
+</article>

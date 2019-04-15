@@ -14,13 +14,9 @@ const md = new MarkdownIt({
 
 const eleventy = config => {
   config.addPlugin(pluginRss);
-  config.addPlugin(pluginTOC, {
-    wrapperClass: "content__header__toc"
-  });
+  config.addPlugin(pluginTOC);
 
-  config.addFilter("date", code => {
-    return formatDate(code, "dddd, MMMM Do");
-  });
+  config.addFilter("date", code => formatDate(code, "dddd, MMMM Do"));
 
   config.addFilter("markdown", code => {
     return code ? md.render(code) : code;

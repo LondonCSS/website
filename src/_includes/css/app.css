@@ -73,17 +73,6 @@ body {
   height: var(--icon-med);
 }
 
-.toc {
-  & ol {
-    list-style-type: lower-latin;
-    margin: 0;
-
-    & ol {
-      list-style-type: disc;
-    }
-  }
-}
-
 .register {
   display: flex;
   align-items: center;
@@ -234,12 +223,27 @@ body {
     position: sticky;
     top: 1rem;
   }
+}
 
-  & .toc a {
+.content__header__toc {
+  font-size: 1.2rem;
+
+  & ol {
+    margin: 0;
+    padding-left: 2rem;
+    list-style-type: disc;
+  }
+
+  & > ol {
+    list-style-type: lower-latin;
+  }
+  
+  & a {
     text-decoration: initial;
     color: inherit;
 
     &:enter {
+      text-decoration: underline;
       color: var(--bg-contrast-title);
     }
   }
