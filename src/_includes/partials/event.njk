@@ -22,11 +22,6 @@
         Registrations open soon
       </p>
     {% endif %}
-    {# 
-    <address class="location">
-      {{host.address | markdown | safe}}
-    </address>
-    #}
   </div>
 </header>
 
@@ -34,25 +29,21 @@
   <section class="talks">
     {%- for talk in talks %}
       <article class="talk">
-        <header class="talk__header">
-          <h3 class="title talk__topic">
-            {% if talk.speaker.twitter %}
-              <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
-                <span class="talk__author">
-                  <svg class="icon" role="img">
-                    <title>{{talk.speaker.name}} on Twitter</title>
-                    <use href="#icon-twitter"></use>
-                  </svg>
-                  {{talk.speaker.name}}:
-                </span>
-                <span class="talk__title">{{talk.presentation.title}}</span>
-              </a>
-            {% else %}
-              <span class="talk__author">{{talk.speaker.name}}</span>:
+        <h3 class="title talk__topic">
+          {% if talk.speaker.twitter %}
+            <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
+              <svg class="icon" role="img">
+                <title>{{talk.speaker.name}} on Twitter</title>
+                <use href="#icon-twitter"></use>
+              </svg>
+              {{talk.speaker.name}}:
               <span class="talk__title">{{talk.presentation.title}}</span>
-            {% endif %}
-          </h3>
-        </header>
+            </a>
+          {% else %}
+            {{talk.speaker.name}}:
+            <span class="talk__title">{{talk.presentation.title}}</span>
+          {% endif %}
+        </h3>
         <div class="talk__content">
           {{talk.presentation.content | markdown | safe}}
         </div>

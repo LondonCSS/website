@@ -293,34 +293,30 @@ body {
 
 .talk__topic {
   padding: 0.65rem;
-  border-bottom: 1px solid currentColor;
-}
-
-.talk__author {
+  border-bottom: 1px solid var(--bg-contrast-text);
   color: var(--bg-contrast-title);
 }
 
 .talk__link {
   --icon-tint: transparent;
 
-  display: contents;
+  &:enter {
+    --icon-tint: currentColor;
+  }
 
   & svg {
     fill: var(--icon-tint);
     margin-right: 0.25rem;
-  }
-
-  &:enter {
-    --icon-tint: currentColor;
   }
 }
 
 .talk__title {
   display: block;
   font-style: italic;
+  color: var(--bg-contrast-text);
 
   @media (--mq-m) {
-    display: inline;
+    display: inline-block;
     margin-left: 0.25rem;
   }
 }
