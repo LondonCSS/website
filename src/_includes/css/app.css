@@ -84,6 +84,24 @@ body {
   }
 }
 
+.register {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+
+  & span {
+    margin-left: 8px;
+  }
+
+  @nest .bg & {
+    text-decoration: none;
+
+    &:enter {
+      text-decoration: underline;
+    }
+  }
+}
+
 
 /* App
 ------------------------------------------------------------------------------*/

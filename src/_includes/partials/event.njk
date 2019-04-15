@@ -12,6 +12,14 @@
   </div>
   <div class="copy bg">
     {{event.description | markdown | safe}}
+
+    <a class="title register" href="#">
+      <svg class="icon" role="img">
+        <title>on Twitter</title>
+        <use href="#icon-calendar"></use>
+      </svg>
+      <span class="register__label">Register for tickets</span>
+    </a>
     {# 
     <address class="location">
       {{host.address | markdown | safe}}
@@ -30,8 +38,7 @@
               <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
                 <span class="talk__author">
                   <svg class="icon" role="img">
-                    <title>{{talk.speaker.name}}
-                      on Twitter</title>
+                    <title>{{talk.speaker.name}} on Twitter</title>
                     <use href="#icon-twitter"></use>
                   </svg>
                   {{talk.speaker.name}}:

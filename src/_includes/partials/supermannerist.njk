@@ -1,5 +1,10 @@
 <template id="super-mannerist">
-  <link rel="stylesheet" href="/styles/supermannerist.css"/>
+  {%- set css_supermannerist -%}
+    {% include "css/supermannerist.css" %}
+  {%- endset %}
+  <style>
+    {{css_supermannerist | postcss | safe}}
+  </style>
   <div class="sm">
     <div class="sm__container">
       <div class="sm__stripes sm__stripes--a">
