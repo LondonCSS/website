@@ -1,5 +1,5 @@
 const postcss = require("postcss");
-const postcssConfig = require("./postcss.config");
+const postcssConfig = require("./tools/postcss.config");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginTOC = require("eleventy-plugin-toc");

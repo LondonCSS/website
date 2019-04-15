@@ -19,12 +19,19 @@
 
     <link rel="stylesheet" href="/styles/reset.css"/>
 
-    {%- set css -%}
+    {%- set css_static -%}
+    {% include "css/reset.css" %}
+    {% include "css/supermannerist.css" %}
+    {%- endset %}
+
+    {%- set css_app -%}
     {% include "css/typography.css" %}
     {% include "css/app.css" %}
     {%- endset %}
+    
     <style>
-      {{css | postcss | safe}}
+      {{css_static | postcss | safe}}
+      {{css_app | postcss | safe}}
     </style>
   </head>
 

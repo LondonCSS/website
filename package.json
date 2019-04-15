@@ -58,11 +58,7 @@
     "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
-    "css": "postcss ./styles/*.css --dir ./dist/styles",
-    "dev:css": "yarn run css -w",
-    "dev:serve": "eleventy --serve",
-    "dev": "run-p dev:*",
-    "build:css": "yarn run css",
+    "dev": "eleventy --serve",
     "build:site": "eleventy",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build": "run-s build:*"

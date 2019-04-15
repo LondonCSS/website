@@ -58,7 +58,7 @@ body {
   color: var(--bg-contrast-text);
 
   & a {
-    color: var(--grad3);
+    color: var(--bg-contrast-title);
     text-decoration: underline;
 
     &:enter {
@@ -125,10 +125,25 @@ body {
 }
 
 .app__title {
+  position: relative;
   margin: 0;
   font-weight: 100;
   font-size: var(--h2);
   color: #fff;
+
+  & a {
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 -6px;
+    width: 111px;
+    height: 100%;
+    border: 1px solid var(--bg-contrast-title);
+    border: 1px solid #fff6;
+  }
 }
 
 .app__nav__links {
@@ -136,7 +151,7 @@ body {
 }
 
 .app__nav__link {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
 
   &:enter,
   &:target,
