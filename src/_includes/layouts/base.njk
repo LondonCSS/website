@@ -31,24 +31,18 @@
   <body>
     <super-mannerist></super-mannerist>
     <div class="app">
-      <header class="app__controls app__nav title">
+      <nav class="app__controls app__nav title">
         <div class="container row">
-          <a href="/">
-            <h1 class="app__title">London CSS</h1>
-          </a>
-          <nav class="app__nav__links">
+          <h1 class="app__title"><a href="/">London CSS</a></h1>          
+          <div class="app__nav__links">
             {%- for p in collections.pages -%}
               <a href="{{p.url}}" class="app__nav__link {% if page.url == p.url %}active{% endif %}">
                 {{p.data.title}}
               </a>
             {%- endfor -%}
-          </nav>
+          </div>
         </div>
-      </header>
-
-      <h1 class="title page__title">
-        {{ title }}
-      </h1>
+      </nav>
 
       {{ content | safe }}
 
@@ -58,11 +52,6 @@
           <a href="#" class="sponsor sponsor--cinema">
             <img src="/static/images/logos/silogo.svg" alt="Samsung Internet logo">
           </a>
-          {#
-          <a href="#" class="sponsor sponsor--panorama">
-            <img src="/static/images/logos/ft.svg" alt="Financial Times logo">
-          </a>
-          #}
         </div>
       </aside>
 

@@ -2,22 +2,24 @@ const postcss = require("postcss");
 const postcssConfig = require("./postcss.config");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginTOC = require('eleventy-plugin-toc')
- 
+const pluginTOC = require("eleventy-plugin-toc");
+
 const MarkdownIt = require("markdown-it");
-const formatDate = require('date-fns/format')
+const formatDate = require("date-fns/format");
 
 const md = new MarkdownIt({
   xhtmlOut: true,
   typographer: true
-});
+}).use(require("markdown-it-anchor"));
 
 const eleventy = config => {
   config.addPlugin(pluginRss);
-  config.addPlugin(pluginTOC);
+  config.addPlugin(pluginTOC, {
+    wrapperClass: "content__header__toc"
+  });
 
   config.addFilter("date", code => {
-    return formatDate(code, "dddd, MMMM Do")
+    return formatDate(code, "dddd, MMMM Do");
   });
 
   config.addFilter("markdown", code => {

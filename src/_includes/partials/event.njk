@@ -1,4 +1,8 @@
 <header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+
   <div class="title content__hero">
     <h2 class="content__hero__caption">
       <span>{{event.title}}:</span>
@@ -6,7 +10,7 @@
     </h2>
     <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
   </div>
-  <div class="copy">
+  <div class="copy bg">
     {{event.description | markdown | safe}}
     {# 
     <address class="location">
@@ -25,7 +29,7 @@
             {% if talk.speaker.twitter %}
               <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
                 <span class="talk__author">
-                  <svg role="img" class="icon">
+                  <svg class="icon" role="img">
                     <title>{{talk.speaker.name}}
                       on Twitter</title>
                     <use href="#icon-twitter"></use>
