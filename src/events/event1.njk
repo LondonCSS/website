@@ -1,59 +1,75 @@
 ---
-  tags: 
-    - "events"
-    - "eventCurrent"
-  title: "Events"
-  layout: "layouts/base.njk"
-  event: 
-    title: "Event 1"
-    subtitle: "Relaunch!"
-    date: "2019-05-09"
-    description: "Please join us at [Condé Nast](https://www.condenast.co.uk/) for the relaunch of [London CSS](https://twitter.com/LondonCSS) with talks from these amazing speakers... \n"
-  host: 
-    name: "Condé Nast"
-    website: https://www.condenast.co.uk/
-    address: |
-      The Adelphi,\
-      1-11 John Adam St,\
-      London, WC2N 6HT
-    location: 
-      lat: 51.5092559
-      long: -0.1252801
-  talks: 
-    - 
-      speaker: 
-        name: Lau González
-        twitter: freezydorito
-        bio: |
-          Laura is a developer/villain at The Guardian and maintains many of the greatest Twitter accounts to have ever existed
-      presentation: 
-        title: Absolute unit
-        content: |
-          Laura takes us on a walk through CSS units old and new in our opening Lightning talk"
-    - 
-      speaker: 
-        name: Cassie Evans
-        twitter: cassiecodes
-        bio: |
-          Cassie is passionate about web animation, SVG and testing the limits of CSS.
-          
-          She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at [Clearleft](https://www.clearleft.co.uk)."
-      presentation: 
-        title: Limitation breeds creativity
-        content: |
-          Constraints might not feel like what you want when you're trying to kickstart creativity or start a new project. But working within constraints can help you get started and provide unconventional ways around a problem.
-          
-          Come along to see me demo a few of my favourite unconventional solutions.
-    - 
-      speaker: 
-        name: Jean-Yves Perrier
-        bio: |
-          Jean-Yves is Program Manager, Developer Outreach at Mozilla in London
-        twitter: Teoli2003
-      presentation: 
-        title: Modern Layouts
-        content: |
-          Jean-Yves joins us from Mozilla to speak about how layouts work at the browser level
+tags: 
+  - "events"
+  - "eventCurrent"
+title: "Events"
+layout: "layouts/base.njk"
+event: 
+  canRegister: false
+  title: "Event 1"
+  subtitle: "Relaunch!"
+  date: "2019-05-09"
+  description: |
+    Please join us at [Condé Nast](https://www.condenast.co.uk/) for the relaunch of London CSS with talks from these amazing speakers...
+host: 
+  name: "Condé Nast"
+  website: https://www.condenast.co.uk/
+  address: |
+    The Adelphi,\
+    1-11 John Adam St,\
+    London, WC2N 6HT
+  location: 
+    lat: 51.5092559
+    long: -0.1252801
+talks: 
+  - 
+    speaker: 
+      name: Lau González
+      twitter: freezydorito
+      bio: |
+        Laura is a developer/villain at The Guardian
+    presentation: 
+      title: Absolute unit
+      content: |
+        Laura walks us through CSS units old and new in our opening Lightning talk
+  - 
+    speaker: 
+      name: Cassie Evans
+      twitter: cassiecodes
+      bio: |
+        Cassie is passionate about web animation, SVG and testing the limits of CSS.
+        
+        She is a core organiser of codebar Brighton, a non-profit initiative that runs free programming workshops to tackle the diversity gap and currently works as a Front-end Developer at [Clearleft](https://www.clearleft.co.uk).
+    presentation: 
+      title: Limitation breeds creativity
+      content: |
+        Constraints might not feel like what you want when you're trying to kickstart creativity or start a new project. But working within constraints can help you get started and provide unconventional ways around a problem.
+        
+        Come and see Cassie demo some of her favourite unconventional solutions.
+  - 
+    speaker: 
+      name: Jean-Yves Perrier
+      twitter: Teoli2003
+      bio: |
+        Jean-Yves is a member of the Developer Relations team at Mozilla where he manages programs like the Mozilla Tech Speakers. He is a former editor of MDN (CSS, HTML & APIs) and was its content manager until 2016.
+    presentation: 
+      title: Moar CSS Features?
+      content: |
+        In 2019 older CSS features like fonts and floats still have their place even though flexbox and grid have arrived.
+        
+        Jean-Yves takes us through a contemporary review of traditional approaches.
+  -
+    speaker:
+      name: Oliver Turner
+      twitter: oliverturner
+      bio: | 
+        Oliver is co-organiser of London CSS and builds things at the Financial Times
+    presentation:
+      title: When Houdini met Goldblum
+      content: |
+        What is Houdini? Why can't we declaratively animate linear gradients? ...and what does either of these things have to do with Jeff Goldblum?
+
+        Get started experimenting with the capabilities of next-generation CSS and see how they can help us bring new user experiences to life on the web.
 
 ---
 

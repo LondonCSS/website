@@ -1,8 +1,4 @@
 <header class="content__header">
-  <h1 class="title page__title">
-    {{ title }}
-  </h1>
-
   <div class="title content__hero">
     <h2 class="content__hero__caption">
       <span>{{event.title}}:</span>
@@ -13,6 +9,7 @@
   <div class="copy bg">
     {{event.description | markdown | safe}}
 
+    {% if event.canRegister %}
     <a class="title register" href="#">
       <svg class="icon" role="img">
         <title>on Twitter</title>
@@ -20,6 +17,11 @@
       </svg>
       <span class="register__label">Register for tickets</span>
     </a>
+    {% else %}
+      <p class="title register--inactive">
+        Registrations open soon
+      </p>
+    {% endif %}
     {# 
     <address class="location">
       {{host.address | markdown | safe}}

@@ -1,49 +1,46 @@
----json
-{
-  "tags": ["events"],
-  "title": "Events",
-  "layout": "layouts/base.njk",
-  "event": {
-    "title": "Event 2",
-    "subtitle": "Parte deux",
-    "date": "2019-08-08",
-    "description":
-      "Please join us at [LendInvest](https://www.lendinvest.com/) for the next instalment of [London CSS](https://twitter.com/londoncss) with talks from these amazing speakers... \n"
-  },
-  "host": {
-    "name": "LendInvest",
-    "website": "https://www.lendinvest.com/",
-    "address": "Two Fitzroy Place, 8 Mortimer Street, Fitzrovia, London W1T 3JJ",
-    "location": { "lat": 51.5187082, "long": -0.1379895 }
-  },
-  "talks": [
-    {
-      "speaker": {
-        "name": "Michelle Barker",
-        "twitter": "mbarker_84",
-        "bio":
-          "Michelle is a front end developer with a passion for CSS, and a Mozilla Tech Speaker. Her passion for CSS in all its forms leads her to spending most of her spare time experimenting with CSS Grid, and writing articles on front end development on her blog, CSS {In Real Life}. She has a background in design and illustration, and is currently a front end developer at Ordoo, a mobile ordering startup, where she helps build UX-driven mobile experiences."
-      },
-      "presentation": {
-        "title": "New fronteers of CSS Layout",
-        "content":
-          "We’re in the middle of a web layout revolution. Recent years have brought us a fantastic CSS toolkit for building layouts on the web, and browsers have risen to the challenge of supporting these new features faster than ever before. Do modern layout techniques make your head spin? With so much choice available, how do we pick the right layout method for the job?\n\nJoin us on a journey through time, where we’ll explore a brief history of CSS layout. We’ll learn how modern specifications like Grid, flexbox and custom properties can help us build more robust and flexible layouts fit for a new era of web design. We’ll bust some common myths, and discover how understanding the past can help us build layouts of the future."
-      }
-    },
-    {
-      "speaker": {
-        "name": "Heydon Pickering",
-        "twitter": "heydonworks",
-        "bio":
-          "Heydon is a freelance web accessibility consultant, interface designer and writer.\n\nHeydon writes and edits for Smashing Magazine and works with leading web accessibility specialists, The Paciello Group, focusing on accessible User Experience Design (UX)."
-      },
-      "presentation": {
-        "title": "TBA",
-        "content":
-          "TBA"
-      }
-    }
-  ]
-}
+---
+tags: 
+  - "events"
+title: "Events"
+layout: "layouts/base.njk"
+event: 
+  canRegister: false
+  title: Event 2
+  subtitle: Parte deux
+  date: "2019-08-08"
+  description: |
+    Please join us at [LendInvest](https://www.lendinvest.com/) with talks from these amazing speakers...
+host: 
+  name: "LendInvest"
+  website: "https://www.lendinvest.com/"
+  address: |
+    Two Fitzroy Place,\
+    8 Mortimer Street,\
+    Fitzrovia, London W1T 3JJ
+  location: 
+    lat: 51.5187082
+    long: -0.1379895
+talks: 
+  - 
+    speaker: 
+      name: Michelle Barker
+      twitter: mbarker_84
+      bio: |
+        Michelle is a front end developer with a passion for CSS, and a Mozilla Tech Speaker. Her passion for CSS in all its forms leads her to spending most of her spare time experimenting with CSS Grid, and writing articles on front end development on her blog, [CSS {In Real Life}](https://css-irl.info/). She has a background in design and illustration, and is currently a front end developer at Ordoo, a mobile ordering startup, where she helps build UX-driven mobile experiences.
+    presentation: 
+      title: New frontiers of CSS Layout
+      content: |
+        We’re in the middle of a web layout revolution. Recent years have brought us a fantastic CSS toolkit for building layouts on the web, and browsers have risen to the challenge of supporting these new features faster than ever before. Do modern layout techniques make your head spin? With so much choice available, how do we pick the right layout method for the job?
+        
+        Join us on a journey through time, where we’ll explore a brief history of CSS layout. We’ll learn how modern specifications like Grid, flexbox and custom properties can help us build more robust and flexible layouts fit for a new era of web design. We’ll bust some common myths, and discover how understanding the past can help us build layouts of the future.
+  - 
+    speaker: 
+      name: Heydon Pickering
+      twitter: heydonworks
+      bio: |
+        Heydon is a freelance web accessibility consultant, interface designer and writer.\n\nHeydon writes and edits for Smashing Magazine and works with leading web accessibility specialists, The Paciello Group, focusing on accessible User Experience Design (UX).
+    presentation: 
+      title: "TBA"
+      content: "TBA"
 ---
 {% include "partials/event.njk" %}

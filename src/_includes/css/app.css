@@ -88,18 +88,23 @@ body {
   display: flex;
   align-items: center;
   margin-top: 1em;
+  
+  &:enter {
+    text-decoration: underline;
+    
+    & .icon {
+      fill: currentColor;
+      stroke: var(--bg-contrast);
+    }
+  } 
 
   & span {
     margin-left: 8px;
   }
+}
 
-  @nest .bg & {
-    text-decoration: none;
-
-    &:enter {
-      text-decoration: underline;
-    }
-  }
+.register--inactive {
+  color: #888;
 }
 
 
@@ -250,7 +255,7 @@ body {
 
   @media (--mq-m) {
     height: 200px;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
   }
 }
 
