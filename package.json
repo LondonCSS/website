@@ -46,11 +46,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "yarn lint:js --fix",
       "git add"
     ],
-    "*.stylelintrc": [
-      "stylelint",
+    "*.css": [
+      "yarn lint:css",
       "git add"
     ]
   },
