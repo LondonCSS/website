@@ -151,7 +151,7 @@ body {
     content: "";
     position: absolute;
     inset: 0 -6px;
-    width: 111px;
+    width: 154px;
     height: 100%;
     border: 1px solid var(--bg-contrast-title);
     border: 1px solid #fff6;
