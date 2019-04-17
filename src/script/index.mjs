@@ -1,10 +1,3 @@
-// TODO: remove once PWA features are in place
-navigator.serviceWorker.getRegistrations().then(function(registrations) {
-  for (let registration of registrations) {
-    registration.unregister();
-  }
-});
-
 class SuperMannerist extends HTMLElement {
   constructor() {
     super();

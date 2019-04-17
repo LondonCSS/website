@@ -10,12 +10,11 @@
     {{event.description | markdown | safe}}
 
     {% if event.canRegister %}
-    <a class="title register" href="#">
+    <a class="title register" href="{{event.register}}">
+      Register for tickets
       <svg class="icon" role="img">
-        <title>on Twitter</title>
-        <use href="#icon-calendar"></use>
+        <use href="#icon-chevron-right"></use>
       </svg>
-      <span class="register__label">Register for tickets</span>
     </a>
     {% else %}
       <p class="title register--inactive">
@@ -28,7 +27,7 @@
 <div class="page__content">
   <section class="talks">
     {%- for talk in talks %}
-      <article class="talk">
+      <article class="bg talk">
         <h3 class="title talk__topic">
           {% if talk.speaker.twitter %}
             <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">

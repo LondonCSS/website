@@ -63,7 +63,7 @@ body {
   background: var(--bg-contrast);
   color: var(--bg-contrast-text);
 
-  & a {
+  & p a {
     color: var(--bg-contrast-title);
     text-decoration: underline;
 
@@ -80,21 +80,25 @@ body {
 }
 
 .register {
+  --bg: #000a;
+  --colour: var(--bg-contrast-title);
+
+  transition: color 0.25s, background-color 0.25s;
+
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  
   margin-top: 1em;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--bg-contrast-title);
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--colour);
   
   &:enter {
-    text-decoration: underline;
-    
-    & .icon {
-      fill: currentColor;
-      stroke: var(--bg-contrast);
-    }
-  } 
-
-  & span {
-    margin-left: 8px;
+    --colour: #000a;
+    --bg: var(--bg-contrast-title);
   }
 }
 
@@ -322,8 +326,7 @@ body {
 /* Talks
 ------------------------------------------------------------------------------*/
 .talk {
-  background: var(--bg-contrast);
-  color: var(--bg-contrast-text);
+  /* block root */
 }
 
 .talk__topic {
