@@ -102,6 +102,10 @@ body {
   }
 }
 
+.register__label {
+  flex: 1 0 auto;
+}
+
 .register--inactive {
   color: #888;
 }
