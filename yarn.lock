@@ -5091,6 +5091,13 @@ postcss-initial@^3.0.0:
     lodash.template "^4.2.4"
     postcss "^7.0.2"
 
+postcss-inset@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-inset/-/postcss-inset-1.0.0.tgz#1bc0937996a5f042f7054643dbf8f60e49065fa7"
+  integrity sha512-GAGG8dCDL8zq3BLo2spfcY7YxVQzIZscHDklcJVy/VI2V5lO8V5N9b/p96411w8nf40v7lx3VOiAzBNJlmrI4Q==
+  dependencies:
+    postcss "^6.0.1"
+
 postcss-jsx@^0.36.0:
   version "0.36.0"
   resolved "https://registry.yarnpkg.com/postcss-jsx/-/postcss-jsx-0.36.0.tgz#b7685ed3d070a175ef0aa48f83d9015bd772c82d"
@@ -5352,7 +5359,7 @@ postcss@7.0.14, postcss@>=5.0.19, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.1
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^6.x:
+postcss@^6.0.1, postcss@^6.x:
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
   integrity sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==

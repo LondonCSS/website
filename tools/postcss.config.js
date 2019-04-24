@@ -2,6 +2,7 @@
 const postcssPseudoEnter = require("postcss-pseudo-class-enter");
 const postcssPresetEnv = require(`postcss-preset-env`);
 const postcssClean = require(`postcss-clean`);
+const postcssInset = require(`postcss-inset`);
 
 const { customMedia } = require("../src/theme.js");
 
@@ -16,6 +17,7 @@ module.exports = () => ({
         "custom-media-queries": { importFrom: { customMedia } }
       }
     }),
+    postcssInset(),
     postcssPseudoEnter(),
     postcssClean()
   ]
