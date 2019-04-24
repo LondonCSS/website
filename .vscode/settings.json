@@ -1,0 +1,24 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "files.associations": {
+    "*.css": "postcss",
+    "*.njk": "twig",
+    ".stylelintrc": "json"
+  },
+
+  "eslint.options": { "configFile": "./tools/.eslintrc" },
+
+  "emmet.includeLanguages": {
+    "twig": "html",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "twig": "html",
+    "postcss": "css"
+  },
+
+  "prettier.stylelintIntegration": true,
+
+  "stylelint.config": { "extends": "./tools/.stylelintrc" }
+}
