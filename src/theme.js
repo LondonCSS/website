@@ -6,7 +6,7 @@ const breakpoints = {
 };
 
 /**
- * Produces an object of media queries from `breakpoints` suitable for use in 
+ * Produces an object of media queries from `breakpoints` suitable for use in
  * matchMedia queries in JS
  *
  * {
@@ -27,7 +27,7 @@ const mediaQueries = Object.entries(breakpoints).reduce((acc, [k, v]) => {
  *   --mq-l:  (min-width: 960px),
  *   --mq-xl: (min-width: 1200px)
  * }
- * 
+ *
  * usage:
  * .app {
  *   @media (--mq-m) { ... }
@@ -35,14 +35,11 @@ const mediaQueries = Object.entries(breakpoints).reduce((acc, [k, v]) => {
  *   @media (--mq-xl) { ... }
  * }
  */
-const customMedia = Object.entries(mediaQueries).reduce(
-  (acc, [k, v]) => {
-    return { ...acc, [`--mq-${k}`]: v };
-  },
-  {}
-);
+const customMedia = Object.entries(mediaQueries).reduce((acc, [k, v]) => {
+  return { ...acc, [`--mq-${k}`]: v };
+}, {});
 
 module.exports = {
   mediaQueries,
   customMedia
-}
+};

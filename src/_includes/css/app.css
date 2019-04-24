@@ -43,11 +43,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 
   @media (--mq-m) {
     flex-wrap: initial;
     justify-content: space-between;
-    align-items: center;
   }
 }
 
