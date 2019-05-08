@@ -1,0 +1,22 @@
+<header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+</header>
+
+<article class="bg copy page__content">
+  {{ content | markdown | safe }}
+
+  <br>
+
+  <form name="coc-report" method="POST" data-netlify="true" action="/success-message">
+    <p>
+      <label>Message:</label>
+      <br> 
+      <textarea name="report" cols="40" rows="10" id="message" required="true"></textarea>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>
+</article>
