@@ -1,18 +1,47 @@
 ---
 tags: pages
 title: Anonymous report
-description:
-  London CSS is dedicated to a harassment-free event for everyone. Please use this form to contact us.
+description: Contact us in the event of a violation of our Code of Conduct
 layout: layouts/base.njk
 eleventyExcludeFromCollections: true
 content: |
-  ## Anonymous report
-
   London CSS is dedicated to a harassment-free event for everyone. If you'd like to give feedback anonymously about a situation please use the form bellow. 
   
-  We won’t be able to follow up with you directly, but we will fully investigate and take whatever action we deem appropriate to prevent a recurrence.
-
+  We won’t be able to follow up with you directly, but we will fully investigate and take appropriate action to prevent a recurrence.
 ---
 
-{% include "partials/anonymous-contact-form.njk" %}
+<header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+</header>
+
+<article class="bg copy page__content page__content--stretch">
+  {{ content | markdown | safe }}
+
+  <form
+    class="form form--stretch"
+    name="coc-report"
+    method="POST"
+    netlify-honeypot="slip"
+    data-netlify="true"
+    action="/success-message"
+  >
+    <label class="hidden">
+      Don’t fill this out if you're human:
+      <input name="slip" />
+    </label>
+
+    <label for="message">Message:</label>
+    <textarea name="report" id="message" required="true"></textarea>
+
+    <button class="title register">
+      <span class="register__label">Send</span>
+      <svg class="icon" role="img">
+        <use href="#icon-chevron-right"></use>
+      </svg>
+    </button>
+  </form>
+</article>
+
 

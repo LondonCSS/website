@@ -7,19 +7,27 @@
 <article class="bg copy page__content">
   {{ content | markdown | safe }}
 
-  <br>
+  <form
+    class="form"
+    name="coc-report"
+    method="POST"
+    netlify-honeypot="slip"
+    data-netlify="true"
+    action="/success-message"
+  >
+    <label class="hidden"
+      >Don’t fill this out if you're human:
+      <input name="slip" />
+    </label>
 
-  <form name="coc-report" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/success-message" >
-    <p class="hidden">
-      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-    </p>
-    <p>
-      <label>Message:</label>
-      <br> 
-      <textarea name="report" cols="40" rows="10" id="message" required="true"></textarea>
-    </p>
-    <p>
-      <button type="submit">Send</button>
-    </p>
+    <label for="message">Message:</label>
+    <textarea name="report" id="message" required="true"></textarea>
+
+    <button class="title register">
+      <span class="register__label">Send</span>
+      <svg class="icon" role="img">
+        <use href="#icon-chevron-right"></use>
+      </svg>
+    </button>
   </form>
 </article>
