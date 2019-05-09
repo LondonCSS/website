@@ -51,6 +51,16 @@ body {
   }
 }
 
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0); 
+  clip-path: inset(100%);
+  overflow: hidden;
+  white-space: nowrap; 
+}
+
 .icons {
   display: none;
 }
@@ -247,6 +257,11 @@ body {
   grid-area: content;
 
   min-height: 100%;
+
+  &.page__content--stretch {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .talks {
@@ -504,5 +519,31 @@ body {
 
   @nest .social__link:enter & {
     border-color: #999;
+  }
+}
+
+/* TODO: refactor! */
+.form {
+  display: grid;
+  align-content: flex-start;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+
+  margin-top: 1rem;
+
+  & textarea {
+    align-self: stretch;
+
+    padding: 1rem;
+    border: none;
+    resize: none;
+  }
+
+  & button {
+    margin: 0;
+  }
+
+  &.form--stretch {
+    flex: 1;
   }
 }
