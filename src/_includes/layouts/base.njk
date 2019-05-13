@@ -34,13 +34,14 @@
 
   <body>
     <super-mannerist></super-mannerist>
-    <div class="app">
+    <div class="app menu-closed">
       <nav class="app__controls app__nav title">
         <div class="container row">
           <h1 class="app__title"><a href="/">London CSS</a></h1>          
-          <div class="app__nav__links">
+          <div class="app__links is-closed">
+            <button class="app__links__togglebtn" data-click="menu-toggle">menu</button>
             {%- for p in collections.pages -%}
-              <a href="{{p.url}}" class="app__nav__link {% if page.url == p.url %}active{% endif %}">
+              <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
                 {{p.data.title}}
               </a>
             {%- endfor -%}
@@ -70,7 +71,7 @@
                   <use href="#icon-email"/>
                 </svg>
               </span>
-              <span class="social__link__label">Contact</span>
+              <span class="social__link__label">Email</span>
             </a>
             <a class="social__link" href="https://twitter.com/londoncss">
               <span class="social__link__icon">

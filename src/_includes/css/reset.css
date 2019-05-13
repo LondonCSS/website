@@ -498,6 +498,7 @@ body:not(:-moz-handler-blocked) fieldset {
  * that aren't typißcally interactive. See:
  * https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile.
  */
+button,
 [role="button"] {
   cursor: pointer;
 }

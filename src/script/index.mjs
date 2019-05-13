@@ -12,3 +12,12 @@ class SuperMannerist extends HTMLElement {
 
 // Define the new element
 customElements.define("super-mannerist", SuperMannerist);
+
+// Instantiate menu
+const $ = document.querySelector.bind(document);
+const btn = $("[data-click=menu-toggle]");
+const app = $(".app");
+
+btn.addEventListener("click", () => {
+  app.classList.toggle("menu-closed");
+});
