@@ -508,7 +508,7 @@ body {
   position: relative;
 
   margin-left: -4px;
-  padding: 0 5px;
+  padding: 0 5px 0 0;
   border: 1px solid transparent;
   border-left: none;
   border-radius: 20px;
