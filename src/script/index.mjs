@@ -16,8 +16,8 @@ customElements.define("super-mannerist", SuperMannerist);
 // Instantiate menu
 const $ = document.querySelector.bind(document);
 const btn = $("[data-click=menu-toggle]");
-const app = $(".app");
+const body = $("body");
 
 btn.addEventListener("click", () => {
-  app.classList.toggle("menu-closed");
+  body.classList.toggle("menu-closed");
 });

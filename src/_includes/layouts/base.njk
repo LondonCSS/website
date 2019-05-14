@@ -32,14 +32,21 @@
     </style>
   </head>
 
-  <body>
+  <body class="menu-closed">
     <super-mannerist></super-mannerist>
-    <div class="app menu-closed">
+    <div class="app">
       <nav class="app__controls app__nav title">
         <div class="container row">
           <h1 class="app__title"><a href="/">London CSS</a></h1>          
-          <div class="app__links is-closed">
-            <button class="app__links__togglebtn" data-click="menu-toggle">menu</button>
+          <div class="app__links">
+            <button class="app__links__togglebtn" data-click="menu-toggle">
+              <div class="togglebtn__body">
+                <svg class="icon" role="icon">
+                  <use href="#icon-menu"/>
+                </svg>
+                <span>Menu</span>
+              </div>
+            </button>
             {%- for p in collections.pages -%}
               <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
                 {{p.data.title}}
@@ -66,8 +73,8 @@
           <div class="social">
             <a class="social__link" href="mailto:hello@londoncss">
               <span class="social__link__icon">
-                <svg role="img">
-                  <title>Email</title>
+                <svg role="icon">
+                  <title>Email symbol</title>
                   <use href="#icon-email"/>
                 </svg>
               </span>
@@ -75,7 +82,7 @@
             </a>
             <a class="social__link" href="https://twitter.com/londoncss">
               <span class="social__link__icon">
-                <svg role="img">
+                <svg role="icon">
                   <title>Twitter Logo</title>
                   <use href="#icon-twitter"/>
                 </svg>
@@ -84,7 +91,7 @@
             </a>
             <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
               <span class="social__link__icon">
-                <svg role="img">
+                <svg role="icon">
                   <title>Github Logo</title>
                   <use href="#icon-github"/>
                 </svg>
