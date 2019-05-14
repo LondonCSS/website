@@ -293,14 +293,18 @@ body {
   box-sizing: border-box;
   width: var(--wh);
   height: var(--wh);
-  border-right: 1px solid var(--bg-contrast-title);
   font-size: 0.7rem;
   text-align: center;
-  background: var(--bg-highlight);
-  color: #fffa;
+  background: var(--bg-contrast-title);
+
+  color: #000;
 
   & svg {
     margin: auto;
+  }
+
+  @nest button:enter & {
+    background: #fff;
   }
 }
 
