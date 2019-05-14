@@ -149,6 +149,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: #000a;
+    z-index: 1;
   }
 
   &.menu-closed {
@@ -195,6 +196,7 @@ body {
   font-weight: 100;
   font-size: var(--h2);
   line-height: 2.5rem;
+  white-space: nowrap;
   color: #fff;
 
   @media (--mq-m) {
@@ -232,6 +234,7 @@ body {
   position: fixed;
   left: 100%;
   top: 0;
+  z-index: 1;
 
   height: 100vh;
   border-left: 1px solid var(--bg-contrast-title);
@@ -273,7 +276,8 @@ body {
   right: 100%;
 
   padding: 1rem;
-  background: var(--bg-contrast-title);
+  border-right: 1px solid var(--bg-contrast-title);
+  background: var(--bg-highlight);
   color: #000;
 
   @media (--mq-m) {
