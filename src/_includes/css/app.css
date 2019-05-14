@@ -228,9 +228,10 @@ body {
 }
 
 .app__links {
-  transition: transform 0.5s;
-  transform: translate3D(-100%, 0, 0);
-
+  will-change: transform;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+    
   position: fixed;
   left: 100%;
   top: 0;
@@ -242,7 +243,7 @@ body {
   color: #999;
 
   @nest .menu-closed & {
-    transform: translate3D(0, 0, 0);
+    transform: translateX(0);
 
     &::before {
       content: none;
@@ -269,16 +270,16 @@ body {
 }
 
 .app__links__togglebtn {
-  all: unset;
-
   position: absolute;
   top: 0;
   right: 100%;
 
-  padding: 1rem;
+  padding: 1.25rem;
+  border: none;
   border-right: 1px solid var(--bg-contrast-title);
+  line-height: 1;
   background: var(--bg-highlight);
-  color: #000;
+  color: #fffa;
 
   @media (--mq-m) {
     display: none;
