@@ -6,9 +6,18 @@ description:
 layout: layouts/base.njk
 eleventyExcludeFromCollections: true
 content: |
-  Your report was successfully submitted. Thank you for letting us know.
-
+  Your report was successfully submitted. 
+  
+  Thank you for letting us know.
 ---
 
-{% include "partials/longform.njk" %}
+<header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+</header>
+
+<article class="bg copy page__content">
+  {{ content | markdown | safe }}
+</article>
 

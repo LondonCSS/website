@@ -7,15 +7,16 @@
     <meta name="description" content="{{ description }}"/>
     <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
 
-    <meta property="og:url" content="{{ url }}"/>
+    <meta property="og:url" content="{{ pkg.homepage }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="{{ title }}"/>
     <meta property="og:description" content="{{ description }}"/>
-    <meta property="og:image" content="{{ url }}/images/favicon.png"/>
+    <meta property="og:image" content="{{ pkg.homepage }}/static/images/card.svg"/>
+
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="{{ title }}"/>
     <meta name="twitter:description" content="{{ description }}"/>
-    <meta name="twitter:image" content="{{ url }}/images/favicon.png"/>
+    <meta name="twitter:image" content="{{ pkg.homepage }}/static/images/card.svg"/>
 
     {%- set css_static -%}
     {% include "css/reset.css" %}
@@ -32,15 +33,23 @@
     </style>
   </head>
 
-  <body>
+  <body class="menu-closed">
     <super-mannerist></super-mannerist>
     <div class="app">
       <nav class="app__controls app__nav title">
         <div class="container row">
           <h1 class="app__title"><a href="/">London CSS</a></h1>          
-          <div class="app__nav__links">
+          <div class="app__links">
+            <button class="app__links__togglebtn" data-click="menu-toggle">
+              <div class="togglebtn__body">
+                <svg class="icon" role="icon">
+                  <use href="#icon-menu"/>
+                </svg>
+                <span class="title">Menu</span>
+              </div>
+            </button>
             {%- for p in collections.pages -%}
-              <a href="{{p.url}}" class="app__nav__link {% if page.url == p.url %}active{% endif %}">
+              <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
                 {{p.data.title}}
               </a>
             {%- endfor -%}
@@ -63,18 +72,27 @@
         <div class="container row">
           <p>©2019 London CSS</p>
           <div class="social">
+            <a class="social__link" href="mailto:hello@londoncss">
+              <span class="social__link__icon">
+                <svg role="icon">
+                  <title>Email symbol</title>
+                  <use href="#icon-email"/>
+                </svg>
+              </span>
+              <span class="social__link__label">Email</span>
+            </a>
             <a class="social__link" href="https://twitter.com/londoncss">
               <span class="social__link__icon">
-                <svg role="img">
+                <svg role="icon">
                   <title>Twitter Logo</title>
                   <use href="#icon-twitter"/>
                 </svg>
               </span>
-              <span class="social__link__label">Tweet!</span>
+              <span class="social__link__label">Follow</span>
             </a>
             <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
               <span class="social__link__icon">
-                <svg role="img">
+                <svg role="icon">
                   <title>Github Logo</title>
                   <use href="#icon-github"/>
                 </svg>
