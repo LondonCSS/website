@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "repository": "git@github.com:LondonCSS/website.git",
   "author": "Oliver Turner <oliver.turner@codedsignal.co.uk>",
-  "homepage": "https://www.londoncss.dev/",
+  "homepage": "https://www.londoncss.dev",
   "bugs": "https://github.com/LondonCSS/website/issues",
   "keywords": [
     "London CSS",

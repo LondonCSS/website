@@ -7,16 +7,16 @@
     <meta name="description" content="{{ description }}"/>
     <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
 
-    <meta property="og:url" content="{{ url }}"/>
+    <meta property="og:url" content="{{ pkg.homepage }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="{{ title }}"/>
     <meta property="og:description" content="{{ description }}"/>
-    <meta property="og:image" content="{{ url }}/static/images/card.svg"/>
-    
+    <meta property="og:image" content="{{ pkg.homepage }}/static/images/card.svg"/>
+
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="{{ title }}"/>
     <meta name="twitter:description" content="{{ description }}"/>
-    <meta name="twitter:image" content="{{ url }}/static/images/card.svg"/>
+    <meta name="twitter:image" content="{{ pkg.homepage }}/static/images/card.svg"/>
 
     {%- set css_static -%}
     {% include "css/reset.css" %}
