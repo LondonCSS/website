@@ -1,3 +1,9 @@
+@keyframes fade-in {
+  to {
+    opacity: 1
+  }
+}
+
 :root {
   --grad1: #002239;
   --grad2: #0b605f;
@@ -149,6 +155,9 @@ body {
   min-height: 100vh;
 
   &::before  {
+    opacity: 0;
+    animation: fade-in forwards 0.3s;
+
     content: "";
     position: fixed;
     top: 0;
@@ -156,7 +165,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: #000a;
-    z-index: 1;
+    z-index: 2;
   }
 
   @nest .menu-closed &::before {
@@ -240,7 +249,7 @@ body {
   position: fixed;
   left: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 
   height: 100vh;
   border-left: 1px solid var(--bg-contrast-title);
@@ -333,7 +342,7 @@ body {
   position: relative;
   padding: 0.5rem;
   font-size: 0.8rem;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* Page
