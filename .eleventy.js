@@ -29,7 +29,7 @@ const eleventy = config => {
   });
 
   config.addPassthroughCopy("src/script");
-  config.addPassthroughCopy("static/images");
+  config.addPassthroughCopy("static");
 
   return {
     dir: {

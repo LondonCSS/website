@@ -6,6 +6,16 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}"/>
     <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/icons/favicon.ico">
+    <meta name="msapplication-config" content="/static/icons/browserconfig.xml">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/static/site.webmanifest">
 
     <meta property="og:url" content="{{ pkg.homepage }}"/>
     <meta property="og:type" content="website"/>
@@ -42,7 +52,7 @@
           <div class="app__links">
             <button class="app__links__togglebtn" data-click="menu-toggle">
               <div class="togglebtn__body">
-                <svg class="icon" role="icon">
+                <svg class="icon" aria-hidden="true">
                   <use href="#icon-menu"/>
                 </svg>
                 <span class="title">Menu</span>
@@ -73,27 +83,24 @@
           <p>©2019 London CSS</p>
           <div class="social">
             <a class="social__link" href="mailto:hello@londoncss">
-              <span class="social__link__icon">
-                <svg role="icon">
-                  <title>Email symbol</title>
+              <span class="social__link__icon" aria-hidden="true">
+                <svg>
                   <use href="#icon-email"/>
                 </svg>
               </span>
               <span class="social__link__label">Email</span>
             </a>
             <a class="social__link" href="https://twitter.com/londoncss">
-              <span class="social__link__icon">
-                <svg role="icon">
-                  <title>Twitter Logo</title>
+              <span class="social__link__icon" aria-hidden="true">
+                <svg>
                   <use href="#icon-twitter"/>
                 </svg>
               </span>
               <span class="social__link__label">Follow</span>
             </a>
             <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
-              <span class="social__link__icon">
-                <svg role="icon">
-                  <title>Github Logo</title>
+              <span class="social__link__icon" aria-hidden="true">
+                <svg>
                   <use href="#icon-github"/>
                 </svg>
               </span>
