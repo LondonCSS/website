@@ -1,3 +1,5 @@
+{% import "partials/socialmedia.njk" as socialmedia  %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,19 +30,7 @@
     <meta name="twitter:description" content="{{ description }}"/>
     <meta name="twitter:image" content="{{ pkg.homepage }}/static/images/card.svg"/>
 
-    {%- set css_static -%}
-    {% include "css/reset.css" %}
-    {%- endset %}
-
-    {%- set css_app -%}
-    {% include "css/typography.css" %}
-    {% include "css/app.css" %}
-    {%- endset %}
-    
-    <style>
-      {{css_static | postcss | safe}}
-      {{css_app | postcss | safe}}
-    </style>
+    <link rel="stylesheet" href="/styles.css">
   </head>
 
   <body class="menu-closed">
@@ -82,30 +72,9 @@
         <div class="container row">
           <p>©2019 London CSS</p>
           <div class="social">
-            <a class="social__link" href="mailto:hello@londoncss">
-              <span class="social__link__icon" aria-hidden="true">
-                <svg>
-                  <use href="#icon-email"/>
-                </svg>
-              </span>
-              <span class="social__link__label">Email</span>
-            </a>
-            <a class="social__link" href="https://twitter.com/londoncss">
-              <span class="social__link__icon" aria-hidden="true">
-                <svg>
-                  <use href="#icon-twitter"/>
-                </svg>
-              </span>
-              <span class="social__link__label">Follow</span>
-            </a>
-            <a class="social__link" href="https://github.com/LondonCSS/website/tree/master/{{ page.inputPath }}">
-              <span class="social__link__icon" aria-hidden="true">
-                <svg>
-                  <use href="#icon-github"/>
-                </svg>
-              </span>
-              <span class="social__link__label">Source</span>
-            </a>
+            {%- for link in config.socialmedia -%}
+              {{ socialmedia.link(link) }}
+            {%- endfor -%}
           </div>
         </div>
       </footer>

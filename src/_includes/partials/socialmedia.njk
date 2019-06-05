@@ -1,0 +1,10 @@
+{% macro link(link) %}
+<a class="social__link" href="{{link.href}}">
+  <span class="social__link__icon" aria-hidden="true">
+    <svg>
+      <use href="#icon-{{link.icon}}"/>
+    </svg>
+  </span>
+  <span class="social__link__label">{{link.label}}</span>
+</a>
+{% endmacro %}
