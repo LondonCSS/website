@@ -386,7 +386,7 @@ body {
 .content__header {
   grid-area: header;
 
-  display: grid;
+  /* display: grid; */
 
   @media (--mq-m) {
     position: sticky;
@@ -451,6 +451,16 @@ body {
   margin-top: 0.5rem;
   font-size: 0.8;
   font-weight: 400;
+}
+
+/* Talks
+------------------------------------------------------------------------------*/
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+
+  padding: 0 1rem;
 }
 
 /* Talks
@@ -547,7 +557,7 @@ body {
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   @media (--mq-m) {
@@ -569,7 +579,7 @@ body {
 }
 
 .sponsor--panorama {
-  height: 24px;
+  height: 22px;
 }
 
 /* Social
@@ -585,7 +595,6 @@ body {
   align-items: center;
 
   margin-left: 0.5rem;
-  /* color: #666; */
 
   &:enter {
     color: #ccc;

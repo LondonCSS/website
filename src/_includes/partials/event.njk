@@ -38,23 +38,31 @@
               {{talk.speaker.name}}:
               <span class="talk__title">{{talk.presentation.title}}</span>
             </a>
-          {% else %}
+          {% elseif talk.speaker %}
             {{talk.speaker.name}}:
             <span class="talk__title">{{talk.presentation.title}}</span>
+          {% else %}
+            To be announced
           {% endif %}
         </h3>
+
+        {% if talk.speaker.twitter %}
         <div class="talk__content">
           {{talk.presentation.content | markdown | safe}}
         </div>
-        <footer class="talk__footer">
-          <details class="speaker">
-            <summary class="speaker__name">About
-              {{talk.speaker.name}}</summary>
-            <div class="speaker__bio">
-              {{talk.speaker.bio | markdown | safe}}
-            </div>
-          </details>
-        </footer>
+        {% endif %}
+
+        {% if talk.speaker.twitter %}
+          <footer class="talk__footer">
+            <details class="speaker">
+              <summary class="speaker__name">About
+                {{talk.speaker.name}}</summary>
+              <div class="speaker__bio">
+                {{talk.speaker.bio | markdown | safe}}
+              </div>
+            </details>
+          </footer>
+        {% endif %}
       </article>
     {%- endfor %}
   </section>
