@@ -1,6 +1,7 @@
 ---
 tags: 
   - "events"
+  - "eventCurrent"
 title: "Events"
 layout: "layouts/base.njk"
 event: 
@@ -28,19 +29,30 @@ talks:
       bio: |
         Michelle is a front end developer with a passion for CSS, and a Mozilla Tech Speaker. Her passion for CSS in all its forms leads her to spending most of her spare time experimenting with CSS Grid, and writing articles on front end development on her blog, [CSS {In Real Life}](https://css-irl.info/). She has a background in design and illustration, and is currently a front end developer at Ordoo, a mobile ordering startup, where she helps build UX-driven mobile experiences.
     presentation: 
-      title: New frontiers of CSS Layout
+      title: "When Grids Go Wrong: Debugging CSS Grid"
       content: |
-        We’re in the middle of a web layout revolution. Recent years have brought us a fantastic CSS toolkit for building layouts on the web, and browsers have risen to the challenge of supporting these new features faster than ever before. Do modern layout techniques make your head spin? With so much choice available, how do we pick the right layout method for the job?
-        
-        Join us on a journey through time, where we’ll explore a brief history of CSS layout. We’ll learn how modern specifications like Grid, flexbox and custom properties can help us build more robust and flexible layouts fit for a new era of web design. We’ll bust some common myths, and discover how understanding the past can help us build layouts of the future.
+        CSS Grid is an incredibly powerful tool for building web layouts, and there has never been a better time to start using it in production. But with so many different ways to create a grid and place items, it’s not always easy to debug when layouts don’t behave as we expect them to.
+
+        In this talk we’ll examine some common problems, and put the CSS Grid specification under the microscope to understand some of Grid’s surprising behaviours. We’ll take a look at how Grid works in harmony with (and not against!) other layout methods to build the robust, flexible web of the future.
   - 
-    speaker: 
-      name: Heydon Pickering
-      twitter: heydonworks
-      bio: |
-        Heydon is a freelance web accessibility consultant, interface designer and writer.\n\nHeydon writes and edits for Smashing Magazine and works with leading web accessibility specialists, The Paciello Group, focusing on accessible User Experience Design (UX).
+  - 
+---
+{# - 
+  speaker: 
+    name: Heydon Pickering
+    twitter: heydonworks
+    bio: |
+      Heydon is a freelance web accessibility consultant, interface designer and writer.\n\nHeydon writes and edits for Smashing Magazine and works with leading web accessibility specialists, The Paciello Group, focusing on accessible User Experience Design (UX).
     presentation: 
       title: "TBA"
       content: "TBA"
----
+  speaker: 
+    name: Stu Robson
+    twitter: StuRobson
+    bio: |
+      Front-End Consultant • Design Systems Advocate • Working with @EMBL • 
+    presentation: 
+      title: "TBA"
+      content: "TBA" 
+#}
 {% include "partials/event.njk" %}

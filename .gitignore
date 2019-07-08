@@ -1,4 +1,8 @@
+# Ignore build folder
 dist/
+
+# Ignore lighthouse output
+www.londoncss.dev* 
 
 # Logs
 logs

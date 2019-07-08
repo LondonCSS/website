@@ -21,25 +21,26 @@
     "date-fns": "1.30.1",
     "eleventy-plugin-toc": "1.0.1",
     "markdown-it": "8.4.2",
-    "markdown-it-anchor": "5.2.3",
+    "markdown-it-anchor": "5.2.4",
     "npm-run-all": "4.1.5",
-    "postcss": "7.0.16",
+    "postcss": "7.0.17",
     "postcss-clean": "1.1.0",
     "postcss-cli": "6.1.2",
     "postcss-import": "12.0.1",
     "postcss-inset": "1.0.0",
     "postcss-preset-env": "6.6.0",
     "postcss-pseudo-class-enter": "5.0.0",
-    "stylelint-selector-bem-pattern": "2.1.0",
+    "rimraf": "2.6.3",
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
-    "eslint": "5.16.0",
-    "husky": ">=2.3.0",
+    "eslint": "6.0.1",
+    "husky": "3.0.0",
     "lighthouse": "5.1.0",
-    "lint-staged": ">=8.1.7",
-    "stylelint": "10.0.1",
-    "stylelint-config-recommended": "2.2.0"
+    "lint-staged": "9.0.1",
+    "stylelint": "10.1.0",
+    "stylelint-config-recommended": "2.2.0",
+    "stylelint-selector-bem-pattern": "2.1.0"
   },
   "husky": {
     "hooks": {
@@ -59,13 +60,17 @@
     ]
   },
   "scripts": {
-    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json",
+    "clean": "rimraf dist",
+    "css": "postcss ./src/_includes/css/styles.css --dir ./dist --ext css --config ./tools",
     "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
-    "dev": "eleventy --serve",
+    "dev:css": "yarn css --watch",
+    "dev:build": "eleventy --serve",
+    "dev": "run-s clean css && run-p dev:*",
     "build:site": "eleventy",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
-    "build": "run-s build:*"
+    "build": "run-s clean css build:*",
+    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
   }
 }
