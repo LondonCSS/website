@@ -27,7 +27,12 @@
 <div class="page__content">
   <section class="talks">
     {%- for talk in talks %}
-      <article class="bg talk">
+      {% if talk.speaker %}
+        <article class="bg talk" id="{{talk.speaker.name | slug}}">
+      {% else %}
+        <article class="bg talk">
+      {% endif %}
+      
         <h3 class="title talk__topic">
           {% if talk.speaker.twitter %}
             <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
