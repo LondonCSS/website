@@ -5,7 +5,7 @@ layout: "layouts/base.njk"
 {% from "partials/event-header.njk" import header as eventHeader  %}
 {% from "partials/event-talk.njk" import talk as eventTalk  %}
 
-{{ eventHeader(description, event) }}
+{{ eventHeader(title, subtitle, description, event) }}
 
 <div class="page__content">
   <section class="talks">
