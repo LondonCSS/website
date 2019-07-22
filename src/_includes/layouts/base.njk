@@ -27,7 +27,7 @@
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="{{ title }}"/>
-    <meta name="twitter:description" content="{{ description }}"/>
+    <meta name="twitter:description" content="{{ description | markdown | safe }}"/>
     <meta name="twitter:image" content="{{ pkg.homepage }}/static/images/card.jpg"/>
 
     <link rel="stylesheet" href="/styles.css">
