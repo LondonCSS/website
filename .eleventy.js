@@ -1,7 +1,6 @@
 const postcss = require("postcss");
 const postcssConfig = require("./tools/postcss.config");
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginTOC = require("eleventy-plugin-toc");
 
 const MarkdownIt = require("markdown-it");
@@ -13,7 +12,6 @@ const md = new MarkdownIt({
 }).use(require("markdown-it-anchor"));
 
 const eleventy = config => {
-  config.addPlugin(pluginRss);
   config.addPlugin(pluginTOC);
 
   config.addFilter("date", code => formatDate(code, "dddd, MMMM Do"));
@@ -21,6 +19,8 @@ const eleventy = config => {
   config.addFilter("markdown", code => {
     return code ? md.render(code) : code;
   });
+
+  config.setLibrary("md", md);
 
   config.addNunjucksAsyncFilter("postcss", async (code, callback) => {
     const { css } = await postcss([postcssConfig()]).process(code);

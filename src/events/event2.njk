@@ -2,15 +2,14 @@
 tags: 
   - "events"
   - "eventCurrent"
-title: "Events"
-layout: "layouts/base.njk"
+title: "Event 2"
+description: "Please join us at [LendInvest](https://www.lendinvest.com/) with talks from these amazing speakers..."
+layout: "layouts/event.njk"
 event: 
   canRegister: false
   title: Event 2
   subtitle: Parte deux
   date: "2019-08-08"
-  description: |
-    Please join us at [LendInvest](https://www.lendinvest.com/) with talks from these amazing speakers...
 host: 
   name: "LendInvest"
   website: "https://www.lendinvest.com/"
@@ -27,7 +26,7 @@ talks:
       name: Michelle Barker
       twitter: mbarker_84
       bio: |
-        Michelle is a front end developer with a passion for CSS, and a Mozilla Tech Speaker. Her passion for CSS in all its forms leads her to spending most of her spare time experimenting with CSS Grid, and writing articles on front end development on her blog, [CSS {In Real Life}](https://css-irl.info/). She has a background in design and illustration, and is currently a front end developer at Ordoo, a mobile ordering startup, where she helps build UX-driven mobile experiences.
+        Michelle is a front end developer with a passion for CSS and a Mozilla Tech Speaker. Her passion for CSS in all its forms leads her to spending most of her spare time experimenting with CSS Grid and writing articles on front end development on her blog, [CSS {In Real Life}](https://css-irl.info/). She has a background in design and illustration and is currently a front end developer at Ordoo – a mobile ordering startup – where she helps build UX-driven mobile experiences.
     presentation: 
       title: "When Grids Go Wrong: Debugging CSS Grid"
       content: |
@@ -35,6 +34,24 @@ talks:
 
         In this talk we’ll examine some common problems, and put the CSS Grid specification under the microscope to understand some of Grid’s surprising behaviours. We’ll take a look at how Grid works in harmony with (and not against!) other layout methods to build the robust, flexible web of the future.
   - 
+    speaker: 
+      name: Stu Robson
+      twitter: StuRobson
+      bio: |
+        Stuart is a front-end consultant and design systems advocate who for the last 5 years has helped companies and organisation with the front-end of their design systems.
+
+        They’re passionate about modern CSS, progressive enhancement and accessibility they help companies author the ‘holy trinity’ of front-end development (HTML, CSS, and JavaScript) so that is clear, maintainable and can be updated easily over time. 
+        
+        Hailing from Wiltshire, living with his partner and their son Ethan, they spend time enjoying cooking and barbecuing. They also enjoy watching horror movies and tv shows and listening to rock music.
+    presentation: 
+      title: "Design Tokens and CSS: Systematising the Design of Components"
+      content: |
+        Aren’t Design Tokens just **spicy** Sass variables?
+
+        Design Tokens allow you to define the low-level values of the design attributes in your Design System so that they can become the part of a shared vocabulary amongst all of Systems users and used across all of the products within Design System. 
+        
+        In this talk Stuart will be discussing what types of design attributes you could find in a set of Design Tokens, how you can create them once and share them anywhere, look beyond their generic usage across organisations, and how they can empower everyone to contribute to the overall Design System.
+
   - 
 ---
 {# - 
@@ -46,13 +63,4 @@ talks:
     presentation: 
       title: "TBA"
       content: "TBA"
-  speaker: 
-    name: Stu Robson
-    twitter: StuRobson
-    bio: |
-      Front-End Consultant • Design Systems Advocate • Working with @EMBL • 
-    presentation: 
-      title: "TBA"
-      content: "TBA" 
 #}
-{% include "partials/event.njk" %}

@@ -1,3 +1,6 @@
+---
+layout: "layouts/base.njk"
+---
 <header class="content__header">
   <h1 class="title page__title">
     {{ title }}
@@ -5,8 +8,7 @@
 
   <div class="copy bg subtitle">
     {{ 
-      content 
-      | markdown 
+      content
       | toc('{"tags": ["h2", "h3"], "wrapperClass": "content__header__toc"}') 
       | safe 
     }}
@@ -14,5 +16,5 @@
 </header>
 
 <article class="bg copy page__content">
-  {{ content | markdown | safe }}
+  {{ content | safe }}
 </article>

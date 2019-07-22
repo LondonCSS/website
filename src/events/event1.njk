@@ -1,16 +1,14 @@
 ---
 tags: 
   - "events"
-title: "Events"
-layout: "layouts/base.njk"
+title: "Event 1"
+layout: "layouts/event.njk"
 event: 
-  canRegister: true
+  canRegister: false
   register: https://www.meetup.com/London-CSS-Meetup/events/260641468/
   title: "Event 1"
   subtitle: "Relaunch!"
   date: "2019-05-09"
-  description: |
-    Please join us at [Condé Nast](https://www.condenast.co.uk/) for the relaunch of London CSS with talks from these amazing speakers...
 host: 
   name: "Condé Nast"
   website: https://www.condenast.co.uk/
@@ -72,5 +70,3 @@ talks:
         Get started experimenting with the capabilities of next-generation CSS and see how they can help us bring new user experiences to life on the web.
 
 ---
-
-{% include "partials/event.njk" %}

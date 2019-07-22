@@ -1,0 +1,41 @@
+{% macro talk(talk) %}
+{% if talk.speaker %}
+  <article class="bg talk" id="{{talk.speaker.name | slug}}">
+    <h3 class="title talk__topic">
+      {% if talk.speaker.twitter %}
+        <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
+          <svg class="icon" role="img">
+            <title>{{talk.speaker.name}} on Twitter</title>
+            <use href="#icon-twitter"></use>
+          </svg>
+          {{talk.speaker.name}}
+          <span class="talk__title">{{talk.presentation.title}}</span>
+        </a>
+      {% else %}
+        {{talk.speaker.name}}
+        <span class="talk__title">{{talk.presentation.title}}</span>
+      {% endif %}
+    </h3>
+
+    <div class="talk__content">
+      {{talk.presentation.content | markdown | safe}}
+    </div>
+    
+    <footer class="talk__footer">
+      <details class="speaker">
+        <summary class="speaker__name">About
+          {{talk.speaker.name}}</summary>
+        <div class="speaker__bio">
+          {{talk.speaker.bio | markdown | safe}}
+        </div>
+      </details>
+    </footer>
+  </article>
+{% else %}
+  <article class="bg talk">
+    <h3 class="title talk__topic">
+      To be announced
+    </h3>
+  </article>
+{% endif %}
+{% endmacro %}
