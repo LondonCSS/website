@@ -1,8 +1,6 @@
 --- 
-title: Home 
-layout: layouts/base.njk 
+layout: ../events/event2.njk
+eleventyExcludeFromCollections: true
 ---
 
-{%- for event in collections.eventCurrent -%}
-  {{event.templateContent | safe}}
-{%- endfor -%}
+{{ content | safe }}

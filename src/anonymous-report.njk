@@ -4,10 +4,6 @@ title: Anonymous report
 description: Contact us in the event of a violation of our Code of Conduct
 layout: layouts/base.njk
 eleventyExcludeFromCollections: true
-content: |
-  London CSS is committed to providing a harassment-free event for everyone. If you'd like to give feedback anonymously about a situation please use the form bellow. 
-  
-  We won’t be able to follow up with you directly, but we will fully investigate and take appropriate action to prevent a recurrence.
 ---
 
 <header class="content__header">
@@ -17,7 +13,8 @@ content: |
 </header>
 
 <article class="bg copy page__content page__content--stretch">
-  {{ content | markdown | safe }}
+  <p>London CSS is committed to providing a harassment-free event for everyone. If you'd like to give feedback anonymously about a situation please use the form below.</p>
+  <p>We won’t be able to follow up with you directly, but we will fully investigate and take appropriate action to prevent a recurrence.</p>
 
   <form
     class="form form--stretch"
