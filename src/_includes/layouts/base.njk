@@ -31,7 +31,8 @@
   </head>
 
   <body class="menu-closed">
-    <super-mannerist></super-mannerist>
+    {% include "partials/supermannerist.njk" %}
+    
     <div class="app">
       <nav class="app__controls app__nav title">
         <div class="container row">
@@ -80,7 +81,6 @@
       </footer>
     </div>
 
-    {% include "partials/supermannerist.njk" %}
     {% include "partials/icons.njk" %}
 
     <script type="module" src="{{ '/script/index.mjs' | url }}"></script>

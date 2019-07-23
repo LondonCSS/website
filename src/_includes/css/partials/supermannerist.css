@@ -1,0 +1,66 @@
+.sm {
+  --stripe: #fff1;
+  
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sm__container {
+  display: grid;
+  grid-template-areas:
+    "a a b b b b"
+    "a a c c c c"
+    "a a d d d d";
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  transform: rotate(-45deg) scale(2);
+  transform-origin: center center;
+}
+
+.sm__stripes {
+  --perc: calc(100% / var(--stripes));
+  --perc2: calc(var(--perc) * 2);
+
+  background: repeating-linear-gradient(
+    var(--direction),
+    var(--stripe), 
+    var(--stripe) var(--perc), 
+    transparent var(--perc), 
+    transparent var(--perc2)
+  );
+}
+
+.sm__stripes--a {
+  --stripes: 16;
+  --direction: to right;
+
+  grid-area: a;
+}
+
+.sm__stripes--b {
+  --stripes: 4;
+  --direction: to bottom;
+
+  grid-area: b;
+}
+
+.sm__stripes--c {
+  --stripes: 32;
+  --direction: to bottom;
+  
+  grid-area: c;
+}
+
+.sm__stripes--d {
+  --stripes: 8;
+  --direction: to right;
+  
+  grid-area: d;
+}

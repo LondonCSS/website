@@ -1,4 +1,4 @@
-@import "./reset.css";
-@import "./typography.css";
-@import "./supermannerist.css";
-@import "./app.css";
+@import "./partials/reset.css";
+@import "./partials/typography.css";
+@import "./partials/supermannerist.css";
+@import "./partials/app.css";

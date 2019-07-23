@@ -61,16 +61,13 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "css": "postcss ./src/_includes/css/styles.css --dir ./dist --ext css --config ./tools",
     "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
-    "dev:css": "yarn css --watch",
-    "dev:build": "eleventy --serve",
-    "dev": "run-s clean css && run-p dev:*",
+    "dev": "run-s clean && eleventy --serve",
     "build:site": "eleventy",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
-    "build": "run-s clean css build:*",
+    "build": "run-s clean build:*",
     "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
   }
 }
