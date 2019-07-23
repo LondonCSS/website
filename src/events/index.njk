@@ -15,8 +15,8 @@ tags: pages
   {%- for event in collections.events -%}
     <a class="title content__hero" href="{{event.url}}">
       <h2 class="content__hero__caption">
-        <span>{{event.data.event.title}}:</span>
-        <em>{{event.data.event.subtitle}}</em>
+        <span>{{event.data.title}}:</span>
+        <em>{{event.data.subtitle}}</em>
       </h2>
       <time class="content__hero__date" datetime="{{event.data.event.date}}">{{event.data.event.date | date}}</time>
     </a>

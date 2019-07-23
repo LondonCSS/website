@@ -1,6 +1,3 @@
-const postcss = require("postcss");
-const postcssConfig = require("./tools/postcss.config");
-
 const pluginTOC = require("eleventy-plugin-toc");
 
 const MarkdownIt = require("markdown-it");
@@ -21,12 +18,6 @@ const eleventy = config => {
   });
 
   config.setLibrary("md", md);
-
-  config.addNunjucksAsyncFilter("postcss", async (code, callback) => {
-    const { css } = await postcss([postcssConfig()]).process(code);
-
-    return callback(null, css);
-  });
 
   config.addPassthroughCopy("src/script");
   config.addPassthroughCopy("static");
