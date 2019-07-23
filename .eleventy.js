@@ -29,7 +29,7 @@ const eleventy = config => {
       includes: "_includes"
     },
     passthroughFileCopy: true,
-    templateFormats: ["njk", "md", "css", "html", "yml"],
+    templateFormats : ["njk", "md", "11ty.js"],
     htmlTemplate: "njk",
     markdownTemplateEngine: "njk"
   };
