@@ -1,16 +1,26 @@
-{% macro title(title, subtitle, event) %}
+{% macro eventCaption(title, subtitle, event) %}
+<h2 class="content__hero__caption">
+  <span>{{title}}:</span>
+  <em>{{subtitle}}</em>
+</h2>
+<time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+{% endmacro %}
+
+{% macro eventTitle(title, subtitle, event) %}
 <div class="title content__hero">
-  <h2 class="content__hero__caption">
-    <span>{{title}}:</span>
-    <em>{{subtitle}}</em>
-  </h2>
-  <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+  {{eventCaption(title, subtitle, event)}}
 </div>
 {% endmacro %}
 
-{% macro header(title, subtitle, description, event) %}
+{% macro eventLink(title, subtitle, url, event) %}
+<a class="title content__hero" href="{{url}}">
+  {{eventCaption(title, subtitle, event)}}
+</a>
+{% endmacro %}
+
+{% macro eventHeader(title, subtitle, description, event) %}
 <header class="content__header">
-  {{ title(title, subtitle, event) }}
+  {{ eventTitle(title, subtitle, event) }}
   <div class="copy bg">
     {{description | markdown | safe}}
 
