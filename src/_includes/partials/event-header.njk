@@ -1,12 +1,16 @@
+{% macro title(title, subtitle, event) %}
+<div class="title content__hero">
+  <h2 class="content__hero__caption">
+    <span>{{title}}:</span>
+    <em>{{subtitle}}</em>
+  </h2>
+  <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+</div>
+{% endmacro %}
+
 {% macro header(title, subtitle, description, event) %}
 <header class="content__header">
-  <div class="title content__hero">
-    <h2 class="content__hero__caption">
-      <span>{{title}}:</span>
-      <em>{{subtitle}}</em>
-    </h2>
-    <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
-  </div>
+  {{ title(title, subtitle, event) }}
   <div class="copy bg">
     {{description | markdown | safe}}
 
