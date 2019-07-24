@@ -30,7 +30,6 @@
     "postcss-inset": "1.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
-    "rimraf": "2.6.3",
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
@@ -61,7 +60,7 @@
     ]
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
