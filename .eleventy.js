@@ -3,6 +3,8 @@ const pluginTOC = require("eleventy-plugin-toc");
 const MarkdownIt = require("markdown-it");
 const formatDate = require("date-fns/format");
 
+const now = new Date();
+
 const md = new MarkdownIt({
   xhtmlOut: true,
   typographer: true
@@ -17,6 +19,10 @@ const eleventy = config => {
     return code ? md.render(code) : code;
   });
 
+  config.addFilter("isFuture", code => {
+    return new Date(code) > now;
+  });
+
   config.setLibrary("md", md);
 
   config.addPassthroughCopy("src/script");
@@ -29,7 +35,7 @@ const eleventy = config => {
       includes: "_includes"
     },
     passthroughFileCopy: true,
-    templateFormats : ["njk", "md", "11ty.js"],
+    templateFormats: ["njk", "md", "11ty.js"],
     htmlTemplate: "njk",
     markdownTemplateEngine: "njk"
   };

@@ -24,17 +24,19 @@
   <div class="copy bg">
     {{description | markdown | safe}}
 
-    {% if event.canRegister %}
-      <a class="title register" href="{{event.register}}">
-        <span class="register__label">Register for tickets</span>
-        <svg class="icon" role="img">
-          <use href="#icon-chevron-right"></use>
-        </svg>
-      </a>
-    {% else %}
-      <p class="title register--inactive">
-        Registrations open soon
-      </p>
+    {% if event.date | isFuture %}
+      {% if event.registerUrl %}
+        <a class="title register" href="{{event.registerUrl}}">
+          <span class="register__label">Register for tickets</span>
+          <svg class="icon" role="img">
+            <use href="#icon-chevron-right"></use>
+          </svg>
+        </a> 
+      {% else %}
+        <p class="title register--inactive">
+          Registrations open soon
+        </p>
+      {% endif %}
     {% endif %}
   </div>
 </header>
