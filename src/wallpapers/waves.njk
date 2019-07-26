@@ -1,0 +1,59 @@
+---
+title: Waves
+tags: wallpapers
+layout: "layouts/wallpaper.njk"
+---
+
+<style>
+  :root {
+    --stripe-bg: #0a0c27;
+    --stripe-tint: #2b2d44;
+    --stripe-w: 3px;
+
+    --stripe0-inner: 0;
+    --stripe0-outer: var(--stripe-w);
+
+    --stripe1-outer: 20%;
+    --stripe1-inner: calc(var(--stripe1-outer) - var(--stripe-w));
+
+    --waves: (
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-radial-gradient(
+        circle,
+        
+        var(--stripe-tint) var(--stripe0-inner) var(--stripe0-outer),            
+        var(--stripe-bg)   var(--stripe0-outer) var(--stripe1-inner)
+      );
+    );
+  }
+
+  .logo {
+    border: var(--stripe-w) solid var(--stripe-tint);
+  }
+</style>
+
+<div class="doodle">
+  <css-doodle>
+    :doodle { 
+      @grid: 10 / 100vmax; 
+
+      position: absolute;
+    }
+    
+    :before {
+      position: absolute;
+      top: -50%;
+      @use: var(--waves);
+    }
+
+    :after {
+      position: absolute;
+      left: -50%;
+      @use: var(--waves);
+    }
+  </css-doodle>
+  <h1 class="title logo">London CSS</h1>
+</div>
