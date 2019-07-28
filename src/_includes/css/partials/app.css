@@ -373,6 +373,13 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  &.page__content--wallpapers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 188px;
+    gap: 12px;
+  }
 }
 
 .talks {
@@ -667,3 +674,4 @@ body {
     flex: 1;
   }
 }
+
