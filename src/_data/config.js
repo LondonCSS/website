@@ -1,10 +1,5 @@
 module.exports = {
   socialmedia: [
-    // {
-    //   href: "/wallpapers", 
-    //   icon: "monitor", 
-    //   label: "Wallpaper" 
-    // },
     { 
       href: "mailto:hello@londoncss", 
       icon: "email", 

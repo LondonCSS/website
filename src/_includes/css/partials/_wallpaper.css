@@ -2,8 +2,11 @@
   position: relative;
 
   padding: 0 6px;
-  font-size: 0.8rem;
   background: #0a0c27;
+
+  @media (--mq-m) {
+    font-size: 0.8rem;
+  }
 
   & summary {
     padding: 5px 10px;
