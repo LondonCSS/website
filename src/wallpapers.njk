@@ -29,10 +29,27 @@ description: London CSS Wallpapers
         <details id="{{wallpaper.id}}">
           <summary>{{wallpaper.title}}</summary>
           <ul class="unlist">
-            <li><a href="/static/wallpapers/{{wallpaper.id}}-cinema.png" download><span>Cinema</span>: 3840 × 2160</a></li>
-            <li><a href="/static/wallpapers/{{wallpaper.id}}-desktop.png" download><span>Desktop</span>: 1440 × 900</a></li>
-            <li><a href="/static/wallpapers/{{wallpaper.id}}-mobile.png" download><span>Mobile</span>: 414 × 744</a></li>
-            <li><a href="https://codepen.io/oliverturner/pen/{{wallpaper.id}}?editors=0100"><span>Source on Codepen</span></a></li>
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-cinema.png" 
+                download="{{wallpaper.title | slug}}-cinema.png">
+                <span>Cinema</span>: 3840 × 2160
+              </a>
+            </li>
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-desktop.png" 
+                download="{{wallpaper.title | slug}}-desktop.png">
+                <span>Desktop</span>: 1440 × 900
+              </a>
+            </li>
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-mobile.png" 
+                download="{{wallpaper.title | slug}}-mobile.png">
+                <span>Mobile</span>: 414 × 744
+              </a>
+            </li>
+            <li>
+              <a href="https://codepen.io/oliverturner/pen/{{wallpaper.id}}?editors=0100"><span>Source on Codepen</span></a>
+            </li>
           </ul>
         </details>        
       </figcaption>
