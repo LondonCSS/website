@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+tags: subpages
+
+title: Wallpapers
+description: London CSS Wallpapers
+---
+
+<header class="content__header">
+  <h1 class="title page__title">
+    Wallpapers
+  </h1>
+  <div class="copy bg subtitle">
+    <div class="content__header__toc">
+      <ol>
+        {%- for wallpaper in config.wallpapers -%}
+          <li><a href="#{{wallpaper.id}}">{{wallpaper.title}}</a></li>
+        {%- endfor -%}
+      </ol>
+    </div>
+  </div>
+</header>
+
+<article class="bg copy page__content page__content--wallpapers">
+  {%- for wallpaper in config.wallpapers -%}
+    <figure class="wallpaper">
+      <img class="wallpaper__img" width="600px" height="375px" src="/static/wallpapers/{{wallpaper.id}}-thumbnail.png">
+      <figcaption class="wallpaper__label">
+        <details id="{{wallpaper.id}}">
+          <summary>{{wallpaper.title}}</summary>
+          <ul class="unlist">
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-cinema.png" 
+                download="{{wallpaper.title | slug}}-cinema.png">
+                <span>Cinema</span>: 3840 × 2160
+              </a>
+            </li>
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-desktop.png" 
+                download="{{wallpaper.title | slug}}-desktop.png">
+                <span>Desktop</span>: 1440 × 900
+              </a>
+            </li>
+            <li>
+              <a href="/static/wallpapers/{{wallpaper.id}}-mobile.png" 
+                download="{{wallpaper.title | slug}}-mobile.png">
+                <span>Mobile</span>: 414 × 744
+              </a>
+            </li>
+            <li>
+              <a href="https://codepen.io/oliverturner/pen/{{wallpaper.id}}?editors=0100"><span>Source on Codepen</span></a>
+            </li>
+          </ul>
+        </details>        
+      </figcaption>
+    </figure>
+  {%- endfor -%}
+</article>
+
+

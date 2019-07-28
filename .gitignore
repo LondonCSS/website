@@ -1,5 +1,6 @@
 # Ignore build folder
 dist/
+static/wallpapers/
 
 # Ignore lighthouse output
 www.londoncss.dev* 

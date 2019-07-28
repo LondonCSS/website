@@ -1,0 +1,58 @@
+.wallpaper {
+  position: relative;
+
+  padding: 0 6px;
+  background: #0a0c27;
+
+  @media (--mq-m) {
+    font-size: 0.8rem;
+  }
+
+  & summary {
+    padding: 5px 10px;
+    background: #0006;
+
+    &:enter {
+      background: #000;
+      color: white;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &[open] {
+      background: #000a;
+    }
+  }
+
+  & ul {
+    position: relative;
+  }
+
+  & a {
+    display: block;
+    padding: 5px 10px;
+
+    &:enter span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.wallpaper__img {
+  object-fit: cover;
+}

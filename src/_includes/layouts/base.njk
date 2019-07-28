@@ -51,6 +51,13 @@
                 {{p.data.title}}
               </a>
             {%- endfor -%}
+            <div class="subpages">
+              {%- for p in collections.subpages -%}
+                <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
+                  {{p.data.title}}
+                </a>
+              {%- endfor -%}
+            </div>
           </div>
         </div>
       </nav>

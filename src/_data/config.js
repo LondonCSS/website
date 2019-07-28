@@ -15,5 +15,10 @@ module.exports = {
       icon: "github",
       label: "Source"
     }
+  ],
+  wallpapers: [
+    { title: "Supermannerist", id: "bXBywv" },
+    { title: "Truchet Tiles", id: "KLvmOG" },
+    { title: "Waves", id: "Lojyvp" }
   ]
 };
