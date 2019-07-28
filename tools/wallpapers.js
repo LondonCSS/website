@@ -34,7 +34,7 @@ async function thumbnailImage(id) {
   const img = await readFile(pathIn);
 
   await sharp(img)
-    .resize({ width: 600 })
+    .resize({ width: 1200 })
     .toFile(pathOut);
 }
 

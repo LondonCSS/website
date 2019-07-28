@@ -1,8 +1,7 @@
 .wallpaper {
   position: relative;
-  width: 300px;
-  height: 188px;
 
+  padding: 0 6px;
   font-size: 0.8rem;
   background: #0a0c27;
 
@@ -49,4 +48,8 @@
       text-decoration: underline;
     }
   }
+}
+
+.wallpaper__img {
+  object-fit: cover;
 }

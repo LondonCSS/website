@@ -7,18 +7,20 @@ layout: layouts/base.njk
     Wallpapers
   </h1>
   <div class="copy bg subtitle">
-    <ol class="content__header__toc">
-      {%- for wallpaper in config.wallpapers -%}
-        <li><a href="#{{wallpaper.id}}">{{wallpaper.title}}</a></li>
-      {%- endfor -%}
-    </ol>
+    <div class="content__header__toc">
+      <ol>
+        {%- for wallpaper in config.wallpapers -%}
+          <li><a href="#{{wallpaper.id}}">{{wallpaper.title}}</a></li>
+        {%- endfor -%}
+      </ol>
+    </div>
   </div>
 </header>
 
 <article class="bg copy page__content page__content--wallpapers">
   {%- for wallpaper in config.wallpapers -%}
     <figure class="wallpaper">
-      <img class="wallpaper__img" width="300px" height="188px" src="/static/wallpapers/{{wallpaper.id}}-thumbnail.png">
+      <img class="wallpaper__img" width="600px" height="375px" src="/static/wallpapers/{{wallpaper.id}}-thumbnail.png">
       <figcaption class="wallpaper__label">
         <details id="{{wallpaper.id}}">
           <summary>{{wallpaper.title}}</summary>

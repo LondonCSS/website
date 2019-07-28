@@ -17,7 +17,7 @@ module.exports = {
     }
   ],
   wallpapers: [
-    { title: "Supermannerism", id: "bXBywv" },
+    { title: "Supermannerist", id: "bXBywv" },
     { title: "Truchet Tiles", id: "KLvmOG" },
     { title: "Waves", id: "Lojyvp" }
   ]
