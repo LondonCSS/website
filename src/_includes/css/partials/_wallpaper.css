@@ -10,6 +10,11 @@
     padding: 5px 10px;
     background: #0006;
 
+    &:enter {
+      background: #000;
+      color: white;
+    }
+
     &::before {
       content: "";
       position: absolute;

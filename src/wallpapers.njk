@@ -2,12 +2,17 @@
 layout: layouts/base.njk 
 ---
 
-<header class="content__header bg">
-  <ol>
-  {%- for wallpaper in config.wallpapers -%}
-    <li><a href="#{{wallpaper.id}}">{{wallpaper.title}}</a></li>
-  {%- endfor -%}
-  </ol>
+<header class="content__header">
+  <h1 class="title page__title">
+    Wallpapers
+  </h1>
+  <div class="copy bg subtitle">
+    <ol class="content__header__toc">
+      {%- for wallpaper in config.wallpapers -%}
+        <li><a href="#{{wallpaper.id}}">{{wallpaper.title}}</a></li>
+      {%- endfor -%}
+    </ol>
+  </div>
 </header>
 
 <article class="bg copy page__content page__content--wallpapers">
