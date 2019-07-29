@@ -22,6 +22,7 @@
     "eleventy-plugin-toc": "1.0.1",
     "markdown-it": "9.0.1",
     "markdown-it-anchor": "5.2.4",
+    "mkdirp": "0.5.1",
     "npm-run-all": "4.1.5",
     "postcss": "7.0.17",
     "postcss-clean": "1.1.0",
@@ -30,14 +31,16 @@
     "postcss-inset": "1.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
+    "puppeteer": "1.19.0",
+    "sharp": "0.22.1",
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
     "cypress": "3.4.0",
     "eslint": "6.1.0",
     "husky": "3.0.1",
-    "lighthouse": "5.1.0",
-    "lint-staged": "9.2.0",
+    "lighthouse": "5.2.0",
+    "lint-staged": "9.2.1",
     "stylelint": "10.1.0",
     "stylelint-config-recommended": "2.2.0",
     "stylelint-selector-bem-pattern": "2.1.0"
@@ -67,6 +70,7 @@
     "dev": "run-s clean && eleventy --serve",
     "build:site": "eleventy",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
+    "build:wallpapers": "node ./tools/wallpapers.js",
     "build": "run-s clean build:*",
     "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
   }

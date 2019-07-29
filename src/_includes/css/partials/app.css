@@ -281,6 +281,12 @@ body {
       content: none;
     }
   }
+
+  & .subpages {
+    @media (--mq-m) {
+      display: none;
+    }
+  }
 }
 
 .app__links__togglebtn {
@@ -362,6 +368,11 @@ body {
   border: 1px solid currentColor;
   border-left: none;
   border-right: none;
+  text-align: center;
+
+  @media (--mq-m) {
+    text-align: left;
+  }
 }
 
 .page__content {
@@ -372,6 +383,16 @@ body {
   &.page__content--stretch {
     display: flex;
     flex-direction: column;
+  }
+
+  &.page__content--wallpapers {
+    display: grid;
+    gap: 12px;
+
+    @media (--mq-m) {
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+      grid-auto-rows: 375px;
+    }
   }
 }
 
@@ -667,3 +688,4 @@ body {
     flex: 1;
   }
 }
+
