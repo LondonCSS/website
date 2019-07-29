@@ -13,7 +13,7 @@
 {% endmacro %}
 
 {% macro eventLink(title, subtitle, url, event) %}
-<a class="title content__hero" href="{{url}}" data-event="{{title | slug}}}">
+<a class="title content__hero content__hero--card" href="{{url}}" data-event="{{title | slug}}}">
   {{eventCaption(title, subtitle, event)}}
 </a>
 {% endmacro %}
