@@ -7,11 +7,8 @@ const urls = {
 };
 const rootUrl = urls[process.env.CONTEXT] || pkg.homepage;
 
-const isPuppeteer = process.env.NODE_ENV === "puppeteer";
-
 module.exports = {
   rootUrl,
-  isPuppeteer,
   socialmedia: [
     {
       href: "mailto:hello@londoncss",

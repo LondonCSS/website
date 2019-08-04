@@ -21,7 +21,7 @@ async function grabScreenshots() {
 
     const browser = await puppeteer.launch(browserOpts);
     const page = await browser.newPage();
-    await page.goto(`http://localhost:${serverOpts.port}/events/`, {
+    await page.goto(`http://localhost:${serverOpts.port}/events/puppeteer.html`, {
       waitUntil: "domcontentloaded"
     });
 
