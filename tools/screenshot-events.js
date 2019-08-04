@@ -26,10 +26,13 @@ async function grabScreenshots() {
     });
 
     const nodes = await page.$$("[data-event]");
-    let count = 0;
-
     for (const node of nodes) {
-      await node.screenshot({ path: `${savePath}/event-${++count}.png` });
+      const event = await page.evaluate(
+        link => link.getAttribute("data-event"),
+        node
+      );
+
+      await node.screenshot({ path: `${savePath}/${event}.png` });
     }
 
     await browser.close();

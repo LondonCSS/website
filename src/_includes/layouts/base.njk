@@ -18,7 +18,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/static/site.webmanifest">
-    
+  
+  <!-- Twitter card -->
+  {% block twitter %}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@londoncss" />
     <meta name="twitter:creator" content="@oliverturner" />
@@ -26,6 +28,7 @@
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ subtitle }}" />
     <meta property="og:image" content="{{ pkg.homepage }}/static/images/card-small.png" />
+  {% endblock %}
 
     <link rel="stylesheet" href="/styles.css">
   </head>
@@ -62,7 +65,9 @@
         </div>
       </nav>
 
+    {% block content %}
       {{ content | safe }}
+    {% endblock %}
 
       <aside class="sponsors">
         <p class="title">Proudly sponsored by</p>
