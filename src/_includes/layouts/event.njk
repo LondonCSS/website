@@ -1,16 +1,26 @@
----
-layout: "layouts/base.njk"
----
+{% extends "layouts/base.njk" %}
 
 {% from "partials/event-header.njk" import eventHeader  %}
 {% from "partials/event-talk.njk" import talk as eventTalk  %}
 
-{{ eventHeader(title, subtitle, description, event) }}
+{% block twitter %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@londoncss" />
+  <meta name="twitter:creator" content="@oliverturner" />
+  <meta property="og:url" content="{{ config.rootUrl }}{{ page.url }}" />
+  <meta property="og:title" content="{{ title }}: {{ subtitle }}" />
+  <meta property="og:description" content="Join us at {{ host.twitter }} for an evening of talks from some of the best CSS developers working today" />
+  <meta property="og:image" content="{{ config.rootUrl }}/static/events/{{ title | slug }}.png" />
+{% endblock %}
 
-<div class="page__content">
-  <section class="talks">
-    {%- for talk in talks %}
-      {{ eventTalk(talk) }}
-    {%- endfor %}
-  </section>
-</div>
+{% block content %}
+  {{ eventHeader(title, subtitle, description, event) }}
+
+  <div class="page__content">
+    <section class="talks">
+      {%- for talk in talks %}
+        {{ eventTalk(talk) }}
+      {%- endfor %}
+    </section>
+  </div>
+{% endblock %}
