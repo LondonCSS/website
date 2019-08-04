@@ -7,10 +7,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@londoncss" />
   <meta name="twitter:creator" content="@oliverturner" />
-  <meta property="og:url" content="{{ pkg.homepage }}{{ page.url }}" />
+  <meta property="og:url" content="{{ config.rootUrl }}{{ page.url }}" />
   <meta property="og:title" content="{{ title }}" />
   <meta property="og:description" content="{{ subtitle }}" />
-  <meta property="og:image" content="{{ pkg.homepage }}/static/events/{{ title | slug }}.png" />
+  <meta property="og:image" content="{{ config.rootUrl }}/static/events/{{ title | slug }}.png" />
 {% endblock %}
 
 {% block content %}
