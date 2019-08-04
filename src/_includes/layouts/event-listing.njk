@@ -1,0 +1,36 @@
+{% extends "layouts/base.njk" %}
+
+{% from "partials/event-header.njk" import eventLink %}
+
+{% block content %}
+<header class="content__header">
+  <h1 class="title page__title">
+    {{ title }}
+  </h1>
+
+  <div class="copy bg subtitle">
+    <nav class="content__header__toc">
+      <ol>
+        {%- for event in collections.events -%}
+          <li><a href="#{{ event.data.title | slug }}">{{event.data.title}}</a></li>
+        {%- endfor -%}
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<div class="page__content">
+  <div class="events">
+    {%- for event in collections.events -%}
+    {{
+      eventLink(
+        event.data.title,
+        event.data.subtitle,
+        event.url,
+        event.data.event
+      )
+    }}
+    {%- endfor -%}
+  </div>
+</div>
+{% endblock %}

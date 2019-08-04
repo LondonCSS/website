@@ -411,8 +411,6 @@ body {
 .content__header {
   grid-area: header;
 
-  /* display: grid; */
-
   @media (--mq-m) {
     position: sticky;
     top: 1rem;
@@ -450,16 +448,15 @@ body {
 
   height: 200px;
   padding: 2rem 1rem 1rem;
-  background: var(--bg-highlight);
+  background-color: var(--bg-highlight);
 
   @media (--mq-m) {
     padding: 0.5rem 1rem;
   
     &.content__hero--card {
-      height: 314px;
+      height: 322px;
     }
   }
-
 }
 
 .content__hero__caption {
@@ -483,14 +480,11 @@ body {
   font-weight: 400;
 }
 
-/* Talks
+/* Events
 ------------------------------------------------------------------------------*/
 .events {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
-
-  padding: 0 1rem;
 }
 
 /* Talks

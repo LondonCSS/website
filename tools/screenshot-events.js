@@ -1,10 +1,13 @@
+const fs = require("fs");
 const util = require("util");
 const path = require("path");
 const http = require("http");
+const sharp = require("sharp");
 const puppeteer = require("puppeteer");
 const handler = require("serve-handler");
 const mkdirp = util.promisify(require("mkdirp"));
 
+const readFile = util.promisify(fs.readFile);
 const savePath = path.join(__dirname, "../dist/static/events");
 const browserOpts = {
   args: ["--enable-experimental-web-platform-features"],
@@ -15,15 +18,25 @@ const serverOpts = {
   dir: "dist"
 };
 
+async function makeThumbnail(path, width) {
+  const img = await readFile(path);
+  await sharp(img)
+    .resize({ width })
+    .toFile(path);
+}
+
 async function grabScreenshots() {
   try {
     await mkdirp(savePath);
 
     const browser = await puppeteer.launch(browserOpts);
     const page = await browser.newPage();
-    await page.goto(`http://localhost:${serverOpts.port}/events/puppeteer.html`, {
-      waitUntil: "domcontentloaded"
-    });
+    await page.goto(
+      `http://localhost:${serverOpts.port}/events/puppeteer.html`,
+      {
+        waitUntil: "domcontentloaded"
+      }
+    );
 
     const nodes = await page.$$("[data-event]");
     for (const node of nodes) {
@@ -31,8 +44,10 @@ async function grabScreenshots() {
         link => link.getAttribute("data-event"),
         node
       );
+      const path = `${savePath}/${event}.png`;
 
-      await node.screenshot({ path: `${savePath}/${event}.png` });
+      await node.screenshot({ path });
+      await makeThumbnail(path, 495 * 2);
     }
 
     await browser.close();

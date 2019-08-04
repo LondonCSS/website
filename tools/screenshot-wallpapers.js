@@ -27,14 +27,14 @@ async function screenshotPage(browser, id) {
   await page.screenshot({ path: `${savePath}/${id}-mobile.png` });
 }
 
-async function thumbnailImage(id) {
+async function thumbnailImage(id, width) {
   const pathIn = `${savePath}/${id}-desktop.png`;
   const pathOut = `${savePath}/${id}-thumbnail.png`;
 
   const img = await readFile(pathIn);
 
   await sharp(img)
-    .resize({ width: 1200 })
+    .resize({ width })
     .toFile(pathOut);
 }
 
@@ -47,7 +47,7 @@ async function grabScreenshots() {
   try {
     for (const { id, title } of wallpapers) {
       await screenshotPage(browser, id, title);
-      await thumbnailImage(id);
+      await thumbnailImage(id, 1200);
     }
     await browser.close();
   } catch (err) {

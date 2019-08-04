@@ -70,9 +70,9 @@
     "dev": "run-s clean && eleventy --serve",
     "serve": "serve ./dist",
     "build:site": "eleventy",
-    "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
+    "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build": "run-s clean build:*",
     "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
   }

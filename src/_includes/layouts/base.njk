@@ -32,6 +32,9 @@
     <meta property="og:image" content="{{ config.rootUrl }}/static/images/card-small.png" />
   {% endblock %}
 
+  <!-- Let pages add dependencies -->
+  {% block extras %}{% endblock %}
+
   </head>
 
   <body class="menu-closed">
@@ -97,6 +100,5 @@
     {% include "partials/icons.njk" %}
 
     <script type="module" src="{{ '/script/index.mjs' | url }}"></script>
-    <script src="{{ '/script/sw.js' | url }}"></script>
   </body>
 </html>
