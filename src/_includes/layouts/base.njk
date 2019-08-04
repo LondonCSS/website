@@ -18,6 +18,12 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/static/site.webmanifest">
+
+    <link rel="stylesheet" href="/styles.css">
+    
+  {% if config.isPuppeteer %}    
+    <link rel="stylesheet" href="/puppeteer.css">
+  {% endif %}
   
   <!-- Twitter card -->
   {% block twitter %}
@@ -30,7 +36,6 @@
     <meta property="og:image" content="{{ config.rootUrl }}/static/images/card-small.png" />
   {% endblock %}
 
-    <link rel="stylesheet" href="/styles.css">
   </head>
 
   <body class="menu-closed">
