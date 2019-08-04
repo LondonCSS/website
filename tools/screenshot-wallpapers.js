@@ -14,7 +14,7 @@ const savePath = path.join(__dirname, "../dist/static/wallpapers");
 async function screenshotPage(browser, id) {
   const page = await browser.newPage();
   await page.goto(`https://s.codepen.io/oliverturner/debug/${id}`, {
-    waitUntil: "domcontentloaded"
+    waitUntil: "networkidle0"
   });
 
   await page.setViewport({ width: 3840, height: 2160, deviceScaleFactor: 2 });
