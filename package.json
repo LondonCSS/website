@@ -36,7 +36,9 @@
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
+    "cypress": "3.4.0",
     "eslint": "6.1.0",
+    "eslint-plugin-cypress": "2.6.0",
     "husky": "3.0.1",
     "lighthouse": "5.2.0",
     "lint-staged": "9.2.1",
@@ -71,6 +73,7 @@
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build:wallpapers": "node ./tools/wallpapers.js",
     "build": "run-s clean build:*",
-    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
+    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view",
+    "cypress:open": "cypress open"
   }
 }
