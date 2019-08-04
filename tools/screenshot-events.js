@@ -34,7 +34,7 @@ async function grabScreenshots() {
     await page.goto(
       `http://localhost:${serverOpts.port}/events/puppeteer.html`,
       {
-        waitUntil: "domcontentloaded"
+        waitUntil: "networkidle0"
       }
     );
 
