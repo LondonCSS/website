@@ -25,7 +25,7 @@ const eleventy = config => {
 
   config.setLibrary("md", md);
 
-  config.addPassthroughCopy("src/script");
+  config.addPassthroughCopy("src/js");
   config.addPassthroughCopy("static");
 
   return {
