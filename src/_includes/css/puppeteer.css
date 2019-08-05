@@ -1,0 +1,39 @@
+h3 {
+  font-weight: 700;
+}
+
+.title, 
+.subtitle {
+  font-family: Lato, sans-serif;
+}
+
+.content__hero__caption {
+  font-weight: 700;
+}
+
+#event-2 {
+  /*
+  --randots-tile-size:  2;
+  --randots-fill-color:  #7ac7ff;
+  --randots-starting-alpha:  0.0125;
+  --randots-alpha-increment:  0.00125;
+  --randots-starting-probability:  0.000625;
+  --randots-probability-increment:  0.0025;
+
+  --lines-tile-size: 48;
+  --lines-color: #f0f;
+  --lines-weight: 4;
+  --lines-probability: 0.25;
+  --lines-direction: 0;
+  --lines-crosshatch: 1;
+  */
+  
+  @supports (background: paint(id)) {
+    --circles-tile-size: 8;
+    --circles-colors: #e59eff #0094ff #ff8a7f;
+    --circles-amplitude: 2.25;
+    --circles-blend-mode: multiply;
+
+    background: paint(circles);
+  }
+}

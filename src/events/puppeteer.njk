@@ -8,42 +8,9 @@ permalink: /events/puppeteer.html
 
 {% block extras %}
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i&display=swap" rel="stylesheet">
-
-<style>
-  h3 {
-    font-weight: 700;
-  }
-
-  .title, 
-  .subtitle {
-    font-family: Lato, sans-serif;
-  }
-
-  .content__hero__caption {
-    font-weight: 700;
-  }
-
-  [data-event="event-1"] {
-    --extra-sparkleNumber: 60; /* defaults to 30 */
-    --extra-sparkleHue: 180; /* Defaults to 60 (yellow) */
-    --extra-sparkleHeightVariance: 12; /* Defaults to 9 */
-    --extra-sparkleWidthVariance: 15; /* Defaults to 12 */
-    --extra-sparkleWeightVariance: 3; /* Defaults to 2 */
-
-    background-image: paint(extra-sparkles);
-  }
-
-  [data-event="event-2"] {
-    --extra-confettiNumber: 80; /* defaults to 30 */
-    --extra-confettiLengthVariance: 12; /* Defaults to 15 */
-    --extra-confettiWeightVariance: 3; /* Defaults to 4 */
-
-    background-image: paint(extra-confetti);
-  }
-</style>
+<link rel="stylesheet" href="/puppeteer.css">
 {% endblock %}
 
 {% block footer %}
-<script src="/static/paintlets/extra.css/sparkles.js"></script>
-<script src="/static/paintlets/extra.css/confetti.js"></script>
+<script type="module" src="/js/puppeteer.js"></script>
 {% endblock %}
