@@ -22,6 +22,24 @@ h3 {
   font-weight: 700;
 }
 
+#event-0 {
+  --extra-sparkleNumber: 140;
+  --extra-sparkleHue: 300;
+  --extra-sparkleWidthVariance: 8;
+  --extra-sparkleHeightVariance: 8;
+  --extra-sparkleWeightVariance: 2;
+  
+  background-image: paint(extra-sparkles);
+}
+
+#event-1 {
+  --extra-confettiNumber: 140;
+  --extra-confettiWeightVariance: 8;
+  --extra-confettiLengthVariance: 10;
+  
+  background-image: paint(extra-confetti);
+}
+
 #event-2 {
   --randots-tile-size:  2;
   --randots-fill-color:  #7ac7ff;
@@ -42,6 +60,5 @@ h3 {
   --circles-amplitude: 2.25;
   --circles-blend-mode: multiply;
 
-  
   background-image: paint(circles);
 }
