@@ -99,6 +99,8 @@
 
     {% include "partials/icons.njk" %}
 
+    {% block footer %}{% endblock %}
+    
     <script type="module" src="{{ '/script/index.mjs' | url }}"></script>
   </body>
 </html>
