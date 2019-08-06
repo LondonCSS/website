@@ -32,16 +32,19 @@
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
     "puppeteer": "1.19.0",
-    "sharp": "0.22.1",
+    "serve-handler": "6.1.0",
+    "sharp": "0.23.0",
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
-    "cypress": "3.4.0",
+    "cypress": "3.4.1",
     "eslint": "6.1.0",
-    "eslint-plugin-cypress": "2.6.0",
-    "husky": "3.0.1",
+    "eslint-plugin-cypress": "2.6.1",
+    "husky": "3.0.2",
     "lighthouse": "5.2.0",
     "lint-staged": "9.2.1",
+    "serve": "11.1.0",
+    "start-server-and-test": "1.9.2",
     "stylelint": "10.1.0",
     "stylelint-config-recommended": "2.2.0",
     "stylelint-selector-bem-pattern": "2.1.0"
@@ -69,11 +72,15 @@
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
     "dev": "run-s clean && eleventy --serve",
+    "serve": "serve ./dist",
     "build:site": "eleventy",
+    "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
+    "build:eventcards": "node ./tools/screenshot-events.js",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
-    "build:wallpapers": "node ./tools/wallpapers.js",
     "build": "run-s clean build:*",
     "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view",
-    "cypress:open": "cypress open"
+    "cy:serve": "serve ./dist",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test cy:serve http://localhost:5000 cy:run"
   }
 }

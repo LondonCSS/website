@@ -18,16 +18,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="manifest" href="/static/site.webmanifest">
-    
+
+    <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Twitter card -->
+  {% block twitter %}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@londoncss" />
     <meta name="twitter:creator" content="@oliverturner" />
-    <meta property="og:url" content="{{ pkg.homepage }}" />
+    <meta property="og:url" content="{{ config.rootUrl }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ subtitle }}" />
-    <meta property="og:image" content="{{ pkg.homepage }}/static/images/card-small.png" />
+    <meta property="og:image" content="{{ config.rootUrl }}/static/images/card-small.png" />
+  {% endblock %}
 
-    <link rel="stylesheet" href="/styles.css">
+  <!-- Let pages add dependencies -->
+  {% block extras %}{% endblock %}
+
   </head>
 
   <body class="menu-closed">
@@ -62,7 +69,9 @@
         </div>
       </nav>
 
+    {% block content %}
       {{ content | safe }}
+    {% endblock %}
 
       <aside class="sponsors">
         <p class="title">Proudly sponsored by</p>
@@ -90,7 +99,8 @@
 
     {% include "partials/icons.njk" %}
 
-    <script type="module" src="{{ '/script/index.mjs' | url }}"></script>
-    <script src="{{ '/script/sw.js' | url }}"></script>
+    {% block footer %}{% endblock %}
+    
+    <script type="module" src="{{ '/js/index.js' | url }}"></script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 {% macro eventCaption(title, subtitle, event) %}
 <h2 class="content__hero__caption">
+  <span class="faded">London CSS</span>
   <span>{{title}}:</span>
   <em>{{subtitle}}</em>
 </h2>
@@ -13,9 +14,14 @@
 {% endmacro %}
 
 {% macro eventLink(title, subtitle, url, event) %}
-<a class="title content__hero" href="{{url}}">
-  {{eventCaption(title, subtitle, event)}}
-</a>
+<div id="{{ title | slug }}"
+   class="title content__hero content__hero--card" 
+   data-event={{ title | slug }}
+>
+  <a href="{{url}}">
+    {{eventCaption(title, subtitle, event)}}
+  </a>
+</div>
 {% endmacro %}
 
 {% macro eventHeader(title, subtitle, description, event) %}

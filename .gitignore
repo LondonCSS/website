@@ -1,6 +1,8 @@
 # Ignore build folder
 dist/
 static/wallpapers/
+cypress/videos/
+cypress/screenshots/
 
 # Ignore lighthouse output
 www.londoncss.dev* 

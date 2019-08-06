@@ -1,21 +1,6 @@
 ---
 title: Events
-layout: layouts/base.njk
 tags: pages
 ---
 
-{% from "partials/event-header.njk" import eventLink  %}
-
-<header class="content__header">
-  <h1 class="title page__title">
-    {{title}}
-  </h1>
-</header>
-
-<div class="page__content">
-  <div class="events">
-  {%- for event in collections.events -%}
-    {{eventLink(event.data.title, event.data.subtitle, event.url, event.data.event)}}
-  {%- endfor -%}
-  </div>
-</div>
+{% extends "layouts/event-listing.njk" %}
