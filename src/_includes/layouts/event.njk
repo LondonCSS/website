@@ -9,7 +9,7 @@
   <meta name="twitter:creator" content="@oliverturner" />
   <meta property="og:url" content="{{ config.rootUrl }}{{ page.url }}" />
   <meta property="og:title" content="{{ title }}: {{ subtitle }}" />
-  <meta property="og:description" content="Join us at {{ host.twitter }} for an evening of talks from some of the best CSS developers working today" />
+  <meta property="og:description" content="Join us on {{ event.date | date }} at {{ host.twitter }} for an evening of talks from some of the best CSS developers working today" />
   <meta property="og:image" content="{{ config.rootUrl }}/static/events/{{ title | slug }}.png" />
 {% endblock %}
 
