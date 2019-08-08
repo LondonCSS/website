@@ -4,9 +4,7 @@ const postcssClean = require(`postcss-clean`);
 const postcssInset = require(`postcss-inset`);
 const postcssImport = require("postcss-import");
 
-const { customMedia } = require("../src/theme.js");
-
-module.exports = () => ({
+module.exports = ({ customMedia }) => ({
   plugins: [
     postcssImport(),
     postcssPresetEnv({
