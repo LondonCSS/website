@@ -1,5 +1,5 @@
 {% macro link(link) %}
-<a class="social__link" href="{{link.href}}">
+<a class="social__link" href="{{link.href}}" data-social-link="{{link.icon}}">
   <span class="social__link__icon" aria-hidden="true">
     <svg>
       <use href="#icon-{{link.icon}}"/>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{{ title }}</title>
+    <title>London CSS: {{ title }}</title>
     <meta name="description" content="{{ description }}"/>
     <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
     
@@ -34,9 +34,11 @@
     {% include "partials/supermannerist.njk" %}
     
     <div class="app">
-      <nav class="app__controls app__nav title">
+      <nav class="app__controls app__nav title" data-app-nav>
         <div class="container row">
-          <h1 class="app__title"><a href="/">London CSS</a></h1>          
+          <h1 class="app__title">
+            <a href="/">London CSS</a>
+          </h1>
           <div class="app__links">
             <button class="app__links__togglebtn" data-click="menu-toggle">
               <div class="togglebtn__body">
@@ -47,13 +49,17 @@
               </div>
             </button>
             {%- for p in collections.pages -%}
-              <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
+              <a href="{{p.url}}" 
+                 class="app__link {% if page.url == p.url %}active{% endif %}"
+                 data-app-link="{{p.data.title | slug}}">
                 {{p.data.title}}
               </a>
             {%- endfor -%}
-            <div class="subpages">
+            <div class="subpages" data-testid="subnav">
               {%- for p in collections.subpages -%}
-                <a href="{{p.url}}" class="app__link {% if page.url == p.url %}active{% endif %}">
+                <a href="{{p.url}}" 
+                   class="app__link {% if page.url == p.url %}active{% endif %}"
+                   data-app-link="{{p.data.title | slug}}">
                   {{p.data.title}}
                 </a>
               {%- endfor -%}
