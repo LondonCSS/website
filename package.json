@@ -20,7 +20,7 @@
     "clean-css": "4.2.1",
     "date-fns": "1.30.1",
     "eleventy-plugin-toc": "1.0.1",
-    "markdown-it": "9.0.1",
+    "markdown-it": "9.1.0",
     "markdown-it-anchor": "5.2.4",
     "mkdirp": "0.5.1",
     "npm-run-all": "4.1.5",
@@ -37,13 +37,16 @@
     "workbox-cli": "4.3.1"
   },
   "devDependencies": {
+    "serve": "11.1.0",
+    "@testing-library/cypress": "4.1.0",
     "cypress": "3.4.1",
+    "cypress-skip-and-only-ui": "1.2.1",
+    "cypress-watch-and-reload": "1.2.9",
     "eslint": "6.1.0",
     "eslint-plugin-cypress": "2.6.1",
-    "husky": "3.0.2",
+    "husky": "3.0.3",
     "lighthouse": "5.2.0",
     "lint-staged": "9.2.1",
-    "serve": "11.1.0",
     "start-server-and-test": "1.9.2",
     "stylelint": "10.1.0",
     "stylelint-config-recommended": "2.2.0",
@@ -79,8 +82,9 @@
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build": "run-s clean build:*",
     "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view",
-    "cy:serve": "serve ./dist",
+    "cy:serve": "npm run dev",
+    "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "start-server-and-test cy:serve http://localhost:5000 cy:run"
+    "cy": "start-server-and-test cy:serve http://localhost:8080 cy:open"
   }
 }
