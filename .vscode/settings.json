@@ -15,7 +15,5 @@
     "twig": "html"
   },
 
-  "prettier.stylelintIntegration": true,
-
   "stylelint.config": { "extends": "./tools/.stylelintrc" }
 }
