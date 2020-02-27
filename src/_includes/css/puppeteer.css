@@ -22,16 +22,6 @@ h3 {
   font-weight: 700;
 }
 
-#event-0 {
-  --extra-sparkleNumber: 140;
-  --extra-sparkleHue: 300;
-  --extra-sparkleWidthVariance: 8;
-  --extra-sparkleHeightVariance: 8;
-  --extra-sparkleWeightVariance: 2;
-  
-  background-image: paint(extra-sparkles);
-}
-
 #event-1 {
   --extra-confettiNumber: 140;
   --extra-confettiWeightVariance: 8;
@@ -61,4 +51,14 @@ h3 {
   --circles-blend-mode: multiply;
 
   background-image: paint(circles);
+}
+
+#event-3 {
+  --extra-sparkleNumber: 200;
+  --extra-sparkleHue: 180;
+  --extra-sparkleWidthVariance: 20;
+  --extra-sparkleHeightVariance: 20;
+  --extra-sparkleWeightVariance: 6;
+  
+  background-image: paint(extra-sparkles);
 }

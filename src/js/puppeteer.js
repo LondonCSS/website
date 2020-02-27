@@ -26,6 +26,8 @@ CSS.registerProperty({
   initialValue: "multiply"
 });
 
+// Sparkles
+//------------------------------------------------------------------------------
 CSS.registerProperty({
   name: '--extra-sparkleNumber',
   syntax: '<number>',
@@ -40,8 +42,6 @@ CSS.registerProperty({
   initialValue: 60,
 });
 
-// Sparkles
-//------------------------------------------------------------------------------
 CSS.registerProperty({
   name: '--extra-sparkleHeightVariance',
   syntax: '<number>',
@@ -89,6 +89,7 @@ CSS.registerProperty({
 async function init() {
   try {
     CSS.paintWorklet.addModule("/static/paintlets/extra.css/confetti.js");
+    CSS.paintWorklet.addModule("/static/paintlets/extra.css/sparkles.js");
     CSS.paintWorklet.addModule("/static/paintlets/malchata/circles.js");
   } catch (err) {
     console.log(err);
