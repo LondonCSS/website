@@ -5,7 +5,7 @@ const http = require("http");
 const sharp = require("sharp");
 const puppeteer = require("puppeteer");
 const handler = require("serve-handler");
-const mkdirp = util.promisify(require("mkdirp"));
+const mkdirp = require("mkdirp")
 
 const readFile = util.promisify(fs.readFile);
 const savePath = path.join(__dirname, "../dist/static/events");
@@ -27,7 +27,7 @@ async function makeThumbnail(path, width) {
 
 async function grabScreenshots() {
   try {
-    await mkdirp(savePath);
+    mkdirp.sync(savePath);
 
     const browser = await puppeteer.launch(browserOpts);
     const page = await browser.newPage();

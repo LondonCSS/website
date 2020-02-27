@@ -4,8 +4,8 @@ const path = require("path");
 
 const puppeteer = require("puppeteer");
 const sharp = require("sharp");
+const mkdirp = require("mkdirp");
 
-const mkdirp = util.promisify(require("mkdirp"));
 const readFile = util.promisify(fs.readFile);
 
 const { wallpapers } = require("../src/_data/config");
@@ -39,7 +39,8 @@ async function thumbnailImage(id, width) {
 }
 
 async function grabScreenshots() {
-  await mkdirp(savePath);
+  mkdirp.sync(savePath);
+  
   const browser = await puppeteer.launch({
     args: ["--enable-experimental-web-platform-features"]
   });

@@ -1,7 +1,7 @@
 const pluginTOC = require("eleventy-plugin-toc");
 
 const MarkdownIt = require("markdown-it");
-const formatDate = require("date-fns/format");
+const { format: formatDate, parseISO } = require("date-fns");
 
 const now = new Date();
 
@@ -13,7 +13,7 @@ const md = new MarkdownIt({
 const eleventy = config => {
   config.addPlugin(pluginTOC);
 
-  config.addFilter("date", code => formatDate(code, "dddd, MMMM Do"));
+  config.addFilter("date", code => formatDate(parseISO(code), "EEEE, MMMM do"));
 
   config.addFilter("markdown", code => {
     return code ? md.render(code) : code;
