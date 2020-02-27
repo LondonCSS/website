@@ -1,18 +1,18 @@
 @keyframes fade-in {
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 :root {
   --grad1: #002239;
   --grad2: #0b605f;
-  --grad3: #58ADAC;
+  --grad3: #58adac;
   --stripe: #fff1;
 
   --bg-contrast: #000a;
   --bg-contrast-text: #ccc;
-  --bg-contrast-title: #B6B58E;
+  --bg-contrast-title: #b6b58e;
   --bg-highlight: #202237;
   --bg-highlight-text: #666;
 
@@ -71,10 +71,10 @@ body {
   position: absolute;
   width: 1px;
   height: 1px;
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(100%);
   overflow: hidden;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .icons {
@@ -88,15 +88,6 @@ body {
 .bg {
   background: var(--bg-contrast);
   color: var(--bg-contrast-text);
-
-  & p a {
-    color: var(--bg-contrast-title);
-    text-decoration: underline;
-
-    &:enter {
-      text-decoration: none;
-    }
-  }
 }
 
 .icon {
@@ -120,17 +111,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   margin-top: 1em;
   padding: 0.5rem 1rem;
   border: 1px solid var(--bg-contrast-title);
   text-decoration: none;
   background: var(--bg);
   color: var(--colour);
-  
+
+  & .icon {
+    transition: transform 0.5s;
+  }
+
   &:enter {
     --colour: #000a;
     --bg: var(--bg-contrast-title);
+
+    & .icon {
+      transform: translateX(0.5rem);
+    }
   }
 }
 
@@ -140,7 +139,7 @@ body {
 
 .register--inactive {
   color: #888;
-} 
+}
 
 /* App
 ------------------------------------------------------------------------------*/
@@ -152,13 +151,13 @@ body {
   grid-template-areas:
     "nav"
     "header"
-    "content" 
+    "content"
     "sponsors"
     "footer";
-  
+
   min-height: 100vh;
 
-  &::before  {
+  &::before {
     opacity: 0;
     animation: fade-in forwards 0.3s;
 
@@ -183,9 +182,12 @@ body {
       ".      sponsors  content ."
       "footer footer    footer  footer";
 
-    grid-template-columns: 1fr minmax(160px, 300px) minmax(460px, calc(660px - 1rem)) 1fr;
+    grid-template-columns: 1fr minmax(160px, 300px) minmax(
+        460px,
+        calc(660px - 1rem)
+      ) 1fr;
     grid-template-rows: auto auto 1fr auto;
-    
+
     &::before {
       content: none;
     }
@@ -207,7 +209,7 @@ body {
   }
 }
 
-.app__title {  
+.app__title {
   position: relative;
   margin: 0 auto;
   text-align: center;
@@ -249,7 +251,7 @@ body {
   will-change: transform;
   transition: transform 0.3s;
   transform: translateX(-100%);
-    
+
   position: fixed;
   left: 100%;
   top: 0;
@@ -361,7 +363,7 @@ body {
   @media (--mq-m) {
     display: flex;
     flex-direction: column;
-    
+
     overflow: hidden;
     max-height: 100%;
   }
@@ -398,6 +400,16 @@ body {
       grid-auto-rows: 375px;
     }
   }
+
+  & p a,
+  & li a {
+    color: var(--bg-contrast-title);
+    text-decoration: underline;
+
+    &:enter {
+      text-decoration: none;
+    }
+  }
 }
 
 .talks {
@@ -429,7 +441,7 @@ body {
   & > ol {
     list-style-type: lower-latin;
   }
-  
+
   & a {
     text-decoration: initial;
     color: inherit;
@@ -452,7 +464,7 @@ body {
 
   @media (--mq-m) {
     padding: 0.5rem 1rem;
-  
+
     &.content__hero--card {
       height: 322px;
     }
@@ -470,7 +482,7 @@ body {
   }
 
   & em {
-    color: var(--bg-contrast-title)
+    color: var(--bg-contrast-title);
   }
 }
 
@@ -541,7 +553,7 @@ body {
 
 .speaker__name {
   transition: color 0.25s;
-  
+
   &:enter {
     color: var(--bg-contrast-title);
   }
@@ -638,7 +650,7 @@ body {
 
   & svg {
     stroke: currentColor;
-    
+
     width: var(--icon-med);
     height: var(--icon-med);
   }
@@ -691,4 +703,3 @@ body {
     flex: 1;
   }
 }
-

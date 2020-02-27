@@ -48,7 +48,7 @@ If you are being harassed, notice that someone else is being harassed, or have a
 
 You can make a personal report by:
 
-* Twitter's direct message service: [@London CSS](https://twitter.com/messages/compose?recipient_id=2676180362).
+* Twitter's direct message service: [@LondonCSS](https://twitter.com/messages/compose?recipient_id=2676180362).
 * Email: <hello@londoncss.dev>
 * Phone (organiser's numbers are shared at the beginning of the event and monitored during the event).
 * Reaching out to an organiser who will make sure the conversation is held privately. You will not be asked to confront anyone and we won’t tell anyone who you are. We will identify ourselves at the beginning of each event.
