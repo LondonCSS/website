@@ -431,6 +431,10 @@ body {
     position: sticky;
     top: 1rem;
   }
+
+  & a {
+    color: var(--bg-contrast-title);
+  }
 }
 
 .content__header__toc {
@@ -712,6 +716,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.event__notice + .event__notice {
+  margin-top: 1rem;
+}
+
 .event__notice--alert {
   border: 1px solid var(--bg-contrast-title);
   background: var(--bg-alert);
@@ -725,6 +733,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+    line-height: 1;
   }
 }
 
