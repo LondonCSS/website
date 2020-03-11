@@ -1,0 +1,11 @@
+{% macro notice(notice) %}
+<div class="event__notice event__notice--{{ notice.level }}">
+  <div class="event__notice__heading">
+    <h2 class="title event__notice__title">{{notice.title}}</h2>
+    <span class="event__notice__date">{{ notice.date | date }}</span>
+  </div>
+  <div class="event__notice__content">
+    {{notice.content | markdown | safe}}
+  </div>
+</div>
+{% endmacro %}

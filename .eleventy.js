@@ -13,7 +13,7 @@ const md = new MarkdownIt({
 const eleventy = config => {
   config.addPlugin(pluginTOC);
 
-  config.addFilter("date", code => formatDate(parseISO(code), "EEEE, MMMM do"));
+  config.addFilter("date", code => formatDate(parseISO(code), "EEEE, MMMM do yyyy"));
 
   config.addFilter("markdown", code => {
     return code ? md.render(code) : code;
