@@ -719,11 +719,13 @@ body {
 }
 
 .event__notice__heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-
   border-bottom: 1px solid var(--bg-contrast-title);
+
+  @media (--mq-l) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }
 
 .event__notice__heading,
