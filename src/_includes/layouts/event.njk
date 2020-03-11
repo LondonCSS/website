@@ -2,6 +2,7 @@
 
 {% from "partials/event-header.njk" import eventHeader  %}
 {% from "partials/event-talk.njk" import talk as eventTalk  %}
+{% from "partials/event-notice.njk" import notice as eventNotice  %}
 
 {% block twitter %}
   <meta name="twitter:card" content="summary_large_image" />
@@ -17,6 +18,14 @@
   {{ eventHeader(title, subtitle, description, event) }}
 
   <div class="page__content">
+    {% if notices %}
+      <section class="event__notices">
+        {%- for notice in notices %}
+          {{ eventNotice(notice) }}
+        {%- endfor %}
+      </section>
+    {% endif %}
+
     <section class="talks">
       {%- for talk in talks %}
         {{ eventTalk(talk) }}

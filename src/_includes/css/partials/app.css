@@ -13,23 +13,27 @@
   --bg-contrast: #000a;
   --bg-contrast-text: #ccc;
   --bg-contrast-title: #b6b58e;
+
   --bg-highlight: #202237;
   --bg-highlight-text: #666;
+
+  --bg-alert: #535670;
+  --bg-alert: #402132;
+  --bg-alert-text: #bfb5ba;
 
   --max-w: 960px;
   --icon-med: 24px;
   --icon-lg: 64px;
 }
 
-html,
-body {
-  margin: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   --grad-img: linear-gradient(119deg, var(--grad1) 2%, var(--grad2) 82%);
 
-  scroll-behavior: smooth;
+  margin: 0;
   font-family: system-ui;
   background: var(--grad1) var(--grad-img) no-repeat;
   color: #ccc;
@@ -702,4 +706,33 @@ body {
   &.form--stretch {
     flex: 1;
   }
+}
+
+.event__notices {
+  margin-bottom: 1rem;
+}
+
+.event__notice--alert {
+  border: 1px solid var(--bg-contrast-title);
+  background: var(--bg-alert);
+  color: var(--bg-alert-text);
+}
+
+.event__notice__heading {
+  border-bottom: 1px solid var(--bg-contrast-title);
+
+  @media (--mq-l) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.event__notice__heading,
+.event__notice__content {
+  padding: 1rem;
+}
+
+.event__notice__title {
+  color: var(--bg-contrast-title);
 }
