@@ -30,7 +30,7 @@
   <div class="copy bg">
     {{description | markdown | safe}}
 
-    {% if event.date | isFuture %}
+    {% if event.available and event.date | isFuture %}
       {% if event.registerUrl %}
         <a class="title register" href="{{event.registerUrl}}">
           <span class="register__label">Register for tickets</span>
