@@ -2,7 +2,16 @@
 {% if talk.speaker %}
   <article class="bg talk" id="{{talk.speaker.name | slug}}">
     <h3 class="title talk__topic">
-      {% if talk.speaker.twitter %}
+      {% if talk.speaker.website %}
+        <a class="talk__link" href="{{talk.speaker.website}}">
+          <svg class="icon" role="img">
+            <title>{{talk.speaker.name}}'s website</title>
+            <use href="#icon-email"></use>
+          </svg>
+          {{talk.speaker.name}}
+          <span class="talk__title">{{talk.presentation.title}}</span>
+        </a>
+      {% elseif talk.speaker.twitter %}
         <a class="talk__link" href="https://twitter.com/{{talk.speaker.twitter}}">
           <svg class="icon" role="img">
             <title>{{talk.speaker.name}} on Twitter</title>
