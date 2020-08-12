@@ -4,7 +4,10 @@
   <span>{{title}}:</span>
   <em>{{subtitle}}</em>
 </h2>
+
+{% if event.date %}
 <time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+{% endif %}
 {% endmacro %}
 
 {% macro eventTitle(title, subtitle, event) %}

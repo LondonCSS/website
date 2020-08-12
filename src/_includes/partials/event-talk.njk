@@ -17,19 +17,25 @@
       {% endif %}
     </h3>
 
-    <div class="talk__content">
-      {{talk.presentation.content | markdown | safe}}
-    </div>
-    
-    <footer class="talk__footer">
-      <details class="speaker">
-        <summary class="speaker__name">About
-          {{talk.speaker.name}}</summary>
-        <div class="speaker__bio">
-          {{talk.speaker.bio | markdown | safe}}
-        </div>
-      </details>
-    </footer>
+    {% if talk.presentation.content %}
+      <div class="talk__content">
+        {{talk.presentation.content | markdown | safe}}
+      </div>
+    {% endif %}
+
+    {% if talk.speaker.bio %}
+      <footer class="talk__footer">
+        <details class="speaker">
+          <summary class="speaker__name">About
+            {{talk.speaker.name}}</summary>
+
+          
+          <div class="speaker__bio">
+            {{talk.speaker.bio | markdown | safe}}
+          </div>
+        </details>
+      </footer>
+    {% endif %}
   </article>
 {% else %}
   <article class="bg talk">
