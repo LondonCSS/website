@@ -67,3 +67,11 @@ h3 {
 
   background-image: paint(extra-sparkles);
 }
+
+#event-4 {
+  --extra-confettiNumber: 140;
+  --extra-confettiWeightVariance: 8;
+  --extra-confettiLengthVariance: 10;
+
+  background-image: paint(extra-confetti);
+}
