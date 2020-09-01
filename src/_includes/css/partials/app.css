@@ -606,7 +606,7 @@ body {
   align-items: center;
 
   @media (--mq-m) {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
   }
 }
 
@@ -619,11 +619,15 @@ body {
   }
 }
 
-.sponsor--cinema {
+.sponsor--samsung {
   height: 52px;
 }
 
-.sponsor--panorama {
+.sponsor--vonage {
+  height: 40px;
+}
+
+.sponsor--ft {
   height: 22px;
 }
 
