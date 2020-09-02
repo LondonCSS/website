@@ -1,5 +1,4 @@
 ---
-tags: pages
 title: About Us
 description: About London CSS!
 layout: layouts/longform.njk 

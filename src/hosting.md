@@ -1,7 +1,6 @@
 ---
 layout: layouts/longform.njk
 title: Hosting
-tags: pages
 description: Notes on hosting London CSS
 ---
 
