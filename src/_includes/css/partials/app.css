@@ -106,45 +106,6 @@ body {
   }
 }
 
-.register {
-  --bg: #000a;
-  --colour: var(--bg-contrast-title);
-
-  transition: color 0.25s, background-color 0.25s;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 1em;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--bg-contrast-title);
-  text-decoration: none;
-  background: var(--bg);
-  color: var(--colour);
-
-  & .icon {
-    transition: transform 0.5s;
-  }
-
-  &:enter {
-    --colour: #000a;
-    --bg: var(--bg-contrast-title);
-
-    & .icon {
-      transform: translateX(0.5rem);
-    }
-  }
-}
-
-.register__label {
-  flex: 1 0 auto;
-}
-
-.register--inactive {
-  color: #888;
-}
-
 /* App
 ------------------------------------------------------------------------------*/
 .app {
@@ -435,6 +396,45 @@ body {
   & a {
     color: var(--bg-contrast-title);
   }
+
+  & .register {
+    --bg: #000a;
+    --colour: var(--bg-contrast-title);
+  
+    transition: color 0.25s, background-color 0.25s;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    margin-top: 1em;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--bg-contrast-title);
+    text-decoration: none;
+    background: var(--bg);
+    color: var(--colour);
+  
+    & .icon {
+      transition: transform 0.5s;
+    }
+  
+    &:enter {
+      --colour: #000a;
+      --bg: var(--bg-contrast-title);
+  
+      & .icon {
+        transform: translateX(0.5rem);
+      }
+    }
+  }
+  
+  & .register__label {
+    flex: 1 0 auto;
+  }
+  
+  & .register--inactive {
+    color: #888;
+  }
 }
 
 .content__header__toc {
@@ -576,7 +576,6 @@ body {
 ------------------------------------------------------------------------------*/
 .sponsors {
   grid-area: sponsors;
-  background: #fffa;
 
   & p {
     padding: 0.25rem 0.5rem;
@@ -584,30 +583,16 @@ body {
     background: var(--bg-highlight);
     color: #fff8;
   }
-
-  @media (--mq-m) {
-    align-self: end;
-
-    position: sticky;
-    bottom: 1rem;
-
-    & p {
-      flex: 1;
-    }
-  }
 }
 
 .sponsor__list {
-  padding: 0.5rem;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 
-  @media (--mq-m) {
-    /* justify-content: flex-start; */
-  }
+  padding: 0.5rem;
+  background: #fffa;
 }
 
 .sponsor {
