@@ -1,6 +1,5 @@
 ---
 layout: layouts/longform.njk
-tags: pages
 title: Code of Conduct
 description: "London CSS is dedicated to a harassment-free event for everyone. This is our Code of Conduct."
 ---

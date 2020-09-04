@@ -1,5 +1,4 @@
 ---
-tags: pages
 title: About Us
 description: About London CSS!
 layout: layouts/longform.njk 
@@ -22,4 +21,4 @@ As the current organisers we'd like to recognise the contributions of those who 
 
 ## Sponsors
 
-London CSS is made possible thanks to the generosity of our sponsors. We are grateful to [Samsung Internet](https://samsunginter.net) and to [Financial Times](https://www.ft.com/) for their support: with their help we're able to put these events together and recognise the contributions of our amazing speakers
+London CSS is made possible thanks to the generosity of our sponsors. We are grateful to [Samsung Internet](https://samsunginter.net), to the [Financial Times](https://www.ft.com/) and to [Vonage](https://www.vonage.co.uk/) for their support: with their help we're able to put these events together and recognise the contributions of our amazing speakers
