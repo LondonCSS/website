@@ -576,7 +576,6 @@ body {
 ------------------------------------------------------------------------------*/
 .sponsors {
   grid-area: sponsors;
-  background: #fffa;
 
   & p {
     padding: 0.25rem 0.5rem;
@@ -584,30 +583,16 @@ body {
     background: var(--bg-highlight);
     color: #fff8;
   }
-
-  @media (--mq-m) {
-    align-self: end;
-
-    position: sticky;
-    bottom: 1rem;
-
-    & p {
-      flex: 1;
-    }
-  }
 }
 
 .sponsor__list {
-  padding: 0.5rem;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 
-  @media (--mq-m) {
-    /* justify-content: flex-start; */
-  }
+  padding: 0.5rem;
+  background: #fffa;
 }
 
 .sponsor {
