@@ -1,3 +1,3 @@
-const postcss = require("../../tools/render-sass");
+const { renderSass } = require("../../tools/render-sass");
 
-module.exports = postcss("puppeteer.css");
+module.exports = renderSass("src/scss/styles.scss", "/assets/styles.css");
