@@ -1,0 +1,66 @@
+.faded {
+  opacity: 0.5;
+}
+
+.unlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (--mq-l) {
+    padding: 0;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  @media (--mq-m) {
+    flex-wrap: initial;
+    justify-content: space-between;
+  }
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icons {
+  display: none;
+}
+
+.copy {
+  padding: 1rem;
+}
+
+.bg {
+  background: var(--bg-contrast);
+  color: var(--bg-contrast-text);
+}
+
+.icon {
+  --wh: var(--icon-med);
+
+  stroke: currentColor;
+  width: var(--wh);
+  height: var(--wh);
+
+  &.icon--lg {
+    --wh: var(--icon-lg);
+  }
+}
