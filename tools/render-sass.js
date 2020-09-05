@@ -1,37 +1,38 @@
-const fs = require("fs");
 const path = require("path");
-const util = require("util");
 const sass = require("sass");
 const postcss = require("postcss");
 
-const postcssConfig = require("./postcss.config");
+const pcssConfig = require("./postcss.config");
+const pcssCompiler = postcss(pcssConfig());
 
-const mkdir = util.promisify(fs.mkdir);
-const writeFile = util.promisify(fs.writeFile);
+console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
 
 /**
- * Compile Sass
+ * Compile Sass and process with PostCSS
  *
- * @param {string} scssPath
- * @param {string} dest
+ * @param {string} srcPath
+ * @param {string} permalink
  */
-async function renderSass(scssPath, dest) {
-  try {
-    if (!fs.existsSync(path.dirname(dest))) {
-      await mkdir(path.dirname(dest), { recursive: true });
+function renderSass(srcPath, permalink) {
+  return class {
+    async data() {
+      return {
+        permalink,
+        layout: null,
+        eleventyExcludeFromCollections: true,
+        scssPath: path.join(__dirname, `../${srcPath}`),
+      };
     }
 
-    const sassBuffer = sass.renderSync({ file: scssPath });
-    const postCSS = await postcss(postcssConfig().plugins).process(
-      sassBuffer.css.toString(),
-      {
+    async render({ scssPath }) {
+      const { css: sassOutput } = sass.renderSync({ file: scssPath });
+      const { css: pcssOutput } = await pcssCompiler.process(sassOutput, {
         from: scssPath,
-      }
-    );
-    await writeFile(dest, postCSS.css);
-  } catch (err) {
-    console.log({ err });
-  }
+      });
+
+      return pcssOutput;
+    }
+  };
 }
 
 module.exports = { renderSass };
