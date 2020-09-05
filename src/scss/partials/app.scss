@@ -136,7 +136,7 @@ body {
     z-index: 2;
   }
 
-  @nest .menu-closed &::before {
+  .menu-closed &::before {
     content: none;
   }
 
@@ -227,7 +227,7 @@ body {
   background: #000;
   color: #999;
 
-  @nest .menu-closed & {
+  .menu-closed & {
     transform: translateX(0);
 
     &::before {
@@ -289,7 +289,7 @@ body {
     margin: auto;
   }
 
-  @nest button:enter & {
+  button:enter & {
     background: #fff;
   }
 }
@@ -554,7 +554,7 @@ body {
 }
 
 .speaker {
-  @nest .talk__footer & {
+  .talk__footer & {
     padding: 0.5rem 0;
     border-top: 1px dotted #fff5;
   }
@@ -653,7 +653,7 @@ body {
     height: var(--icon-med);
   }
 
-  @nest .social__link:enter & {
+  .social__link:enter & {
     border-color: #999;
   }
 }
@@ -671,7 +671,7 @@ body {
   background: #000;
   z-index: 1;
 
-  @nest .social__link:enter & {
+  .social__link:enter & {
     border-color: #999;
   }
 }

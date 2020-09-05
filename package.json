@@ -42,8 +42,8 @@
   "devDependencies": {
     "eslint": "7.8.1",
     "husky": "4.2.5",
-    "lighthouse": "6.3.0",
-    "lint-staged": "10.2.13",
+    "lint-staged": "10.3.0",
+    "sass": "1.26.10",
     "stylelint": "13.7.0",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-selector-bem-pattern": "2.1.0"
@@ -74,7 +74,6 @@
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
-    "build": "run-s clean build:*",
-    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
+    "build": "run-s clean build:*"
   }
 }
