@@ -2,7 +2,7 @@ const pluginTOC = require("eleventy-plugin-toc");
 const MarkdownIt = require("markdown-it");
 const { format: formatDate, parseISO } = require("date-fns");
 
-const { renderSass } = require("./config/sass");
+const { renderSass } = require("./tools/render-sass");
 
 const now = new Date();
 
