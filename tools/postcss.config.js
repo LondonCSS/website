@@ -6,17 +6,15 @@ const cssnano = require("cssnano");
 
 const { customMedia } = require("../src/theme.js");
 
-module.exports = () => ({
-  plugins: [
-    postcssImport(),
-    postcssPresetEnv({
-      features: {
-        "custom-media-queries": { importFrom: { customMedia } },
-      },
-    }),
-    postcssInset(),
-    postcssPseudoEnter(),
-    cssnano({ preset: "default" }),
-  ],
-});
+module.exports = () => [
+  postcssImport(),
+  postcssPresetEnv({
+    features: {
+      "custom-media-queries": { importFrom: { customMedia } },
+    },
+  }),
+  postcssInset(),
+  postcssPseudoEnter(),
+  cssnano({ preset: "advanced" }),
+]
 
