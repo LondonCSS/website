@@ -65,7 +65,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
+    "lint:css": "stylelint ./styles ./src/scss --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
     "dev": "run-s clean && eleventy --serve",

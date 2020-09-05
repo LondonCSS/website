@@ -147,10 +147,9 @@ body {
       ".      sponsors  content ."
       "footer footer    footer  footer";
 
-    grid-template-columns: 1fr minmax(160px, 300px) minmax(
-        460px,
-        calc(660px - 1rem)
-      ) 1fr;
+    grid-template-columns:
+      1fr minmax(160px, 300px) minmax(460px, calc(660px - 1rem))
+      1fr;
     grid-template-rows: auto auto 1fr auto;
 
     &::before {
@@ -400,38 +399,38 @@ body {
   & .register {
     --bg: #000a;
     --colour: var(--bg-contrast-title);
-  
+
     transition: color 0.25s, background-color 0.25s;
-  
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+
     margin-top: 1em;
     padding: 0.5rem 1rem;
     border: 1px solid var(--bg-contrast-title);
     text-decoration: none;
     background: var(--bg);
     color: var(--colour);
-  
+
     & .icon {
       transition: transform 0.5s;
     }
-  
+
     &:enter {
       --colour: #000a;
       --bg: var(--bg-contrast-title);
-  
+
       & .icon {
         transform: translateX(0.5rem);
       }
     }
   }
-  
+
   & .register__label {
     flex: 1 0 auto;
   }
-  
+
   & .register--inactive {
     color: #888;
   }
