@@ -12,30 +12,25 @@ const md = new MarkdownIt({
 }).use(require("markdown-it-anchor"));
 
 const eleventy = (config) => {
-  config.addPlugin(pluginTOC);
+  renderSass("src/scss/puppeteer.scss", "./dist/assets/puppeteer.css");
+  renderSass("src/scss/styles.scss", "./dist/assets/styles.css");
+  
+  config.setLibrary("md", md);
 
+  config.addPlugin(pluginTOC);
+  config.addFilter("markdown", (code) => (code ? md.render(code) : code));
+  config.addFilter("isFuture", (code) => new Date(code) > now);
   config.addFilter("date", (code) =>
     formatDate(parseISO(code), "EEEE, MMMM do yyyy")
   );
 
-  config.addFilter("markdown", (code) => {
-    return code ? md.render(code) : code;
-  });
-
-  config.addFilter("isFuture", (code) => {
-    return new Date(code) > now;
-  });
-
-  config.setLibrary("md", md);
-
   config.addPassthroughCopy("src/js");
   config.addPassthroughCopy("static");
 
-  config.addWatchTarget("./src/scss/");
-  config.addWatchTarget("./src/js/");
-
-  renderSass("src/scss/puppeteer.scss", "./dist/assets/puppeteer.css");
-  renderSass("src/scss/styles.scss", "./dist/assets/styles.css");
+  config.browserSyncConfig = {
+    watch: true,
+    open: true,
+  };
 
   return {
     dir: {

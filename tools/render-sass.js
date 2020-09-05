@@ -22,9 +22,12 @@ async function renderSass(scssPath, dest) {
     }
 
     const sassBuffer = sass.renderSync({ file: scssPath });
-    const postCSS = await postcss(postcssConfig()).process(sassBuffer.css, {
-      from: scssPath,
-    });
+    const postCSS = await postcss(postcssConfig().plugins).process(
+      sassBuffer.css.toString(),
+      {
+        from: scssPath,
+      }
+    );
     await writeFile(dest, postCSS.css);
   } catch (err) {
     console.log({ err });

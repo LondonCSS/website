@@ -1,5 +1,14 @@
+@import "./partials/variables";
 @import "./partials/reset";
+@import "./partials/globals";
 @import "./partials/typography";
+@import "./partials/utils";
 @import "./partials/supermannerist";
-@import "./partials/app";
-@import "./partials/_wallpaper";
+
+@import "./components/app";
+@import "./components/page";
+@import "./components/events";
+@import "./components/sponsors";
+@import "./components/social";
+@import "./components/report";
+@import "./components/wallpaper";
