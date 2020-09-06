@@ -27,11 +27,6 @@ const eleventy = (config) => {
   config.addPassthroughCopy("src/js");
   config.addPassthroughCopy("static");
 
-  config.browserSyncConfig = {
-    watch: true,
-    open: true,
-  };
-
   return {
     dir: {
       input: "src",
