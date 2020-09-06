@@ -3,31 +3,28 @@ const sass = require("sass");
 const postcss = require("postcss");
 
 const pcssConfig = require("./postcss.config");
-const pcssCompiler = postcss(pcssConfig());
-
-console.log("process.env.NODE_ENV:", process.env.NODE_ENV);
+const pcssCompiler = postcss(pcssConfig);
 
 /**
  * Compile Sass and process with PostCSS
  *
  * @param {string} srcPath
- * @param {string} permalink
  */
-function renderSass(srcPath, permalink) {
+function renderCSS(srcPath) {
   return class {
     async data() {
       return {
-        permalink,
+        permalink: ({ page }) => `${page.filePathStem}.css`,
+        scssPath: path.join(__dirname, `../${srcPath}`),
         layout: null,
         eleventyExcludeFromCollections: true,
-        scssPath: path.join(__dirname, `../${srcPath}`),
       };
     }
 
-    async render({ scssPath }) {
-      const { css: sassOutput } = sass.renderSync({ file: scssPath });
+    async render(data) {
+      const { css: sassOutput } = sass.renderSync({ file: data.scssPath });
       const { css: pcssOutput } = await pcssCompiler.process(sassOutput, {
-        from: scssPath,
+        from: data.scssPath,
       });
 
       return pcssOutput;
@@ -35,4 +32,4 @@ function renderSass(srcPath, permalink) {
   };
 }
 
-module.exports = { renderSass };
+module.exports = { renderCSS };
