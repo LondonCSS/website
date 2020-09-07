@@ -2,8 +2,6 @@ const pluginTOC = require("eleventy-plugin-toc");
 const MarkdownIt = require("markdown-it");
 const { format: formatDate, parseISO } = require("date-fns");
 
-const { renderSass } = require("./tools/render-sass");
-
 const now = new Date();
 
 const md = new MarkdownIt({
@@ -11,10 +9,7 @@ const md = new MarkdownIt({
   typographer: true,
 }).use(require("markdown-it-anchor"));
 
-const eleventy = (config) => {
-  renderSass("src/scss/puppeteer.scss", "./dist/assets/puppeteer.css");
-  renderSass("src/scss/styles.scss", "./dist/assets/styles.css");
-  
+const eleventy = (config) => {  
   config.setLibrary("md", md);
 
   config.addPlugin(pluginTOC);
