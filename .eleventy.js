@@ -2,6 +2,8 @@ const pluginTOC = require("eleventy-plugin-toc");
 const MarkdownIt = require("markdown-it");
 const { format: formatDate, parseISO } = require("date-fns");
 
+const criticalCSSTransform = require("./tools/critical-css-transform.js");
+
 const now = new Date();
 
 const md = new MarkdownIt({
@@ -9,10 +11,11 @@ const md = new MarkdownIt({
   typographer: true,
 }).use(require("markdown-it-anchor"));
 
-const eleventy = (config) => {  
+const eleventy = (config) => {
   config.setLibrary("md", md);
 
   config.addPlugin(pluginTOC);
+
   config.addFilter("markdown", (code) => (code ? md.render(code) : code));
   config.addFilter("isFuture", (code) => new Date(code) > now);
   config.addFilter("date", (code) =>
@@ -21,6 +24,10 @@ const eleventy = (config) => {
 
   config.addPassthroughCopy("src/js");
   config.addPassthroughCopy("static");
+
+  if (process.env.NODE_ENV === "production") {
+    config.addTransform("critical-css", criticalCSSTransform);
+  }
 
   return {
     dir: {
