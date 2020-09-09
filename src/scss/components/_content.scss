@@ -1,11 +1,6 @@
 .content__header {
   grid-area: header;
 
-  @media (--mq-m) {
-    position: sticky;
-    top: 1rem;
-  }
-
   & a {
     color: var(--bg-contrast-title);
   }
