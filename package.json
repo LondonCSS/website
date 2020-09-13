@@ -17,9 +17,6 @@
     "node": ">= 12"
   },
   "dependencies": {
-    "workbox-cli": "5.1.3"
-  },
-  "devDependencies": {
     "@11ty/eleventy": "0.11.0",
     "@11ty/eleventy-plugin-rss": "1.0.9",
     "critical": "2.0.4",
@@ -37,18 +34,18 @@
     "postcss-inset": "1.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
-    "sass": "1.26.10",
     "puppeteer": "5.3.0",
+    "sass": "1.26.10",
     "serve-handler": "6.1.3",
-    "sharp": "0.26.0",
-    "workbox-cli": "5.1.4",
+    "sharp": "0.26.0"
+  },
+  "devDependencies": {    
     "eslint": "7.9.0",
     "husky": "4.3.0",
-    "lighthouse": "6.3.0",
     "lint-staged": "10.3.0",
     "stylelint": "13.7.1",
     "stylelint-config-recommended": "3.0.0",
-    "stylelint-selector-bem-pattern": "2.1.0"
+    "stylelint-selector-bem-pattern": "2.1.0"    
   },
   "husky": {
     "hooks": {
@@ -75,7 +72,6 @@
     "build:site": "eleventy",
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
-    "build:sw": "workbox generateSW ./tools/workbox-config.js",
     "build": "NODE_ENV=production run-s clean build:*"
   }
 }
