@@ -22,6 +22,9 @@ const eleventy = (config) => {
     formatDate(parseISO(code), "EEEE, MMMM do yyyy")
   );
 
+  config.addWatchTarget('./src/scss/'); 
+  config.addWatchTarget('./src/js/');
+
   config.addPassthroughCopy("src/js");
   config.addPassthroughCopy("static");
 
