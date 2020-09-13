@@ -16,34 +16,34 @@
   "engines": {
     "node": ">= 12"
   },
-  "main": "index.js",
   "dependencies": {
+    "workbox-cli": "5.1.3"
+  },
+  "devDependencies": {
     "@11ty/eleventy": "0.11.0",
     "@11ty/eleventy-plugin-rss": "1.0.9",
-    "clean-css": "4.2.3",
+    "critical": "2.0.4",
+    "cssnano": "4.1.10",
+    "cssnano-preset-advanced": "4.0.7",
     "date-fns": "2.16.1",
     "eleventy-plugin-toc": "1.1.0",
+    "eslint": "7.8.1",
+    "husky": "4.2.5",
+    "lint-staged": "10.3.0",
     "markdown-it": "11.0.0",
     "markdown-it-anchor": "5.3.0",
     "mkdirp": "1.0.4",
     "npm-run-all": "4.1.5",
     "postcss": "7.0.32",
-    "postcss-clean": "1.1.0",
     "postcss-cli": "7.1.2",
     "postcss-import": "12.0.1",
     "postcss-inset": "1.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
     "puppeteer": "5.2.1",
+    "sass": "1.26.10",
     "serve-handler": "6.1.3",
     "sharp": "0.26.0",
-    "workbox-cli": "5.1.3"
-  },
-  "devDependencies": {
-    "eslint": "7.8.1",
-    "husky": "4.2.5",
-    "lighthouse": "6.3.0",
-    "lint-staged": "10.2.13",
     "stylelint": "13.7.0",
     "stylelint-config-recommended": "3.0.0",
     "stylelint-selector-bem-pattern": "2.1.0"
@@ -65,7 +65,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "lint:css": "stylelint ./styles ./src/_includes/css --config ./tools/.stylelintrc",
+    "lint:css": "stylelint ./styles ./src/scss --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
     "dev": "run-s clean && eleventy --serve",
@@ -74,7 +74,6 @@
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
     "build:sw": "workbox generateSW ./tools/workbox-config.js",
-    "build": "run-s clean build:*",
-    "perf": "lighthouse https://www.londoncss.dev/ --budget-path=./tools/budget.json --view"
+    "build": "NODE_ENV=production run-s clean build:*"
   }
 }

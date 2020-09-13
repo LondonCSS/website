@@ -40,6 +40,7 @@ const customMedia = Object.entries(mediaQueries).reduce((acc, [k, v]) => {
 }, {});
 
 module.exports = {
+  breakpoints,
   mediaQueries,
   customMedia
 };

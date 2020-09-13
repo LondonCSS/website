@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --grad-img: linear-gradient(119deg, var(--grad1) 2%, var(--grad2) 82%);
+
+  margin: 0;
+  font-family: system-ui;
+  background: var(--grad1) var(--grad-img) no-repeat;
+  color: #ccc;
+}

@@ -1,24 +1,26 @@
 const postcssPseudoEnter = require("postcss-pseudo-class-enter");
 const postcssPresetEnv = require(`postcss-preset-env`);
-const postcssClean = require(`postcss-clean`);
 const postcssInset = require(`postcss-inset`);
-const postcssImport = require("postcss-import");
+const cssnano = require("cssnano");
 
 const { customMedia } = require("../src/theme.js");
 
-module.exports = () => ({
-  plugins: [
-    postcssImport(),
+function getPlugins(isProd) {
+  const plugins = [
     postcssPresetEnv({
-      preserve: true,
-      browsers: "last 2 versions",
       features: {
-        "nesting-rules": true,
-        "custom-media-queries": { importFrom: { customMedia } }
-      }
+        "custom-media-queries": { importFrom: { customMedia } },
+      },
     }),
     postcssInset(),
     postcssPseudoEnter(),
-    postcssClean()
-  ]
-});
+  ];
+
+  if (isProd) {
+    return plugins.concat([cssnano({ preset: "advanced" })]);
+  }
+
+  return plugins;
+}
+
+module.exports = getPlugins(process.env.NODE_ENV === "production");

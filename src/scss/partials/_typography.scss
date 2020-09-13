@@ -1,8 +1,5 @@
-:root {
-  --h1: 28px;
-  --h2: 24px;
-  --h3: 20px;
-  --body: 16px;
+body {
+  font-size: var(--body);
 }
 
 h1,
@@ -12,7 +9,7 @@ h4 {
   font-size: var(--h, 16px);
   margin: 0;
 
-  @nest p + & {
+  p + & {
     margin-top: 1em;
   }
 }
@@ -46,7 +43,7 @@ a {
 p {
   margin: 0;
 
-  @nest p + & {
+  p + & {
     margin: 1em 0 0 0;
   }
 }
