@@ -4,16 +4,6 @@
 
 The source for the online home of the new London CSS!
 
-## Features
-- Sass pipeline: see [details](#Sass%20pipeline)
-- Headers checked with [Security Headers](https://securityheaders.com/?q=londoncss.dev&followRedirects=on)
-- Powered by [Eleventy](https://www.11ty.io/)…
-- Hosted on [Netlify](https://www.netlify.com/)
-
-### Under development
-- Rollup-based JS pipeline
-- Service Workers by [Workbox](https://developers.google.com/web/tools/workbox/)
-
 ## Installation
 
 ```sh
@@ -22,6 +12,16 @@ cd website
 yarn
 yarn start
 ```
+
+## Features
+- Sass pipeline: see [details](#sass-pipeline)
+- Headers checked with [Security Headers](https://securityheaders.com/?q=londoncss.dev&followRedirects=on)
+- Powered by [Eleventy](https://www.11ty.io/)…
+- Hosted on [Netlify](https://www.netlify.com/)
+
+### Under development
+- Rollup-based JS pipeline
+- Service Workers by [Workbox](https://developers.google.com/web/tools/workbox/)
 
 ### Sass pipeline
 
