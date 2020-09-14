@@ -40,7 +40,7 @@ Each event has an associated Houdini-powered background image sourced from sites
 In order to generate social media images 
 1. A special version of the `/events` page - `src/events/puppeteer.njk` - loads custom CSS, paintlet modules and fonts
 2. Puppeteer snapshots the event nodes 
-3. The images are stored in 
+3. The images are stored in `dist/static/events`
 
 ### Under development
 - Rollup-based JS pipeline
