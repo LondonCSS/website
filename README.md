@@ -35,7 +35,7 @@ yarn start
     ```
 
 ### Houdini-powered social images
-Each event has an associated Houdini-powered background image sourced from sites like [@una](https://twitter.com/una)'s iconic [extra.css](https://extra-css.netlify.app/) and [@malchata]'s awesome [paintlets](https://paintlets.herokuapp.com/). 
+Each event has an associated Houdini-powered background image sourced from sites like [@una](https://twitter.com/una)'s iconic [extra.css](https://extra-css.netlify.app/) and [@malchata](https://twitter.com/malchata)'s awesome [paintlets](https://paintlets.herokuapp.com/). 
 
 In order to generate social media images 
 1. A special version of the `/events` page - `src/events/puppeteer.njk` - loads custom CSS, paintlet modules and fonts
