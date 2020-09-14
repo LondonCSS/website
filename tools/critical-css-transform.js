@@ -11,8 +11,6 @@ const dimensions = Object.values(breakpoints).map((value) => ({
 }));
 
 module.exports = async function (value, outputPath) {
-  console.log({ outputPath, isNotPuppeteer: omitList.indexOf(outputPath) < 0 });
-
   if (outputPath.endsWith(".html") && omitList.indexOf(outputPath) < 0) {
     const { html } = await critical.generate(
       {
