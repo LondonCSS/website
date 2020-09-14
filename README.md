@@ -4,18 +4,7 @@
 
 The source for the online home of the new London CSS!
 
-## Features
-- Sass pipeline: see [details](#Sass%20pipeline)
-- Headers checked with [Security Headers](https://securityheaders.com/?q=londoncss.dev&followRedirects=on)
-- Powered by [Eleventy](https://www.11ty.io/)…
-- Hosted on [Netlify](https://www.netlify.com/)
-
-### Under development
-- Rollup-based JS pipeline
-- Service Workers by [Workbox](https://developers.google.com/web/tools/workbox/)
-
 ## Installation
-
 ```sh
 git clone git@github.com:LondonCSS/website.git
 cd website
@@ -23,8 +12,15 @@ yarn
 yarn start
 ```
 
-### Sass pipeline
+## Features
+- Sass pipeline: see [details](#sass-pipeline)
+- Houdini-powered social images: see [details](#houdini-powered-social-images)
+- Dynamic site map
+- Headers checked with [Security Headers](https://securityheaders.com/?q=londoncss.dev&followRedirects=on)
+- Powered by [Eleventy](https://www.11ty.io/)…
+- Hosted on [Netlify](https://www.netlify.com/)
 
+### Sass pipeline
 - Source Sass files are under `src/scss`
 - Compilation is via templates at `src/assets/css`
     
@@ -37,3 +33,15 @@ yarn start
     // output
     dist/assets/css/{filename}.css
     ```
+
+### Houdini-powered social images
+Each event has an associated Houdini-powered background image sourced from sites like [@una](https://twitter.com/una)'s iconic [extra.css](https://extra-css.netlify.app/) and [@malchata]'s awesome [paintlets](https://paintlets.herokuapp.com/). 
+
+In order to generate social media images 
+1. A special version of the `/events` page - `src/events/puppeteer.njk` - loads custom CSS, paintlet modules and fonts
+2. Puppeteer snapshots the event nodes 
+3. The images are stored in `dist/static/events`
+
+### Under development
+- Rollup-based JS pipeline
+- Full PWA status
