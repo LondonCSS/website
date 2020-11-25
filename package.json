@@ -17,7 +17,7 @@
     "node": ">= 14"
   },
   "dependencies": {
-    "@11ty/eleventy": "0.11.1",
+    "@11ty/eleventy": "github:slightlyoff/eleventy#njk-cache",
     "@11ty/eleventy-plugin-rss": "1.0.9",
     "critical": "2.0.6",
     "cssnano": "4.1.10",
@@ -67,7 +67,7 @@
     "lint:css": "stylelint ./styles ./src/scss --config ./tools/.stylelintrc",
     "lint:js": "eslint ./src --config ./tools/.eslintrc",
     "lint": "run-s lint:*",
-    "dev": "run-s clean && eleventy --serve",
+    "start": "run-s clean && eleventy --serve",
     "serve": "serve ./dist",
     "build:site": "eleventy",
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",

@@ -38,7 +38,7 @@
       "footer footer    footer  footer";
 
     grid-template-columns:
-      1fr minmax(160px, 300px) minmax(460px, calc(660px - 1rem))
+      1fr 320px minmax(420px, calc(660px - 1rem))
       1fr;
     grid-template-rows: auto auto 1fr auto;
 
