@@ -1,4 +1,5 @@
 {
   "changefreq": "monthly",
-  "priority": "0.5"
+  "priority": "0.5",
+  "layout": "layouts/event.njk"
 }
