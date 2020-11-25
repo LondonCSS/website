@@ -33,7 +33,7 @@ h3 {
   --extra-confettiWeightVariance: 8;
   --extra-confettiLengthVariance: 10;
 
-  background-image: paint(extra-confetti), linear-gradient(#eaafc8, #654ea3);
+  background-image: paint(extra-confetti);
 }
 
 #event-2 {
@@ -83,5 +83,5 @@ h3 {
   --circles-amplitude: 2.25;
   --circles-blend-mode: multiply;
 
-  background-image: paint(circles);
+  background-image: paint(circles), linear-gradient(lemonchiffon, cornflowerblue);
 }
