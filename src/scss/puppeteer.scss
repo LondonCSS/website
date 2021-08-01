@@ -87,16 +87,19 @@ h3 {
 }
 
 #event-6 {
-  --fleck-seed: 123453;
-  --fleck-count: 680;
-  --fleck-size-base: 4px;
-  --fleck-color-1: #e8ad3c;
-  --fleck-color-2: #a96c1a;
-  --fleck-color-3: #d7b54e;
-  --fleck-color-4: #e2b84b;
-  --fleck-color-5: #d6cdc4;
+  --fleck-seed: 123449;
+  --fleck-count: 580;
+  --fleck-size-base: 8px;
+  --fleck-color-1: #0193c1;
+  --fleck-color-2: #74d8e6;
+  --fleck-color-3: #0bc0e0;
+  --fleck-color-4: #3ddaf5;
+  --fleck-color-5: #e2f9fe;
+  --fleck-color-6: #02313f;
 
-  --background-color: #1b1918;
+  --background-color: #84dce2;
+  --background-color: palevioletred;
 
+  background-color: var(--background-color);
   background-image: paint(fleck);
 }
