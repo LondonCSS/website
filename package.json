@@ -13,8 +13,9 @@
     "eleventy",
     "css"
   ],
-  "engines": {
-    "node": ">= 14"
+  "volta": {
+    "node": "12.22.3",
+    "npm": "7.20.2"
   },
   "dependencies": {
     "@11ty/eleventy": "0.12.1",
@@ -73,9 +74,5 @@
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
     "build": "NODE_ENV=production run-s clean build:*"
-  },
-  "volta": {
-    "node": "12.22.3",
-    "npm": "7.20.2"
   }
 }

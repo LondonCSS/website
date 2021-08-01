@@ -85,3 +85,18 @@ h3 {
 
   background-image: paint(circles), linear-gradient(lemonchiffon, cornflowerblue);
 }
+
+#event-6 {
+  --fleck-seed: 123453;
+  --fleck-count: 680;
+  --fleck-size-base: 4px;
+  --fleck-color-1: #e8ad3c;
+  --fleck-color-2: #a96c1a;
+  --fleck-color-3: #d7b54e;
+  --fleck-color-4: #e2b84b;
+  --fleck-color-5: #d6cdc4;
+
+  --background-color: #1b1918;
+
+  background-image: paint(fleck);
+}

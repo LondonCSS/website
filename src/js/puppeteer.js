@@ -91,6 +91,7 @@ async function init() {
     CSS.paintWorklet.addModule("/static/paintlets/extra.css/confetti.js");
     CSS.paintWorklet.addModule("/static/paintlets/extra.css/sparkles.js");
     CSS.paintWorklet.addModule("/static/paintlets/malchata/circles.js");
+    CSS.paintWorklet.addModule("/static/paintlets/georgedoescode/fleck-worklet.bundle.js");
   } catch (err) {
     console.log(err);
   }
