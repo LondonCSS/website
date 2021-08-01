@@ -6,11 +6,11 @@ description: "London CSS is dedicated to a harassment-free event for everyone. T
 
 ## Short version
 
-London CSS is dedicated to a harassment-free event for everyone.
+London CSS is dedicated to providing a harassment-free event for everyone.
 
 ## Longer version
 
-London CSS is dedicated to providing a harassment-free event experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of event participants in any form. Sexual language and imagery is not appropriate for any event venue, including talks, workshops, parties, Twitter and other online media. Event participants violating these rules may be sanctioned or expelled from the event without a refund at the discretion of the London CSS organisers.
+London CSS is dedicated to providing a harassment-free event experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of event participants in any form. Sexual language and imagery is not appropriate for any event venue, including talks, workshops, parties, Twitter and other online media. Event participants violating these rules may be sanctioned or expelled from the event at the discretion of the London CSS organisers.
 
 ## Full version
 
@@ -41,7 +41,7 @@ Everyone using London CSS services or attending London CSS events is subject to 
 
 ### Reporting
 
-If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of London CSS staff immediately. 
+If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of London CSS staff immediately.
 
 #### Personal report
 
@@ -52,9 +52,9 @@ You can make a personal report by:
 * Phone (organiser's numbers are shared at the beginning of the event and monitored during the event).
 * Reaching out to an organiser who will make sure the conversation is held privately. You will not be asked to confront anyone and we won’t tell anyone who you are. We will identify ourselves at the beginning of each event.
 
-London CSS staff will be happy to help participants contact venue security (if available) or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. We value your attendance. We expect everyone to follow these rules at the all the events organised by London CSS (meetups, workshops, other events and post meetup related social events). 
+London CSS staff will be happy to help participants contact venue security (if available) or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. We value your attendance. We expect everyone to follow these rules at the all the events organised by London CSS (meetups, workshops, other events and post meetup related social events).
 
-#### Anonymous report 
+#### Anonymous report
 
 If you'd like to submit a report without requiring identifying email, we have an anonymous [form](/anonymous-report/) available.
 
