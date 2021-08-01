@@ -73,5 +73,9 @@
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
     "build": "NODE_ENV=production run-s clean build:*"
+  },
+  "volta": {
+    "node": "12.22.3",
+    "npm": "7.20.2"
   }
 }
