@@ -89,7 +89,7 @@ h3 {
 #event-6 {
   --fleck-seed: 123449;
   --fleck-count: 580;
-  --fleck-size-base: 8px;
+  --fleck-size-base: 6px;
   --fleck-color-1: #0193c1;
   --fleck-color-2: #74d8e6;
   --fleck-color-3: #0bc0e0;
@@ -98,7 +98,7 @@ h3 {
   --fleck-color-6: #02313f;
 
   --background-color: #84dce2;
-  --background-color: palevioletred;
+  --background-color: bisque;
 
   background-color: var(--background-color);
   background-image: paint(fleck);
