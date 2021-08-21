@@ -13,10 +13,6 @@
     "eleventy",
     "css"
   ],
-  "volta": {
-    "node": "12.22.3",
-    "npm": "7.20.2"
-  },
   "dependencies": {
     "@11ty/eleventy": "0.12.1",
     "@11ty/eleventy-plugin-rss": "1.1.1",
@@ -48,20 +44,15 @@
     "stylelint-config-recommended": "5.0.0",
     "stylelint-selector-bem-pattern": "2.1.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": [
-        "lint-staged"
-      ]
-    }
-  },
   "lint-staged": {
     "*.js": [
-      "yarn lint:js --fix"
+      "yarn lint:js --fix",
+      "eslint --cache --fix"
     ],
     "*.css": [
       "yarn lint:css"
-    ]
+    ],
+    "*.stylelintrc": "stylelint --fix"
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -73,6 +64,7 @@
     "build:site": "eleventy",
     "build:wallpapers": "node ./tools/screenshot-wallpapers.js",
     "build:eventcards": "node ./tools/screenshot-events.js",
-    "build": "NODE_ENV=production run-s clean build:*"
+    "build": "NODE_ENV=production run-s clean build:*",
+    "prepare": "husky install"
   }
 }
