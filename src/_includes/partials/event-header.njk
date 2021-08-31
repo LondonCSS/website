@@ -6,7 +6,7 @@
 </h2>
 
 {% if event.date %}
-<time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}}</time>
+<time class="content__hero__date" datetime="{{event.date}}">{{event.date | date}},<br>7:00-9:00pm (UK)</time>
 {% endif %}
 {% endmacro %}
 
@@ -18,7 +18,7 @@
 
 {% macro eventLink(title, subtitle, url, event) %}
 <div id="{{ title | slug }}"
-   class="title content__hero content__hero--card" 
+   class="title content__hero content__hero--card"
    data-event={{ title | slug }}
 >
   <a href="{{url}}">
@@ -40,7 +40,7 @@
           <svg class="icon" role="img">
             <use href="#icon-chevron-right"></use>
           </svg>
-        </a> 
+        </a>
       {% else %}
         <p class="title register--inactive">
           Registrations open soon

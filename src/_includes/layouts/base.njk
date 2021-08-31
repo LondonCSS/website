@@ -8,7 +8,7 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}"/>
     <link rel="alternate" type="application/rss+xml" title="London CSS Events" href="/rss.xml"/>
-    
+
     <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
@@ -20,7 +20,7 @@
     <link rel="manifest" href="/static/site.webmanifest">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-  
+
   <!-- Twitter card -->
   {% block twitter %}
     <meta name="twitter:card" content="summary" />
@@ -39,11 +39,11 @@
 
   <body class="menu-closed">
     {% include "partials/supermannerist.njk" %}
-    
+
     <div class="app">
       <nav class="app__controls app__nav title">
         <div class="container row">
-          <h1 class="app__title"><a href="/">London CSS</a></h1>          
+          <h1 class="app__title"><a href="/">London CSS</a></h1>
           <div class="app__links">
             <button class="app__links__togglebtn" data-click="menu-toggle">
               <div class="togglebtn__body">
@@ -82,9 +82,6 @@
           <a href="https://ft.com" class="sponsor sponsor--ft">
             <img src="/static/images/logos/ft.svg" alt="Financial Times Logo">
           </a>
-          <a href="https://www.vonage.co.uk" class="sponsor sponsor--vonage">
-            <img src="/static/images/logos/VonageLogo_Primary_Black.svg" alt="Financial Times Logo">
-          </a>
         </div>
       </aside>
 
@@ -103,7 +100,7 @@
     {% include "partials/icons.njk" %}
 
     {% block footer %}{% endblock %}
-    
+
     <script type="module" src="{{ '/js/index.js' | url }}"></script>
   </body>
 </html>
