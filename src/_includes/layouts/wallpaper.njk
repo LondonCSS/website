@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/static/wallpaper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.19.2/css-doodle.min.js"></script>
+</head>
+<body>
+  {% block content %}{{ content | safe }}{% endblock %}
+</body>
+</html>

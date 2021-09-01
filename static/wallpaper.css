@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: var(--tint-bg);
+  color: var(--tint-stripe);
+}
+
+.logo {
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: var(--bw) solid currentColor;
+  background: var(--tint-bg);
+}
+
+.title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-weight: 400;
+  font-size: 4vmin;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.doodle {
+  display: grid;
+  place-content: center;
+
+  height: 100vh;
+}
