@@ -9,46 +9,54 @@ const mkdirp = require("mkdirp");
 const readFile = util.promisify(fs.readFile);
 
 const { wallpapers } = require("../src/_data/config");
-const savePath = path.join(__dirname, "../dist/static/wallpapers");
+const savePath = path.join(__dirname, "../static/wallpapers");
 
-async function screenshotPage(browser, id) {
+/**
+ * @param {puppeteer.Browser} browser
+ * @param {string} url
+ */
+async function screenshotPage(browser, url) {
   const page = await browser.newPage();
-  await page.goto(`https://s.codepen.io/oliverturner/debug/${id}`, {
-    waitUntil: "networkidle0"
-  });
+  const host = "http://localhost:8080";
+  const pageUrl = `${host}/wallpapers/${url}/`;
+  await page.goto(pageUrl, { waitUntil: "networkidle0" });
+
+  console.log(`screenshotting ${pageUrl}`);
 
   await page.setViewport({ width: 3840, height: 2160, deviceScaleFactor: 2 });
-  await page.screenshot({ path: `${savePath}/${id}-cinema.png` });
+  await page.screenshot({ path: `${savePath}/${url}-cinema.png` });
 
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
-  await page.screenshot({ path: `${savePath}/${id}-desktop.png` });
+  await page.screenshot({ path: `${savePath}/${url}-desktop.png` });
 
   await page.setViewport({ width: 414, height: 744, deviceScaleFactor: 2 });
-  await page.screenshot({ path: `${savePath}/${id}-mobile.png` });
+  await page.screenshot({ path: `${savePath}/${url}-mobile.png` });
 }
 
-async function thumbnailImage(id, width) {
-  const pathIn = `${savePath}/${id}-desktop.png`;
-  const pathOut = `${savePath}/${id}-thumbnail.png`;
+/**
+ * @param {string} url
+ * @param {number} width
+ */
+async function thumbnailImage(url, width) {
+  const pathIn = `${savePath}/${url}-desktop.png`;
+  const pathOut = `${savePath}/${url}-thumbnail.png`;
 
   const img = await readFile(pathIn);
 
-  await sharp(img)
-    .resize({ width })
-    .toFile(pathOut);
+  await sharp(img).resize({ width }).toFile(pathOut);
 }
 
 async function grabScreenshots() {
   mkdirp.sync(savePath);
-  
+
   const browser = await puppeteer.launch({
-    args: ["--enable-experimental-web-platform-features"]
+    args: ["--enable-experimental-web-platform-features"],
   });
 
   try {
-    for (const { id, title } of wallpapers) {
-      await screenshotPage(browser, id, title);
-      await thumbnailImage(id, 1200);
+    for (const { url } of wallpapers) {
+      await screenshotPage(browser, url);
+      await thumbnailImage(url, 1200);
     }
     await browser.close();
   } catch (err) {

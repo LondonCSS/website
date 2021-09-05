@@ -1,0 +1,56 @@
+---
+title: "Waves"
+---
+<style>
+  :root {
+    --bw: 2px;
+    --tint-bg: #0a0c27;
+    --tint-stripe: #2c2d45;
+
+    --stripe-bg: #0a0c27;
+    --stripe-tint: var(--tint-stripe);
+    --stripe-w: 3px;
+
+    --stripe0-inner: 0;
+    --stripe0-outer: var(--stripe-w);
+
+    --stripe1-outer: 20%;
+    --stripe1-inner: calc(var(--stripe1-outer) - var(--stripe-w));
+
+    --waves: (
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-radial-gradient(
+        circle,
+
+        var(--tint-stripe) var(--stripe0-inner) var(--stripe0-outer),
+        var(--tint-bg)   var(--stripe0-outer) var(--stripe1-inner)
+      );
+    );
+  }
+</style>
+
+<div class="doodle">
+  <css-doodle>
+    :doodle {
+      @grid: 10 / 100vmax;
+
+      position: absolute;
+    }
+
+    :before {
+      position: absolute;
+      top: -50%;
+      @use: var(--waves);
+    }
+
+    :after {
+      position: absolute;
+      left: -50%;
+      @use: var(--waves);
+    }
+  </css-doodle>
+  <h1 class="title logo">London CSS</h1>
+</div>

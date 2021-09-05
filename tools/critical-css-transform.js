@@ -1,9 +1,13 @@
 const critical = require("critical");
 const { breakpoints } = require("../src/theme");
+const { wallpapers } = require("../src/_data/config.js");
 
 process.setMaxListeners(Infinity); // <== Sorry generating critical CSS is a resource hog!
 
-const omitList = ['dist/events/puppeteer.html'];
+const omitList = ["dist/events/puppeteer.html"];
+for (const wallpaper of wallpapers) {
+  omitList.push(`dist/wallpapers/${wallpaper.url}/index.html`);
+}
 
 const dimensions = Object.values(breakpoints).map((value) => ({
   width: value + 1,

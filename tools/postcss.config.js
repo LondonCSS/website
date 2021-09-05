@@ -5,6 +5,10 @@ const cssnano = require("cssnano");
 
 const { customMedia } = require("../src/theme.js");
 
+/**
+ * @param {boolean} isProd
+ * @returns {any[]}
+ */
 function getPlugins(isProd) {
   const plugins = [
     postcssPresetEnv({

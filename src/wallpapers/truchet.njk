@@ -1,0 +1,47 @@
+---
+title: "Truchet Tiles"
+---
+<style>
+  :root {
+    --bw: 2px;
+    --tint-bg: #0a0c27;
+    --tint-stripe: #2c2d45;
+    --bw05: calc(var(--bw) / 2);
+    --stripe-inner: calc(50% - var(--bw05));
+    --stripe-outer: calc(50% + var(--bw05));
+
+    --cell: (
+      background-image:
+        radial-gradient(
+          farthest-side at top left,
+          transparent 0% var(--stripe-inner),
+          var(--tint-stripe) var(--stripe-inner) var(--stripe-outer),
+          transparent var(--stripe-outer)
+        ),
+        radial-gradient(
+          farthest-side at bottom right,
+          transparent 0% var(--stripe-inner),
+          var(--tint-stripe) var(--stripe-inner) var(--stripe-outer),
+          transparent var(--stripe-outer)
+        )
+    );
+  }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--tint-bg);
+    color: var(--tint-stripe);
+  }
+</style>
+
+<div class="doodle">
+  <css-doodle>
+    :doodle {
+      @grid: 24/100vmax; position: absolute;
+    }
+    @use: var(--cell);
+    transform: rotate(@pick(90deg, 180deg, 270deg, 360deg));
+  </css-doodle>
+  <h1 class="title logo">London CSS</h1>
+</div>

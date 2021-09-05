@@ -4,7 +4,7 @@
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
-    "no-descending-specificity": null, 
+    "no-descending-specificity": null,
     "selector-nested-pattern": "^&",
     "selector-pseudo-class-blacklist": ["hover"],
     "selector-pseudo-class-no-unknown": [true, {

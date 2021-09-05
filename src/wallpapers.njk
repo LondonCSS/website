@@ -25,25 +25,25 @@ changefreq: monthly
 <article class="bg copy page__content page__content--wallpapers">
   {%- for wallpaper in config.wallpapers -%}
     <figure class="wallpaper">
-      <img class="wallpaper__img" width="600px" height="375px" src="/static/wallpapers/{{wallpaper.id}}-thumbnail.png">
+      <img class="wallpaper__img" width="600px" height="375px" src="/static/wallpapers/{{wallpaper.url}}-desktop.png">
       <figcaption class="wallpaper__label">
         <details id="{{wallpaper.id}}">
           <summary>{{wallpaper.title}}</summary>
           <ul class="unlist">
             <li>
-              <a href="/static/wallpapers/{{wallpaper.id}}-cinema.png" 
+              <a href="/static/wallpapers/{{wallpaper.url}}-cinema.png"
                 download="{{wallpaper.title | slug}}-cinema.png">
                 <span>Cinema</span>: 3840 × 2160
               </a>
             </li>
             <li>
-              <a href="/static/wallpapers/{{wallpaper.id}}-desktop.png" 
+              <a href="/static/wallpapers/{{wallpaper.url}}-desktop.png"
                 download="{{wallpaper.title | slug}}-desktop.png">
                 <span>Desktop</span>: 1440 × 900
               </a>
             </li>
             <li>
-              <a href="/static/wallpapers/{{wallpaper.id}}-mobile.png" 
+              <a href="/static/wallpapers/{{wallpaper.url}}-mobile.png"
                 download="{{wallpaper.title | slug}}-mobile.png">
                 <span>Mobile</span>: 414 × 744
               </a>
@@ -52,7 +52,7 @@ changefreq: monthly
               <a href="https://codepen.io/oliverturner/pen/{{wallpaper.id}}?editors=0100"><span>Source on Codepen</span></a>
             </li>
           </ul>
-        </details>        
+        </details>
       </figcaption>
     </figure>
   {%- endfor -%}
