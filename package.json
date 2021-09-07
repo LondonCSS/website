@@ -61,6 +61,7 @@
     "screenshots:run": "start-test serve 8080 'run-s screenshot:*'",
     "screenshots": "run-s build:site screenshots:run",
     "build:site": "eleventy",
+    "build:cp": "cp ./tools/_redirects ./dist",
     "build": "NODE_ENV=production run-s clean build:*",
     "serve": "serve -l 8080 ./dist",
     "dev": "run-s clean && eleventy --serve"
