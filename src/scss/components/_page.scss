@@ -32,12 +32,9 @@
 
   &.page__content--wallpapers {
     display: grid;
-    gap: 12px;
-
-    @media (--mq-m) {
-      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-      grid-auto-rows: 375px;
-    }
+    align-content: start;
+    // align-items: start;
+    gap: 1rem;
   }
 
   & p a,

@@ -32,15 +32,15 @@
     "postcss-preset-env": "6.7.0",
     "postcss-pseudo-class-enter": "5.0.0",
     "puppeteer": "10.2.0",
-    "sass": "1.39.0",
+    "sass": "1.41.0",
     "serve-handler": "6.1.3",
-    "sharp": "0.29.0"
+    "sharp": "0.29.1"
   },
   "devDependencies": {
     "eslint": "7.32.0",
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
-    "serve": "12.0.0",
+    "serve": "12.0.1",
     "start-server-and-test": "1.14.0",
     "stylelint": "13.13.1",
     "stylelint-config-recommended": "5.0.0",
@@ -64,6 +64,7 @@
     "build:cp": "cp ./tools/_redirects ./dist",
     "build": "NODE_ENV=production run-s clean build:*",
     "serve": "serve -l 8080 ./dist",
+    "preview": "run-s build serve",
     "dev": "run-s clean && eleventy --serve"
   }
 }

@@ -6,9 +6,13 @@ const urls = {
   "branch-deploy": process.env.DEPLOY_URL
 };
 const rootUrl = urls[process.env.CONTEXT] || pkg.homepage;
+const currentYear = new Date().getFullYear()
+const shortYear = String(currentYear).substr(2)
 
 module.exports = {
   rootUrl,
+  currentYear,
+  shortYear,
   socialmedia: [
     {
       href: "mailto:hello@londoncss",

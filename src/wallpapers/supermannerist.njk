@@ -2,86 +2,110 @@
 title: "Supermannerism"
 ---
 <style>
-  body {
-    --grad1: #001d30;
-    background-color: var(--grad1);
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .sm {
-    --stripe: #fff1;
+:root {
+  --grad1: #002239;
+  --grad2: #0b605f;
+  --grad-img: linear-gradient(119deg, var(--grad1) 2%, var(--grad2) 82%);
 
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+  font-size: clamp(1.6rem, 3.5vmax, 2.2rem);
+}
 
-  .sm__container {
-    display: grid;
-    grid-template-areas:
-      "a a b b b b"
-      "a a c c c c"
-      "a a d d d d";
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: var(--grad-img);
+}
 
-    width: 100%;
-    height: 100%;
+.title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-    position: absolute;
-    transform: rotate(-45deg) scale(2);
-    transform-origin: center center;
-  }
+.sm {
+  --stripe: #fff;
 
-  .sm__stripes {
-    --perc: calc(100% / var(--stripes));
-    --perc2: calc(var(--perc) * 2);
+  display: grid;
 
-    background: repeating-linear-gradient(
-      var(--direction),
-      var(--stripe),
-      var(--stripe) var(--perc),
-      transparent var(--perc),
-      transparent var(--perc2)
-    );
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0.08;
+}
 
-  .sm__stripes--a {
-    --stripes: 16;
-    --direction: to right;
+.sm__container {
+  display: grid;
+  grid-template-areas:
+    "a a b b b b"
+    "a a c c c c"
+    "a a d d d d";
 
-    grid-area: a;
-  }
+  width: 100%;
+  height: 100%;
 
-  .sm__stripes--b {
-    --stripes: 4;
-    --direction: to bottom;
+  position: absolute;
+  transform: rotate(-45deg) scale(2);
+  transform-origin: center center;
+}
 
-    grid-area: b;
-  }
+.sm__stripes {
+  --perc: calc(100% / var(--stripes));
+  --perc2: calc(var(--perc) * 2);
 
-  .sm__stripes--c {
-    --stripes: 32;
-    --direction: to bottom;
+  background: repeating-linear-gradient(
+    var(--direction),
+    var(--stripe),
+    var(--stripe) var(--perc),
+    transparent var(--perc),
+    transparent var(--perc2)
+  );
+}
 
-    grid-area: c;
-  }
+.sm__stripes--a {
+  --stripes: 16;
+  --direction: to right;
 
-  .sm__stripes--d {
-    --stripes: 8;
-    --direction: to right;
+  grid-area: a;
+}
 
-    grid-area: d;
-  }
+.sm__stripes--b {
+  --stripes: 4;
+  --direction: to bottom;
 
-  .logo  {
-    background: #112c3e;
-    color: var(--grad1);
+  grid-area: b;
+}
 
-    background: var(--grad1);
-    color: #fff2;
-  }
+.sm__stripes--c {
+  --stripes: 32;
+  --direction: to bottom;
 
+  grid-area: c;
+}
+
+.sm__stripes--d {
+  --stripes: 8;
+  --direction: to right;
+
+  grid-area: d;
+}
+
+.sm__logo {
+  margin: auto;
+  padding: 0.2rem 0.45rem;
+  border: 0.2rem solid currentColor;
+  background: #000;
+  color: #fff;
+  mix-blend-mode: darken;
+}
 </style>
 
 <div class="sm">
@@ -91,7 +115,5 @@ title: "Supermannerism"
     <div class="sm__stripes sm__stripes--c"></div>
     <div class="sm__stripes sm__stripes--d"></div>
   </div>
-</div>
-<div class="doodle">
-  <h1 class="title logo">London CSS</h1>
+  <h1 class="sm__logo title">London CSS</h1>
 </div>

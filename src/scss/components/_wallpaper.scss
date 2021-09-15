@@ -1,7 +1,5 @@
 .wallpaper {
   position: relative;
-
-  padding: 0 6px;
   background: #0a0c27;
 
   @media (--mq-m) {
@@ -54,5 +52,6 @@
 }
 
 .wallpaper__img {
+  width: 100%;
   object-fit: cover;
 }
