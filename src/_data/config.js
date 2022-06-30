@@ -15,7 +15,7 @@ module.exports = {
   shortYear,
   socialmedia: [
     {
-      href: "mailto:hello@londoncss",
+      href: "mailto:hello@www.londoncss.dev",
       icon: "email",
       label: "Email"
     },
